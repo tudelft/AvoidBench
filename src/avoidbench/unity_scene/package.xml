@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>unity_scene</name>
+  <version>0.0.1</version>
+  <description>AvoidBench Render Engine built on Unity</description>
+
+  <maintainer email="h.y.yu@tudelft.nl">Hang Yu</maintainer>
+
+  <license>GNU GPL</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+</package>

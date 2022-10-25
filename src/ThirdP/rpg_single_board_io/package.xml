@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rpg_single_board_io</name>
+  <version>0.0.0</version>
+  <description>A package for using ADCs and GPIOs on single board computers</description>
+
+  <maintainer email="faessler@ifi.uzh.ch">Matthias Faessler</maintainer>
+  <license>MIT</license>
+
+  <author>Matthias Faessler</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+
+  <export>
+    
+  </export>
+</package>

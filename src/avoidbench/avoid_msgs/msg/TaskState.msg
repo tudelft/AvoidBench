@@ -1,0 +1,9 @@
+uint8 PREPARING=0
+uint8 UNITYSETTING=1
+uint8 SENTMISSION=2
+uint8 WAITMISSION=3
+uint8 MISSIONPROCESS=4
+uint8 GAZEBOSETTING=5
+
+Header header
+uint8 Mission_state

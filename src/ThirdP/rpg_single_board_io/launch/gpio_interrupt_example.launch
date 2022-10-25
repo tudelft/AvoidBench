@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="rpg_single_board_io" type="gpio_interrupt_example" 
+      name="gpio_interrupt_example" output="screen">
+  </node>
+
+</launch>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+<node pkg="avoidmetrics" type="read_pcl" name="read_pcl" output="screen">
+</node>
+   
+<node pkg="rviz" type="rviz" name="rviz_face" args="-d $(find avoidmetrics)/launch/pcl.rviz" output="screen"/>
+
+</launch>
