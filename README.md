@@ -5,11 +5,11 @@ AvoidBench: A high-fidelity vision-based obstacle avoidance benchmarking suite f
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In this project, we propose AvoidBench as a benchmarking suite for evaluating the performance of vision-based obstacle avoidance algorithms. We choose Flightmare as the basic backbone of AvoidBench, because it is lighter and can achieve higher simulation speed than Airsim. Based on Flightmare, we have for now built two simulation scenes for benchmarking: a forest environment and an indoor environment. It is easy to change the distribution of obstacles and complexity of map so that researchers can reveal the potential of drones using their algorithms. And we propose a complete set of metrics which contain the flight performance and environment complexity to evaluate the obstacle avoidance algorithms.
 
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/blob/avoidbench/src/images/Picture1.gif"/>
+  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/Picture1.gif"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/blob/avoidbench/src/images/framework.PNG"/>
+  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/framework.PNG"/>
 </p>
 
 ## 2. Installation
@@ -23,12 +23,12 @@ git clone https://github.com/NPU-yuhang/Avoidbench.git
 sudo apt update
 sudo apt install -y --no-install-recommends build-essential cmake libzmqpp-dev libopencv-dev unzip python3-catkin-tools
 cd Avoidbench
-export AVOIDBENCH_PATH=path_to_this_project/Avoidbench/src/avoidbench
+export AVOIDBENCH_PATH=path_to_this_project/AvoiBbench/src/avoidbench
 catkin build
 ```
 
 ## 3. Task
-Different from other benchmarks for drones, AvoidBench focus on the **evaluation of obstacle avoidance performance in environments with different comlexity**. Taking the outdoor scene parameter file [task_outdoor.yaml](https://github.com/tudelft/AvoidBench/blob/avoidbench/src/avoidbench/avoid_manage/params/task_outdoor.yaml) as an example, the following parameters define the evaluation task:
+Different from other benchmarks for drones, AvoidBench focus on the **evaluation of obstacle avoidance performance in environments with different comlexity**. Taking the outdoor scene parameter file [task_outdoor.yaml](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/avoid_manage/params/task_outdoor.yaml) as an example, the following parameters define the evaluation task:
 
 ``` bash
 flight_number: 30 #the number of maps, randomly generate 30 maps with different comlexity
@@ -46,11 +46,11 @@ mission:
 Here we show the environments with different comlexity:
 
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/blob/avoidbench/src/images/Media1.gif" width = "640" height = "360"/>
+  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/Media1.gif" width = "640" height = "360"/>
 </p>
 
 ## 4. Usage
-To use this benchmark, you should download the Unity file first. You can download the [standalone](https://data.4tu.nl/ndownloader/files/37942515) manually and unzip it to the folder of [avoidbench/unity_scene](https://github.com/tudelft/AvoidBench/tree/avoidbench/src/avoidbench/unity_scene). **OR** you can just run the following commands to setup:
+To use this benchmark, you should download the Unity file first. You can download the [standalone](https://data.4tu.nl/ndownloader/files/37942515) manually and unzip it to the folder of [avoidbench/unity_scene](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/unity_scene). **OR** you can just run the following commands to setup:
 
 ``` bash
 # now you are in your ros workspace
@@ -98,7 +98,7 @@ Always keep in mind that AvoidBench can provide stereo images, real depth images
 ## 5. Results
 We tested several mainstream, state-of-the-art obstacle avoidance algorithms, including: [Agile-Autonomy](https://github.com/uzh-rpg/agile_autonomy)(learning-based), [Ego-planner](https://github.com/ZJU-FAST-Lab/ego-planner)(optimization-based), and [MBPlanner](https://github.com/ntnu-arl/mbplanner_ros)(motion-primitive-based, the original version is designed for explorationm, we changed the exploration gain to the distance of current point to the goal point so that the drone can always fly to a fixed goal). Here is the testing video:
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/blob/avoidbench/src/images/Media1_4.gif" width = "640" height = "360"/>
+  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/Media1_4.gif" width = "640" height = "360"/>
 </p>
 
 ## 6. Ackowledgements
