@@ -5,7 +5,7 @@ AvoidBench: A high-fidelity vision-based obstacle avoidance benchmarking suite f
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In this project, we propose AvoidBench as a benchmarking suite for evaluating the performance of vision-based obstacle avoidance algorithms. We choose Flightmare as the basic backbone of AvoidBench, because it is lighter and can achieve higher simulation speed than Airsim. Based on Flightmare, we have for now built two simulation scenes for benchmarking: a forest environment and an indoor environment. It is easy to change the distribution of obstacles and complexity of map so that researchers can reveal the potential of drones using their algorithms. And we propose a complete set of metrics which contain the flight performance and environment complexity to evaluate the obstacle avoidance algorithms.
 
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/Picture1.gif"/>
+  <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Picture1.gif"/>
 </p>
 
 <p align="center">
@@ -46,7 +46,7 @@ mission:
 Here we show the environments with different comlexity:
 
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/Media1.gif" width = "640" height = "360"/>
+  <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Media1.gif" width = "640" height = "360"/>
 </p>
 
 ## 4. Usage
@@ -98,7 +98,7 @@ Always keep in mind that AvoidBench can provide stereo images, real depth images
 ## 5. Results
 We tested several mainstream, state-of-the-art obstacle avoidance algorithms, including: [Agile-Autonomy](https://github.com/uzh-rpg/agile_autonomy)(learning-based), [Ego-planner](https://github.com/ZJU-FAST-Lab/ego-planner)(optimization-based), and [MBPlanner](https://github.com/ntnu-arl/mbplanner_ros)(motion-primitive-based, the original version is designed for explorationm, we changed the exploration gain to the distance of current point to the goal point so that the drone can always fly to a fixed goal). Here is the testing video:
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/Media1_4.gif" width = "640" height = "360"/>
+  <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Media1_4.gif" width = "640" height = "360"/>
 </p>
 
 ## 6. Ackowledgements
