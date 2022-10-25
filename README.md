@@ -50,12 +50,12 @@ Here we show the environments with different comlexity:
 </p>
 
 ## 4. Usage
-To use this benchmark, you should download the Unity file first. You can download the [standalone](https://data.4tu.nl/ndownloader/files/37942515) manually and unzip it to the folder of [avoidbench/unity_scene](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/unity_scene). **OR** you can just run the following commands to setup:
+To use this benchmark, you should download the Unity file first. You can download the [standalone](https://objects.githubusercontent.com/github-production-release-asset-2e65be/557505372/b490df79-54d7-417c-8feb-e5052deef691?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221025T204928Z&X-Amz-Expires=300&X-Amz-Signature=0a75ba7ff5c05781bf069423a45c6bfac758c17ccce48fa8609151ce781c306e&X-Amz-SignedHeaders=host&actor_id=35761931&key_id=0&repo_id=557505372&response-content-disposition=attachment%3B%20filename%3DAvoidBench.zip&response-content-type=application%2Foctet-stream) manually and unzip it to the folder of [avoidbench/unity_scene](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/unity_scene). **OR** you can just run the following commands to setup:
 
 ``` bash
 # now you are in your ros workspace
 cd src/avoidbench/unity_scene/
-wget "https://data.4tu.nl/ndownloader/files/37942515"
+wget "https://data.4tu.nl/ndownloader/files/37942515" # will be available soon
 unzip -o AvoidBench.zip
 rm AvoidBench.zip
 ```
