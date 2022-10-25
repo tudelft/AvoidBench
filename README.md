@@ -9,7 +9,7 @@ This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In th
 </p>
 
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/tree/main/src/images/framework.PNG"/>
+  <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/framework.PNG"/>
 </p>
 
 ## 2. Installation
