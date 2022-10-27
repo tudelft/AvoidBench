@@ -95,7 +95,7 @@ TEST(QuadrotorDynamics, VectorReference) {
 
 TEST(QuadrotorDynamics, LoadParams) {
   QuadrotorDynamics quad(MASS, ARM_LENGTH);
-  std::string cfg_path = getenv("FLIGHTMARE_PATH") +
+  std::string cfg_path = getenv("AVOIDBENCH_PATH") +
                          std::string("/avoidlib/configs/quadrotor_env.yaml");
 
   YAML::Node cfg = YAML::LoadFile(cfg_path);

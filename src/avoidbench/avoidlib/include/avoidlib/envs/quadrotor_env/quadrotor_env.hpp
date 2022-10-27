@@ -31,6 +31,7 @@ enum Ctl : int {
   // observations
   kObs = 0,
   kNObs = 15,
+  kNState = 13,
 
   // control actions
   kAct = 0,
@@ -49,6 +50,8 @@ class QuadrotorEnv final : public EnvBase {
   // - public OpenAI-gym-style functions
   bool reset(Ref<Vector<>> obs) override;
   bool reset(Ref<Vector<>> obs, bool random);
+  bool reset(Ref<Vector<>> obs, Ref<Vector<>> state);
+
   bool step(const Ref<Vector<>> act, Ref<Vector<>> obs,
             Ref<Vector<>> reward) override;
 

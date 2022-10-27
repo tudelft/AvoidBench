@@ -21,7 +21,7 @@ camera:
   height: 480
   baseline: 0.12
   pitch_angle_deg: 0.0 # camera pitch angle in degrees
-  perform_sgm: true
+  perform_sgm: false
   
 drone:
   length: 0.5
@@ -37,4 +37,5 @@ mission:
   radius_origin: 1.5
   end_area: [16, 1.6]
   end_origin: [0, 28]
+  rollout: 120
   pc_file_name: pointcloud-unity

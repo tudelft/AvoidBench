@@ -21,6 +21,7 @@ class QuadrotorVecEnv : public VecEnvBase<EnvBaseName> {
 
   bool reset(Ref<MatrixRowMajor<>> obs) override;
   bool reset(Ref<MatrixRowMajor<>> obs, bool random);
+  bool reset(Ref<MatrixRowMajor<>> obs, Ref<MatrixRowMajor<>> state);
   bool step(Ref<MatrixRowMajor<>> act, Ref<MatrixRowMajor<>> obs,
             Ref<MatrixRowMajor<>> reward, Ref<BoolVector<>> done,
             Ref<MatrixRowMajor<>> extra_info) override;

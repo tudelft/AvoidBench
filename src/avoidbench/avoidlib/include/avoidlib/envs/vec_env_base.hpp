@@ -60,6 +60,7 @@ class VecEnvBase {
   inline bool getUnityRender(void) const { return unity_render_; };
   inline int getObsDim(void) const { return obs_dim_; };
   inline int getActDim(void) const { return act_dim_; };
+  inline int getStateDim(void) const { return state_dim_; };
   inline int getRewDim(void) const { return rew_dim_; };
   inline int getImgHeight(void) const { return img_height_; };
   inline int getImgWidth(void) const { return img_width_; };
@@ -90,7 +91,7 @@ class VecEnvBase {
   uint16_t receive_id_{0};
 
   // auxiliar variables
-  int seed_, num_envs_, obs_dim_, act_dim_, rew_dim_, num_threads_;
+  int seed_, num_envs_, obs_dim_, act_dim_, state_dim_, rew_dim_, num_threads_;
   int img_width_, img_height_;
   Matrix<> obs_dummy_;
 };

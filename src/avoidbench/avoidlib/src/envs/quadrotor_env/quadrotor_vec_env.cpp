@@ -5,8 +5,8 @@ namespace avoidlib {
 template<typename EnvBaseName>
 QuadrotorVecEnv<EnvBaseName>::QuadrotorVecEnv() {
   std::string config_path =
-    getenv("FLIGHTMARE_PATH") +
-    std::string("/flightpy/configs/control/config.yaml");
+    getenv("AVOIDBENCH_PATH") +
+    std::string("/flightpy/configs/control/config_gazebo.yaml");
   cfg_ = YAML::LoadFile(config_path);
   // yaml configurations
   configEnv(cfg_);
@@ -44,6 +44,23 @@ bool QuadrotorVecEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs) {
   this->receive_id_ = 0;
   for (int i = 0; i < this->num_envs_; i++) {
     this->envs_[i]->reset(obs.row(i), random_reset_);
+  }
+
+  return true;
+}
+
+template<typename EnvBaseName>
+bool QuadrotorVecEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs, Ref<MatrixRowMajor<>> state) {
+  if (obs.rows() != this->num_envs_ || obs.cols() != this->obs_dim_ ||
+      state.rows() != this->num_envs_ || state.cols() != this->state_dim_) {
+    this->logger_.error(
+      "Input matrix dimensions do not match with that of the environment.");
+    return false;
+  }
+
+  this->receive_id_ = 0;
+  for (int i = 0; i < this->num_envs_; i++) {
+    this->envs_[i]->reset(obs.row(i), state.row(i));
   }
 
   return true;

@@ -24,6 +24,10 @@ PYBIND11_MODULE(flightgym, m) {
          "reset")
     .def("reset",
          static_cast<bool (QuadrotorVecEnv<QuadrotorEnv>::*)(
+           Ref<MatrixRowMajor<>>, Ref<MatrixRowMajor<>>)>(&QuadrotorVecEnv<QuadrotorEnv>::reset),
+         "reset")
+    .def("reset",
+         static_cast<bool (QuadrotorVecEnv<QuadrotorEnv>::*)(
            Ref<MatrixRowMajor<>>, bool)>(&QuadrotorVecEnv<QuadrotorEnv>::reset),
          "reset with random option")
     .def("step", &QuadrotorVecEnv<QuadrotorEnv>::step)
@@ -42,6 +46,7 @@ PYBIND11_MODULE(flightgym, m) {
     .def("getNumOfEnvs", &QuadrotorVecEnv<QuadrotorEnv>::getNumOfEnvs)
     .def("getObsDim", &QuadrotorVecEnv<QuadrotorEnv>::getObsDim)
     .def("getActDim", &QuadrotorVecEnv<QuadrotorEnv>::getActDim)
+    .def("getStateDim", &QuadrotorVecEnv<QuadrotorEnv>::getStateDim)
     .def("getRewDim", &QuadrotorVecEnv<QuadrotorEnv>::getRewDim)
     .def("getImgHeight", &QuadrotorVecEnv<QuadrotorEnv>::getImgHeight)
     .def("getImgWidth", &QuadrotorVecEnv<QuadrotorEnv>::getImgWidth)

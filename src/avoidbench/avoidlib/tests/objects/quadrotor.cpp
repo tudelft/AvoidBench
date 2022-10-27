@@ -30,7 +30,7 @@ TEST(Quadrotor, Constructor) {
 
   //
   const std::string cfg_path =
-    getenv("FLIGHTMARE_PATH") +
+    getenv("AVOIDBENCH_PATH") +
     std::string("/avoidlib/configs/quadrotor_env.yaml");
   Quadrotor quad2(cfg_path);
   quad2.getState(&quad_state);
