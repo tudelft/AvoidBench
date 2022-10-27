@@ -26,7 +26,8 @@ AvoidManage::AvoidManage(const ros::NodeHandle &nh, const ros::NodeHandle &pnh)
 
   image_transport::ImageTransport it(nh);
   left_pub = it.advertise("/rgb/left", 1);
-  right_pub = it.advertise("/rgb/right", 1);
+  if(perform_sgm_)
+    right_pub = it.advertise("/rgb/right", 1);
   depth_pub = it.advertise("/depth", 1);
   depth_cam_info_pub = nh_.advertise<sensor_msgs::CameraInfo>("camera_depth/camera/camera_info", 10);
   pose_pub_ = nh_.advertise<rpg_quadrotor_msgs::TrajectoryPoint>("autopilot/reset_reference_state", 10);
@@ -36,6 +37,7 @@ AvoidManage::AvoidManage(const ros::NodeHandle &nh, const ros::NodeHandle &pnh)
   goal_pub_ = nh_.advertise<nav_msgs::Path>("goal_point", 10);
   task_state_pub_ = nh_.advertise<avoid_msgs::TaskState>("task_state", 100);
   avoid_metrics_pub_ = nh_.advertise<avoid_msgs::Metrics>("metrics", 10);
+  collision_info_pub_ = nh_.advertise<std_msgs::Bool>("collision", 1);
   // initialize subscriber call backs
   gazebo_model_srv_ = nh_.serviceClient<gazebo_msgs::SetModelState>("/gazebo/set_model_state");
 
@@ -115,9 +117,12 @@ void AvoidManage::RenderingCallback(const ros::TimerEvent &event)
   if(unity_init_)
   {
     unity_ready_ = avoidbench_bridge->updateUnity(received_state_est_);
+    collision_state = avoidbench_bridge->getQuadCollisionState();
+    std_msgs::Bool colli;
+    colli.data = collision_state;
+    collision_info_pub_.publish(colli);
     if(mission_state == Mission_state::MISSIONPROCESS)
     {
-      collision_state = avoidbench_bridge->getQuadCollisionState();
       if(last_collision_state==false && collision_state==true)
       {
         collision_happen = true;
@@ -126,20 +131,31 @@ void AvoidManage::RenderingCallback(const ros::TimerEvent &event)
 
     cv::Mat depth, disparity, left, right;
     ros::Time timestamp = ros::Time::now();
-    avoidbench_bridge->getImages(&left, &right, &depth, &disparity);
-
-    sensor_msgs::ImagePtr left_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", left).toImageMsg();
-    left_msg->header.stamp = timestamp;
-    left_pub.publish(left_msg);
-
-    sensor_msgs::ImagePtr right_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", right).toImageMsg();
-    right_msg->header.stamp = timestamp;
-    right_pub.publish(right_msg);
-
-    sensor_msgs::ImagePtr depth_msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", depth).toImageMsg();
-    depth_msg->header.stamp = timestamp;
-    depth_msg->header.frame_id = "camera_depth_optical_center_link";
-    depth_pub.publish(depth_msg);
+    if(perform_sgm_)
+    {
+      avoidbench_bridge->getImages(&left, &right, &depth, &disparity);
+      sensor_msgs::ImagePtr left_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", left).toImageMsg();
+      left_msg->header.stamp = timestamp;
+      left_pub.publish(left_msg);
+      sensor_msgs::ImagePtr right_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", right).toImageMsg();
+      right_msg->header.stamp = timestamp;
+      right_pub.publish(right_msg);
+      sensor_msgs::ImagePtr depth_msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", depth).toImageMsg();
+      depth_msg->header.stamp = timestamp;
+      depth_msg->header.frame_id = "camera_depth_optical_center_link";
+      depth_pub.publish(depth_msg);
+    }
+    else
+    {
+      avoidbench_bridge->getImages(&left, &depth);
+      sensor_msgs::ImagePtr left_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", left).toImageMsg();
+      left_msg->header.stamp = timestamp;
+      left_pub.publish(left_msg);
+      sensor_msgs::ImagePtr depth_msg = cv_bridge::CvImage(std_msgs::Header(), "32FC1", depth).toImageMsg();
+      depth_msg->header.stamp = timestamp;
+      depth_msg->header.frame_id = "camera_depth_optical_center_link";
+      depth_pub.publish(depth_msg);
+    }
 
     //publish camera info
     sensor_msgs::CameraInfo cam_info;
@@ -270,7 +286,7 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
     
     mission = std::make_shared<avoidmetrics::Mission>(cfg_, p_m, mission_id);    
     //reset the position of start point for gazebo
-    resetGazebo(Eigen::Vector3d(p_m.m_start_point[0], p_m.m_start_point[1], p_m.m_start_point[2]), p_m.m_start_point[3]);
+    // resetGazebo(Eigen::Vector3d(p_m.m_start_point[0], p_m.m_start_point[1], p_m.m_start_point[2]), p_m.m_start_point[3]);
     std::cout<<"start point: "<<p_m.m_start_point[0]<<" "<<p_m.m_start_point[1]<<" "<<p_m.m_start_point[2]<<" "<<p_m.m_start_point[3]<<std::endl;
     mission_start_time = ros::Time::now();
     ros::Duration(1.0).sleep();
@@ -355,7 +371,6 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
       mission_state = Mission_state::PREPARING;
       metrics->setTaskFinishFlag(true);
     }
-      
   }
 }
 
@@ -528,6 +543,7 @@ bool AvoidManage::loadParams() {
   quadrotor_common::getParam("camera/width", width, pnh_);
   quadrotor_common::getParam("camera/height", height, pnh_);
   quadrotor_common::getParam("camera/baseline", baseline);
+  quadrotor_common::getParam("camera/perform_sgm", perform_sgm_);
   scene_id_ = env_id;
   return true;
 }

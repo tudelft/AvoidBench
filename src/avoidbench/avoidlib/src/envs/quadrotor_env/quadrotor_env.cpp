@@ -3,8 +3,8 @@
 namespace avoidlib {
 
 QuadrotorEnv::QuadrotorEnv()
-  : QuadrotorEnv(getenv("FLIGHTMARE_PATH") +
-                   std::string("/flightpy/configs/control/config.yaml"),
+  : QuadrotorEnv(getenv("AVOIDBENCH_PATH") +
+                   std::string("/flightpy/configs/control/config_gazeo.yaml"),
                  0) {}
 
 QuadrotorEnv::QuadrotorEnv(const std::string &cfg_path, const int env_id)
@@ -38,7 +38,7 @@ void QuadrotorEnv::init() {
   quad_ptr_->updateDynamics(dynamics);
 
   // define a bounding box {xmin, xmax, ymin, ymax, zmin, zmax}
-  world_box_ << -20, 20, -20, 20, -0.0, 20;
+  world_box_ << -40, 40, -40, 40, -0.0, 20;
   if (!quad_ptr_->setWorldBox(world_box_)) {
     logger_.error("cannot set wolrd box");
   };
@@ -46,6 +46,7 @@ void QuadrotorEnv::init() {
   // define input and output dimension for the environment
   obs_dim_ = quadenv::kNObs;
   act_dim_ = quadenv::kNAct;
+  state_dim_ = quadenv::kNState;
   rew_dim_ = 0;
 
   // load parameters
@@ -129,6 +130,47 @@ bool QuadrotorEnv::reset(Ref<Vector<>> obs) {
 
 bool QuadrotorEnv::reset(Ref<Vector<>> obs, bool random) { return reset(obs); }
 
+bool QuadrotorEnv::reset(Ref<Vector<>> obs, Ref<Vector<>> state)
+{
+  if (state.size() != state_dim_) {
+    logger_.error("State dimension mismatch. %d != %d", state.size(),
+                  state_dim_);
+    return false;
+  }
+
+  quad_state_.setZero();
+  pi_act_.setZero();
+  quad_state_.x(QS::POSX) = state(0);
+  quad_state_.x(QS::POSY) = state(1);
+  quad_state_.x(QS::POSZ) = state(2);
+  quad_state_.x(QS::VELX) = state(3);
+  quad_state_.x(QS::VELY) = state(4);
+  quad_state_.x(QS::VELZ) = state(5);
+  quad_state_.x(QS::ACCX) = state(6);
+  quad_state_.x(QS::ACCY) = state(7);
+  quad_state_.x(QS::ACCZ) = state(8);
+  quad_state_.x(QS::ATTW) = state(9);
+  quad_state_.x(QS::ATTX) = state(10);
+  quad_state_.x(QS::ATTY) = state(11);
+  quad_state_.x(QS::ATTZ) = state(12);
+  // reset quadrotor
+  quad_ptr_->reset(quad_state_);
+    // reset control command
+  cmd_.t = 0.0;
+  if (rotor_ctrl_ == 0) {
+    cmd_.setCmdMode(0);
+    cmd_.thrusts.setZero();
+  } else if (rotor_ctrl_ == 1) {
+    cmd_.setCmdMode(1);
+    cmd_.collective_thrust = 0;
+    cmd_.omega.setZero();
+  }
+
+  // obtain observations
+  getObs(obs);
+  return true;
+}
+
 bool QuadrotorEnv::getObs(Ref<Vector<>> obs) {
   if (obs.size() != obs_dim_) {
     logger_.error("Observation dimension mismatch. %d != %d", obs.size(),
@@ -144,7 +186,6 @@ bool QuadrotorEnv::getObs(Ref<Vector<>> obs) {
   // observation dim : 3 + 9 + 3 = 15
   obs.segment<quadenv::kNObs>(quadenv::kObs) << quad_state_.p, ori,
     quad_state_.v;
-
   // use the following observations if use single rotor thrusts as input
   // observation dim : 3 + 9 + 3 + 3= 18
   // obs.segment<quadenv::kNObs>(quadenv::kObs) << quad_state_.p, ori,
@@ -158,7 +199,6 @@ bool QuadrotorEnv::step(const Ref<Vector<>> act, Ref<Vector<>> obs,
     return false;
   //
   pi_act_ = act.cwiseProduct(act_std_) + act_mean_;
-
   cmd_.t += sim_dt_;
   quad_state_.t += sim_dt_;
 
@@ -168,7 +208,6 @@ bool QuadrotorEnv::step(const Ref<Vector<>> act, Ref<Vector<>> obs,
     cmd_.collective_thrust = pi_act_(0);
     cmd_.omega = pi_act_.segment<3>(1);
   }
-
   // simulate quadrotor
   quad_ptr_->run(cmd_, sim_dt_);
 

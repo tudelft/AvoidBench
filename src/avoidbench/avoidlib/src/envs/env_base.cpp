@@ -5,6 +5,7 @@ namespace avoidlib {
 EnvBase::EnvBase()
   : obs_dim_(0),
     act_dim_(0),
+    state_dim_(0),
     rew_dim_(0),
     img_width_(0),
     img_height_(0),

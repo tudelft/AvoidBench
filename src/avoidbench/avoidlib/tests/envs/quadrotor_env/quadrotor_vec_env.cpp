@@ -16,7 +16,7 @@ static constexpr int REW_DIM = 5;
 
 TEST(QuadrotorVecEnv, Constructor) {
   std::string config_path =
-    getenv("FLIGHTMARE_PATH") +
+    getenv("AVOIDBENCH_PATH") +
     std::string("/flightpy/configs/control/config.yaml");
 
   const int env_id = 0;

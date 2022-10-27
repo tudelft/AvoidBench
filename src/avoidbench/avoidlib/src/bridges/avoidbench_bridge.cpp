@@ -14,36 +14,41 @@ AvoidbenchBridge::AvoidbenchBridge(const std::string &cfg_path)
   }
   // setParamFromMission(para);
   quad_ptr_ = std::make_shared<Quadrotor>();
-  left_rgb_cam_ = std::make_shared<RGBCamera>();
-  right_rgb_cam_ = std::make_shared<RGBCamera>();
 
   float hor_fov_radians = (M_PI * (rgb_fov_deg_ / 180.0));
   float avoidbench_fov = 2. * std::atan(std::tan(hor_fov_radians / 2) * img_rows_ / img_cols_);
   avoidbench_fov = (avoidbench_fov / M_PI) * 180.0;
-  std::cout<<"fov: "<<avoidbench_fov<<std::endl;
+
+  left_rgb_cam_ = std::make_shared<RGBCamera>();
   left_rgb_cam_ ->setFOV(avoidbench_fov);
   left_rgb_cam_->setWidth(img_cols_);
   left_rgb_cam_->setHeight(img_rows_);
-  left_rgb_cam_->setPostProcessing(std::vector<bool>{false, false, false});
-  right_rgb_cam_ ->setFOV(avoidbench_fov);
-  right_rgb_cam_->setWidth(img_cols_);
-  right_rgb_cam_->setHeight(img_rows_);
-  right_rgb_cam_->setPostProcessing(std::vector<bool>{false, false, false});
-
-  Vector<3> B_r_BCr(0.2, -stereo_baseline_ / 2.0, 0.3);
+  if(perform_sgm_)
+    left_rgb_cam_->setPostProcessing(std::vector<bool>{false, false, false});
+  else
+    left_rgb_cam_->setPostProcessing(std::vector<bool>{true, false, false});
   Vector<3> B_r_BCl(0.2, stereo_baseline_ / 2.0, 0.3);
-  // set the relative rotation of the camera
-  Matrix<3, 3> R_BCr, R_BCl;
-  // R_BCr = Quaternion(1.0, 0.0, 0.0, 0.0).toRotationMatrix();
-  // R_BCl = R_BCr;
-  R_BCr = Eigen::AngleAxisd(0.0 * M_PI, Eigen::Vector3d::UnitX()) * Eigen::AngleAxisd(-pitch_angle_deg_ / 180.0 * M_PI,
-                          Eigen::Vector3d::UnitY()) * Eigen::AngleAxisd(-0.5 * M_PI, Eigen::Vector3d::UnitZ());
+  Matrix<3, 3> R_BCl;
   R_BCl = Eigen::AngleAxisd(0.0 * M_PI, Eigen::Vector3d::UnitX()) * Eigen::AngleAxisd(-pitch_angle_deg_ / 180.0 * M_PI,
                           Eigen::Vector3d::UnitY()) * Eigen::AngleAxisd(-0.5 * M_PI, Eigen::Vector3d::UnitZ());
-  right_rgb_cam_->setRelPose(B_r_BCr, R_BCr);
   left_rgb_cam_->setRelPose(B_r_BCl, R_BCl);
   quad_ptr_->addRGBCamera(left_rgb_cam_);
-  quad_ptr_->addRGBCamera(right_rgb_cam_);
+  
+  if(perform_sgm_)
+  {
+    right_rgb_cam_ = std::make_shared<RGBCamera>();
+    right_rgb_cam_ ->setFOV(avoidbench_fov);
+    right_rgb_cam_->setWidth(img_cols_);
+    right_rgb_cam_->setHeight(img_rows_);
+    right_rgb_cam_->setPostProcessing(std::vector<bool>{false, false, false});
+    Vector<3> B_r_BCr(0.2, -stereo_baseline_ / 2.0, 0.3);
+    Matrix<3, 3> R_BCr; 
+    R_BCr = Eigen::AngleAxisd(0.0 * M_PI, Eigen::Vector3d::UnitX()) * Eigen::AngleAxisd(-pitch_angle_deg_ / 180.0 * M_PI,
+                            Eigen::Vector3d::UnitY()) * Eigen::AngleAxisd(-0.5 * M_PI, Eigen::Vector3d::UnitZ());
+    right_rgb_cam_->setRelPose(B_r_BCr, R_BCr);
+    quad_ptr_->addRGBCamera(right_rgb_cam_);
+  }
+
   quad_state_.setZero();
   quad_state_.q(Eigen::Quaterniond(std::cos(0.5 * M_PI_2), 0.0, 0.0,
                                   std::sin(0.5 * M_PI_2)));
@@ -174,16 +179,25 @@ bool AvoidbenchBridge::ifSceneChanged()
   return unity_bridge_ptr_->ifSceneChanged();
 }
 
+void AvoidbenchBridge::getImages(cv::Mat* left_frame, cv::Mat* depth_uint16)
+{
+  left_rgb_cam_->getRGBImage(*left_frame);
+  left_rgb_cam_->getDepthMap(*depth_uint16);
+}
+
 void AvoidbenchBridge::getImages(cv::Mat* left_frame, cv::Mat* right_frame, 
                                   cv::Mat* depth_uint16, cv::Mat* disp_uint8) {
-
-    left_rgb_cam_->getRGBImage(*left_frame);
-    right_rgb_cam_->getRGBImage(*right_frame);
-
-    // compute disparity image
-    *depth_uint16 = cv::Mat(img_rows_, img_cols_, CV_16UC1);
-    *disp_uint8   = cv::Mat(img_rows_, img_cols_, CV_8UC1);
-    computeDepthImage(*left_frame, *right_frame, depth_uint16, disp_uint8);
+  if(!perform_sgm_) 
+  {
+    std::cout<<"must be stereo vision"<<std::endl;
+    return;
+  }
+  left_rgb_cam_->getRGBImage(*left_frame);
+  right_rgb_cam_->getRGBImage(*right_frame);
+  // compute disparity image
+  *depth_uint16 = cv::Mat(img_rows_, img_cols_, CV_16UC1);
+  *disp_uint8   = cv::Mat(img_rows_, img_cols_, CV_8UC1);
+  computeDepthImage(*left_frame, *right_frame, depth_uint16, disp_uint8);
 }
 
 void AvoidbenchBridge::computeDepthImage(const cv::Mat& left_frame,
@@ -191,9 +205,7 @@ void AvoidbenchBridge::computeDepthImage(const cv::Mat& left_frame,
                                          cv::Mat* const depth, cv::Mat* const disp) {
   // ros::WallTime start_disp_comp = ros::WallTime::now();
   cv::Mat disparity(img_rows_, img_cols_, CV_8UC1);
-  if (perform_sgm_) {
-    sgm_->computeDisparity(left_frame, right_frame, disp);
-  }
+  sgm_->computeDisparity(left_frame, right_frame, disp);
   disp->copyTo(disparity);
   disparity.convertTo(disparity, CV_32FC1);
 

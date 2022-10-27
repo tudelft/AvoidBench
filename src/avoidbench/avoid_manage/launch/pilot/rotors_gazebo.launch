@@ -97,7 +97,7 @@
     </group>
 
     <node pkg="avoid_manage" type="avoid_manage_node" name="avoid_manage_node" output="screen">
-      <rosparam file="$(find avoid_manage)/params/task_indoor.yaml" />
+      <rosparam file="$(find avoid_manage)/params/task_outdoor.yaml" />
       <remap from="flight_pilot/state_estimate" to="ground_truth/odometry" />
     </node>
     

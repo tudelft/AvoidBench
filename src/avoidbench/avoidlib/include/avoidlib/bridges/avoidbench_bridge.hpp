@@ -30,6 +30,7 @@ public:
     bool finish_pc_save{false};
 
     bool updateUnity(const quadrotor_common::QuadStateEstimate& start_state);
+    void getImages(cv::Mat* left_frame, cv::Mat* depth_uint16);
     void getImages(cv::Mat* left_frame, cv::Mat* right_frame, 
                     cv::Mat* depth_uint16, cv::Mat* disp_uint8);
     void getPointCloud(const std::string curr_data_dir,

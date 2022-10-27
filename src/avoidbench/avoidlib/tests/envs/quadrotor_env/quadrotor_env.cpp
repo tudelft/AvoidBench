@@ -21,7 +21,7 @@ TEST(QuadrotorEnv, Constructor) {
 
   // create env and load configuration from a yaml file.
   std::string config_path =
-    getenv("FLIGHTMARE_PATH") +
+    getenv("AVOIDBENCH_PATH") +
     std::string("/flightpy/configs/control/config.yaml");
   logger.info("Environment configuration path \"%s\".", config_path.c_str());
   const int env_id = 0;

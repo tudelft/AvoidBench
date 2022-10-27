@@ -86,6 +86,7 @@ class AvoidManage {
   ros::Publisher goal_pub_;
   ros::Publisher task_state_pub_;
   ros::Publisher avoid_metrics_pub_;
+  ros::Publisher collision_info_pub_;
 
   ros::ServiceClient gazebo_model_srv_;
 
@@ -143,6 +144,7 @@ class AvoidManage {
   int width;
   int height;
   double baseline;
+  bool perform_sgm_;
   std::vector<double> env_range, env_origin;
   
   void getMissionParam(avoidlib::mission_parameter* const m_param, const int &m_id);
