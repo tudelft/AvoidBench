@@ -26,7 +26,7 @@ class Mission_state(Enum):
     MISSIONPROCESS = 4
     GAZEBOSETTING = 5
 
-class AvoidManage():
+class AvoidManage:
     def __init__(self):
         self.unity_init_ = False
         self.unity_ready_ = False
