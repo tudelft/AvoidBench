@@ -286,7 +286,7 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
     
     mission = std::make_shared<avoidmetrics::Mission>(cfg_, p_m, mission_id);    
     //reset the position of start point for gazebo
-    // resetGazebo(Eigen::Vector3d(p_m.m_start_point[0], p_m.m_start_point[1], p_m.m_start_point[2]), p_m.m_start_point[3]);
+    resetGazebo(Eigen::Vector3d(p_m.m_start_point[0], p_m.m_start_point[1], p_m.m_start_point[2]), p_m.m_start_point[3]);
     std::cout<<"start point: "<<p_m.m_start_point[0]<<" "<<p_m.m_start_point[1]<<" "<<p_m.m_start_point[2]<<" "<<p_m.m_start_point[3]<<std::endl;
     mission_start_time = ros::Time::now();
     ros::Duration(1.0).sleep();
