@@ -13,6 +13,7 @@ This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In th
 </p>
 
 ## 2. Installation
+2.1 Install with ROS
 This project is developed by on Ubuntu20.04 with ROS noetic. We kindly recommend you to use the same ROS version if you want to test your algorithms in AvoidBench. For gcc and g++ version, we test both 7.5.0 and 9.4.0. You can check this by typing in a terminal ``` gcc --version ``` and ``` g++ --version ```. Follow this [guide](https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/) if your compiler is not compatible.
 
 For the hardware, we suggest you testing AvoidBench in a PC or laptop with GPU. The rendering system Unity3D can work much better than without a NVIDIA discrete GPU. The depth map from stereo vision also needs accelerated computing by CUDA.
@@ -27,6 +28,33 @@ cd Avoidbench
 echo "export AVOIDBENCH_PATH=path_to_this_project/AvoidBench/src/avoidbench" >> ~/.bashrc
 catkin build
 ```
+
+2.2 Install with docker
+Now we have docker image for AvoidBench!
+Follow this [guide](https://docs.docker.com/engine/install/ubuntu/) to install docker. The following steps are used to make your NVIDIA graphics device can work with docker container:
+
+```bash
+# in terminal of the host computer
+xhost +
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+```
+
+Then get our docker image and run a container:
+
+```bash
+
+# in terminal of the host computer
+docker pull hangyutud/noetic_avoidbench:latest
+sudo docker run -it --device=/dev/dri --group-add video --volume=/tmp/.X11-unix:/tmp/.X11-unix  --env="DISPLAY=$DISPLAY" --env="QT_X11_NO_MITSHM=1" --gpus all --name=noetic_ab -e NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics -e NVIDIA_VISIBLE_DEVICES=all hangyutud/noetic_avoidbench:latest /bin/bash
+# in terminal of the docker container
+cd AvoidBench
+catkin build
+```
+
 
 ## 3. Task
 Different from other benchmarks for drones, AvoidBench focus on the **evaluation of obstacle avoidance performance in environments with different comlexity**. Taking the outdoor scene parameter file [task_outdoor.yaml](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/avoid_manage/params/task_outdoor.yaml) as an example, the following parameters define the evaluation task:
@@ -51,7 +79,8 @@ Here we show the environments with different comlexity:
 </p>
 
 ## 4. Usage
-To use this benchmark, you should download the Unity file first. You can download the [standalone](https://objects.githubusercontent.com/github-production-release-asset-2e65be/557505372/b490df79-54d7-417c-8feb-e5052deef691?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221025T204928Z&X-Amz-Expires=300&X-Amz-Signature=0a75ba7ff5c05781bf069423a45c6bfac758c17ccce48fa8609151ce781c306e&X-Amz-SignedHeaders=host&actor_id=35761931&key_id=0&repo_id=557505372&response-content-disposition=attachment%3B%20filename%3DAvoidBench.zip&response-content-type=application%2Foctet-stream) manually and unzip it to the folder of [avoidbench/unity_scene](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/unity_scene). **OR** you can just run the following commands to setup:
+To use this benchmark, you should download the Unity file first. You can download the Unity [standalone](https://objects.githubusercontent.com/github-production-release-asset-2e65be/557505372/b490df79-54d7-417c-8feb-e5052deef691?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221025T204928Z&X-Amz-Expires=300&X-Amz-Signature=0a75ba7ff5c05781bf069423a45c6bfac758c17ccce48fa8609151ce781c306e&X-Amz-SignedHeaders=host&actor_id=35761931&key_id=0&repo_id=557505372&response-content-disposition=attachment%3B%20filename%3DAvoidBench.zip&response-content-type=application%2Foctet-stream) manually and unzip it to the folder of [avoidbench/unity_scene](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/unity_scene). **OR** you can just run the following commands to setup:
+(For docker version, we have already done this, so this step is only for ROS version.)
 
 ``` bash
 # now you are in your ros workspace
