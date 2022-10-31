@@ -1,7 +1,7 @@
 # Avoidbench
 AvoidBench: A high-fidelity vision-based obstacle avoidance benchmarking suite for multi-rotor.
 
-## 1. Introduction
+# 1. Introduction
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In this project, we propose AvoidBench as a benchmarking suite for evaluating the performance of vision-based obstacle avoidance algorithms. We choose Flightmare as the basic backbone of AvoidBench, because it is lighter and can achieve higher simulation speed than Airsim. Based on Flightmare, we have for now built two simulation scenes for benchmarking: a forest environment and an indoor environment. It is easy to change the distribution of obstacles and complexity of map so that researchers can reveal the potential of drones using their algorithms. And we propose a complete set of metrics which contain the flight performance and environment complexity to evaluate the obstacle avoidance algorithms.
 
 <p align="center">
@@ -12,8 +12,8 @@ This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In th
   <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/framework.PNG"/>
 </p>
 
-## 2. Installation
-# 2.1 Install with ROS
+# 2. Installation
+## 2.1 Install with ROS
 This project is developed by on Ubuntu20.04 with ROS noetic. We kindly recommend you to use the same ROS version if you want to test your algorithms in AvoidBench. For gcc and g++ version, we test both 7.5.0 and 9.4.0. You can check this by typing in a terminal ``` gcc --version ``` and ``` g++ --version ```. Follow this [guide](https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/) if your compiler is not compatible.
 
 For the hardware, we suggest you testing AvoidBench in a PC or laptop with GPU. The rendering system Unity3D can work much better than without a NVIDIA discrete GPU. The depth map from stereo vision also needs accelerated computing by CUDA.
@@ -29,7 +29,7 @@ echo "export AVOIDBENCH_PATH=path_to_this_project/AvoidBench/src/avoidbench" >> 
 catkin build
 ```
 
-# 2.2 Install with docker
+## 2.2 Install with docker
 Now we have docker image for AvoidBench!
 Follow this [guide](https://docs.docker.com/engine/install/ubuntu/) to install docker. The following steps are used to make your NVIDIA graphics device can work with docker container:
 
@@ -56,7 +56,7 @@ catkin build
 ```
 
 
-## 3. Task
+# 3. Task
 Different from other benchmarks for drones, AvoidBench focus on the **evaluation of obstacle avoidance performance in environments with different comlexity**. Taking the outdoor scene parameter file [task_outdoor.yaml](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/avoid_manage/params/task_outdoor.yaml) as an example, the following parameters define the evaluation task:
 
 ``` bash
@@ -78,7 +78,7 @@ Here we show the environments with different comlexity:
   <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Media1.gif" width = "640" height = "360"/>
 </p>
 
-## 4. Usage
+# 4. Usage
 To use this benchmark, you should download the Unity file first. You can download the Unity [standalone](https://objects.githubusercontent.com/github-production-release-asset-2e65be/557505372/b490df79-54d7-417c-8feb-e5052deef691?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221025T204928Z&X-Amz-Expires=300&X-Amz-Signature=0a75ba7ff5c05781bf069423a45c6bfac758c17ccce48fa8609151ce781c306e&X-Amz-SignedHeaders=host&actor_id=35761931&key_id=0&repo_id=557505372&response-content-disposition=attachment%3B%20filename%3DAvoidBench.zip&response-content-type=application%2Foctet-stream) manually and unzip it to the folder of [avoidbench/unity_scene](https://github.com/tudelft/AvoidBench/tree/main/src/avoidbench/unity_scene). **OR** you can just run the following commands to setup:
 (For docker version, we have already done this, so this step is only for ROS version.)
 
@@ -125,16 +125,16 @@ Always keep in mind that AvoidBench can provide stereo images, real depth images
   # This topic needs to be provided by users
   /hummingbird/iter_time # Computer running time required for each trajectory generation
  ```
-## 5. Results
+# 5. Results
 We tested several mainstream, state-of-the-art obstacle avoidance algorithms, including: [Agile-Autonomy](https://github.com/uzh-rpg/agile_autonomy)(learning-based), [Ego-planner](https://github.com/ZJU-FAST-Lab/ego-planner)(optimization-based), and [MBPlanner](https://github.com/ntnu-arl/mbplanner_ros)(motion-primitive-based, the original version is designed for explorationm, we changed the exploration gain to the distance of current point to the goal point so that the drone can always fly to a fixed goal). Here is the testing video:
 <p align="center">
   <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Media1_4.gif" width = "640" height = "360"/>
 </p>
 
-## 6. Ackowledgements
+# 6. Ackowledgements
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). Thanks for the great works from [Yunlong Song](https://yun-long.github.io) and [Antonio Loquercio](https://antonilo.github.io/).
 
 Thanks for the helping of all the members in TU-Delft [MAVLab](https://mavlab.tudelft.nl/).
 
-## 7. Licence
+# 7. Licence
 The source code is released under MIT license.
