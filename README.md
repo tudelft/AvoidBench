@@ -13,7 +13,7 @@ This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In th
 </p>
 
 ## 2. Installation
-2.1 Install with ROS
+# 2.1 Install with ROS
 This project is developed by on Ubuntu20.04 with ROS noetic. We kindly recommend you to use the same ROS version if you want to test your algorithms in AvoidBench. For gcc and g++ version, we test both 7.5.0 and 9.4.0. You can check this by typing in a terminal ``` gcc --version ``` and ``` g++ --version ```. Follow this [guide](https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/) if your compiler is not compatible.
 
 For the hardware, we suggest you testing AvoidBench in a PC or laptop with GPU. The rendering system Unity3D can work much better than without a NVIDIA discrete GPU. The depth map from stereo vision also needs accelerated computing by CUDA.
@@ -29,7 +29,7 @@ echo "export AVOIDBENCH_PATH=path_to_this_project/AvoidBench/src/avoidbench" >> 
 catkin build
 ```
 
-2.2 Install with docker
+# 2.2 Install with docker
 Now we have docker image for AvoidBench!
 Follow this [guide](https://docs.docker.com/engine/install/ubuntu/) to install docker. The following steps are used to make your NVIDIA graphics device can work with docker container:
 
