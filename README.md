@@ -21,9 +21,10 @@ Run the following commands to setup:
 ``` bash
 git clone https://github.com/NPU-yuhang/Avoidbench.git
 sudo apt update
-sudo apt install -y --no-install-recommends build-essential cmake libzmqpp-dev libopencv-dev unzip python3-catkin-tools
+sudo apt install git libtool build-essential cmake libzmqpp-dev libopencv-dev unzip python3-catkin-tools
+sudo apt install libgoogle-glog-dev protobuf-compiler ros-$ROS_DISTRO-octomap-msgs ros-noetic-octomap-ros python3-vcstool
 cd Avoidbench
-export AVOIDBENCH_PATH=path_to_this_project/AvoiBbench/src/avoidbench
+echo "export AVOIDBENCH_PATH=path_to_this_project/AvoidBench/src/avoidbench" >> ~/.bashrc
 catkin build
 ```
 
