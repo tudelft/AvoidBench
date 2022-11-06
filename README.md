@@ -94,7 +94,7 @@ Then go back to the ros workspace and run ros launch file
 cd ../../..
 source devel/setup.bash
 # run the launch file
-roslaunch avoid_manage rotor_gazebo.launch
+roslaunch avoid_manage rotors_gazebo.launch
 ```
 We also wrapped the communication interface between Unity and C++ to a python version by [pybind11](https://pybind11.readthedocs.io/en/stable/) and rewrote the avoid_manage node by python. If you want to test your python code, maybe this version is better for you to understand the whole task process. Of course, this version still need the dependency on ROS/rospy.
 ``` bash
