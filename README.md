@@ -20,6 +20,15 @@ For the hardware, we suggest you testing AvoidBench in a PC or laptop with GPU. 
 
 Run the following commands to setup:
 ``` bash
+# install Open3D
+git clone --recursive -b v0.9.0 https://github.com/isl-org/Open3D.git
+cd Open3D
+mkdir build
+cd build
+make -j
+sudo make install
+```
+``` bash
 git clone https://github.com/NPU-yuhang/Avoidbench.git
 sudo apt update
 sudo apt install git libtool build-essential cmake libzmqpp-dev libopencv-dev unzip python3-catkin-tools
