@@ -123,7 +123,7 @@ Always keep in mind that AvoidBench can provide stereo images, real depth images
 /hummingbird/ground_truth/odometry # odometry topic of the drone, velocity is in bodyframe
 /hummingbird/ground_truth/imu # imu topic of the drone
 /hummingbird/goal_point # the goal point for each trial
-/hummingbird/task_state # task state topic, Mission_state: 0(initial state of the whole program); 1(setting the Unity scenes); 2(sending the goal point topic); 3(waiting for the control command); 4(receving the control command and flying); 5(reseting the gazebo for other trial), DONOT send any control command on periods 0, 1, 2, 5
+/hummingbird/task_state # task state topic, Mission_state: 0(initial state of the whole program); 1(setting the Unity scenes); 2(sending the goal point topic); 3(waiting for the control command); 4(receving the control command and flying); 5(reseting the gazebo for other trial), DONOT send any control command on periods 0, 1, 5
 /hummingbird/autopilot/pose_command # position control command. X, Y, Z and yaw
 /hummingbird/autopilot/velocity_command # velocity control command. Vx, Vy, Yz and yaw
 /hummingbird/autopilot/reference_state # reference state control command. pose, velocity, accelerarion, heading, heading rate, jerk
