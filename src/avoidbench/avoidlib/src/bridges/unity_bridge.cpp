@@ -331,7 +331,7 @@ bool UnityBridge::getPointCloud(PointCloudMessage_t& pointcloud_msg) {
   while(!pc_state_msg.save_pc_success)
   {
     ss++;
-    usleep(0.02 * 1e6);
+    usleep(0.1 * 1e6);
     // std::cout<<"point cloud saving..."<<std::endl;
   }
   pc_state_msg.save_pc_success = false;
