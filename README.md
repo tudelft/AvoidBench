@@ -25,11 +25,12 @@ git clone --recursive -b v0.9.0 https://github.com/isl-org/Open3D.git
 cd Open3D
 mkdir build
 cd build
+cmake ..
 make -j
 sudo make install
 ```
 ``` bash
-git clone https://github.com/NPU-yuhang/Avoidbench.git
+git clone https://github.com/tudelft/Avoidbench.git
 sudo apt update
 sudo apt install git libtool build-essential cmake libzmqpp-dev libopencv-dev unzip python3-catkin-tools
 sudo apt install libgoogle-glog-dev protobuf-compiler ros-$ROS_DISTRO-octomap-msgs ros-noetic-octomap-ros python3-vcstool
