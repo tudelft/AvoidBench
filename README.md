@@ -153,10 +153,10 @@ Paper: [AvoidBench](https://arxiv.org/abs/2301.07430)
 }
 ```
 
-# 6. Ackowledgements
+# 7. Ackowledgements
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). Thanks for the great works from [Yunlong Song](https://yun-long.github.io) and [Antonio Loquercio](https://antonilo.github.io/).
 
 Thanks for the helping of all the members in TU-Delft [MAVLab](https://mavlab.tudelft.nl/).
 
-# 7. Licence
+# 8. Licence
 The source code is released under MIT license.
