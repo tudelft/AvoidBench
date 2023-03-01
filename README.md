@@ -95,7 +95,7 @@ To use this benchmark, you should download the Unity file first. You can downloa
 ``` bash
 # now you are in your ros workspace
 cd src/avoidbench/unity_scene/
-wget "https://github.com/tudelft/AvoidBench/releases/download/v0.0.2/AvoidBench.zip" # will be available soon
+wget "https://github.com/tudelft/AvoidBench/releases/download/v0.0.2/AvoidBench.zip"
 unzip -o AvoidBench.zip
 rm AvoidBench.zip
 ```
