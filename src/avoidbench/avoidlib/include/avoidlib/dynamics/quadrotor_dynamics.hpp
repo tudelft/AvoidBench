@@ -44,6 +44,7 @@ class QuadrotorDynamics : DynamicsBase {
   Vector<4> motorOmegaToThrust(const Vector<4>& omega) const;
   Vector<4> motorThrustToOmega(const Vector<4>& thrusts) const;
   Matrix<4, 4> getAllocationMatrix(void) const;
+  Matrix<3, 6> getKlqr(void) const { return K_lqr_; };
 
   Vector<3> getBodyDrag(const Vector<3>& body_vel);
   bool updateBodyDragCoeff1(const Vector<3>& cd1);
@@ -73,6 +74,7 @@ class QuadrotorDynamics : DynamicsBase {
   Scalar mass_;
   Matrix<3, 4> t_BM_;
   Matrix<4, 4> B_allocation_;
+  Matrix<3, 6> K_lqr_;
   Matrix<3, 3> J_;
   Matrix<3, 3> J_inv_;
 

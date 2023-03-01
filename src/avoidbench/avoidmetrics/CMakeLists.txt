@@ -126,7 +126,7 @@ target_link_libraries(avoidmetrics PRIVATE
 
 set_target_properties(avoidmetrics
     PROPERTIES LIBRARY_OUTPUT_DIRECTORY
-${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_PYTHON_DESTINATION}/../)
+    ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_PYTHON_DESTINATION}/../)
 
 # Finish
 cs_install()

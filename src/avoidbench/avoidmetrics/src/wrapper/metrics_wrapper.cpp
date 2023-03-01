@@ -25,11 +25,12 @@ PYBIND11_MODULE(avoidmetrics, m) {
       avoidmetrics::Metrics_msg msg_py;
       msg_py.traversability = msg.factors[i].traversability;
       msg_py.relative_gap_size = msg.factors[i].relative_gap_size;
-      for(int j=0; j<msg.factors[i].optimality_factor.size(); j++)
+      for(int j=0; j<msg.factors[i].path_excess_factor.size(); j++)
       {
-        msg_py.optimality_factor.push_back(msg.factors[i].optimality_factor[j]);
+        msg_py.path_excess_factor.push_back(msg.factors[i].path_excess_factor[j]);
+        msg_py.energy_cost.push_back(msg.factors[i].energy_cost[j]);
         msg_py.average_goal_velocity.push_back(msg.factors[i].average_goal_velocity[j]);
-        msg_py.mission_progress.push_back(msg.factors[i].mission_progress[j]);
+        msg_py.relative_end_distance.push_back(msg.factors[i].relative_end_distance[j]);
         msg_py.processing_time.push_back(msg.factors[i].processing_time[j]);
         msg_py.collision_number.push_back(msg.factors[i].collision_number[j]);
       }
@@ -55,14 +56,15 @@ PYBIND11_MODULE(avoidmetrics, m) {
   .def_readwrite("finished", &avoidmetrics::Mission::finished)
   .def_readwrite("stop_flag", &avoidmetrics::Mission::stop_flag)
   .def_readwrite("cal_time", &avoidmetrics::Mission::cal_time)
-  .def_readwrite("trials", &avoidmetrics::Mission::trials);
+  .def_readwrite("trials", &avoidmetrics::Mission::trials)
+  .def_readwrite("trial_id", &avoidmetrics::Mission::trial_id);
 
   py::class_<avoidmetrics::Metrics_msg>(m, "MetricsMsg")
   .def(py::init<>())
   .def_readwrite("traversability", &avoidmetrics::Metrics_msg::traversability)
-  .def_readwrite("optimality_factor", &avoidmetrics::Metrics_msg::optimality_factor)
+  .def_readwrite("path_excess_factor", &avoidmetrics::Metrics_msg::path_excess_factor)
   .def_readwrite("average_goal_velocity", &avoidmetrics::Metrics_msg::average_goal_velocity)
-  .def_readwrite("mission_progress", &avoidmetrics::Metrics_msg::mission_progress)
+  .def_readwrite("relative_end_distance", &avoidmetrics::Metrics_msg::relative_end_distance)
   .def_readwrite("relative_gap_size", &avoidmetrics::Metrics_msg::relative_gap_size)
   .def_readwrite("processing_time", &avoidmetrics::Metrics_msg::processing_time)
   .def_readwrite("collision_number", &avoidmetrics::Metrics_msg::collision_number);

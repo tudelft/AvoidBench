@@ -50,9 +50,11 @@ bool QuadrotorVecEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs) {
 }
 
 template<typename EnvBaseName>
-bool QuadrotorVecEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs, Ref<MatrixRowMajor<>> state) {
+bool QuadrotorVecEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs, 
+        Ref<MatrixRowMajor<>> state, Ref<MatrixRowMajor<>> omega) {
   if (obs.rows() != this->num_envs_ || obs.cols() != this->obs_dim_ ||
-      state.rows() != this->num_envs_ || state.cols() != this->state_dim_) {
+      state.rows() != this->num_envs_ || state.cols() != this->state_dim_ ||
+      omega.rows() != this->num_envs_ || omega.cols() != this->motor_dim_) {
     this->logger_.error(
       "Input matrix dimensions do not match with that of the environment.");
     return false;
@@ -60,7 +62,7 @@ bool QuadrotorVecEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs, Ref<MatrixRo
 
   this->receive_id_ = 0;
   for (int i = 0; i < this->num_envs_; i++) {
-    this->envs_[i]->reset(obs.row(i), state.row(i));
+    this->envs_[i]->reset(obs.row(i), state.row(i), omega.row(i));
   }
 
   return true;

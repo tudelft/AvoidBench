@@ -2,7 +2,7 @@
 #pragma once
 
 #include <memory>
-
+#include <fstream>
 // ros
 #include <nav_msgs/Odometry.h>
 #include <ros/ros.h>
@@ -116,10 +116,12 @@ class AvoidManage {
   nav_msgs::Odometry drone_pose;
   int mission_id;
   int trial_id;
+  int maps_tried_id;
   std::string cfg_;
   quadrotor_common::QuadStateEstimate received_state_est_;
   std::vector<float> iter_times;
   ros::Time mission_start_time;
+  std::string quad_name;
 
   // Flightmare(Unity3D)
   SceneID scene_id_{UnityScene::WAREHOUSE};
@@ -146,6 +148,8 @@ class AvoidManage {
   double baseline;
   bool perform_sgm_;
   std::vector<double> env_range, env_origin;
+
+  std::ofstream debug_out;
   
   void getMissionParam(avoidlib::mission_parameter* const m_param, const int &m_id);
   void resetGazebo(const Eigen::Vector3d &pos, const double yaw);

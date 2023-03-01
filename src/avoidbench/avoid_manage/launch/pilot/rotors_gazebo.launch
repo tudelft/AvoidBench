@@ -98,15 +98,12 @@
 
     <node pkg="avoid_manage" type="avoid_manage_node" name="avoid_manage_node" output="screen">
       <rosparam file="$(find avoid_manage)/params/task_outdoor.yaml" />
+      <param name="quad_name" value="$(arg quad_name)" />
       <remap from="flight_pilot/state_estimate" to="ground_truth/odometry" />
     </node>
     
     <node pkg="unity_scene" type="AvoidBench.x86_64" name="avoidbench_render" unless="$(arg use_unity_editor)">
     </node>
-    
-    <node name="rqt_quad_gui" pkg="rqt_gui" type="rqt_gui"
-        args="-s rqt_quad_gui.basic_flight.BasicFlight --args
-        --quad_name $(arg quad_name)" output="screen"/>
 
   </group>
 

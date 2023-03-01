@@ -35,7 +35,7 @@ public:
                     cv::Mat* depth_uint16, cv::Mat* disp_uint8);
     void getPointCloud(const std::string curr_data_dir,
                         const Eigen::Vector3d &range, const Eigen::Vector3d &origin);
-    bool checkCollisionState(std::vector<float>* const point, const bool &if_start=false);
+    bool checkCollisionState(const std::vector<float> point, const bool if_start=false);
     bool connectUnity();
     void setParamFromMission(const mission_parameter &para);
     void SpawnNewObs();

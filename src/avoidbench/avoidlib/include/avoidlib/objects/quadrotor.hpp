@@ -26,6 +26,7 @@ class Quadrotor : ObjectBase {
   // reset
   bool reset() override;
   bool reset(const QuadState& state);
+  bool reset(const QuadState& state, const Vector<4> motor_omega);
   void init();
 
   // run the quadrotor

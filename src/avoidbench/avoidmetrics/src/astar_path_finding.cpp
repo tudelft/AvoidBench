@@ -72,6 +72,9 @@ bool AStarFindPath::toFindPath(const Eigen::Vector3d startPos, const Eigen::Vect
   openMap.insert(std::make_pair(start->id, start));
   //judge from first node
   while (openList.size() > 0) {
+
+      if (mission_number>5) return false;
+
       AStarNode* curNode = openList.front();
       int iter=0;
       int idx=0;
@@ -91,7 +94,6 @@ bool AStarFindPath::toFindPath(const Eigen::Vector3d startPos, const Eigen::Vect
         else
           ++iter_map;
       }
-
       closeList.push_back(curNode);
       closeMap.insert(std::make_pair(curNode->id, curNode));
       

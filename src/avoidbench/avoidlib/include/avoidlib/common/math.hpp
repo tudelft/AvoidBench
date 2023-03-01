@@ -36,6 +36,7 @@ void insert(const Matrix<>& from, Matrix<>* const into,
             const int row_offset = 0, const int col_offset = 0);
 
 void quaternionToEuler(const Quaternion& quat, Ref<Vector<3>> euler);
+void EularToquaternion(Quaternion& quat, const Ref<Vector<3>> euler);
 
 std::vector<float> transformationRos2Unity(const Matrix<4, 4>& ros_tran_mat);
 

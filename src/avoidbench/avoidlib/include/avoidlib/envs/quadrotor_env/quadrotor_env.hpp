@@ -26,12 +26,13 @@ namespace quadenv {
 
 enum Ctl : int {
   //
-  kNQuadState = 25,
+  kNQuadState = 32,
 
   // observations
   kObs = 0,
-  kNObs = 15,
-  kNState = 13,
+  kNObs = 21,
+  kNState = 21,
+  kNMotor = 4,
 
   // control actions
   kAct = 0,
@@ -51,6 +52,7 @@ class QuadrotorEnv final : public EnvBase {
   bool reset(Ref<Vector<>> obs) override;
   bool reset(Ref<Vector<>> obs, bool random);
   bool reset(Ref<Vector<>> obs, Ref<Vector<>> state);
+  bool reset(Ref<Vector<>> obs, Ref<Vector<>> state, Ref<Vector<>> omega);
 
   bool step(const Ref<Vector<>> act, Ref<Vector<>> obs,
             Ref<Vector<>> reward) override;
@@ -85,19 +87,25 @@ class QuadrotorEnv final : public EnvBase {
   // quadrotor
   std::shared_ptr<Quadrotor> quad_ptr_;
   QuadState quad_state_;
+  QuadState pre_quad_state_;
   Command cmd_;
   Logger logger_{"QaudrotorEnv"};
 
 
   // Define reward for training
-  double pos_coeff_, ori_coeff_, lin_vel_coeff_, ang_vel_coeff_;
-
+  double pos_coeff_, vert_coeff_, ori_coeff_, lin_vel_coeff_, ang_vel_coeff_, smooth_coeff_;
+  double vel_dir_coeff_, time_coeff_;
   // observations and actions (for RL)
   Vector<quadenv::kNObs> pi_obs_;
   Vector<quadenv::kNAct> pi_act_;
 
   // reward function design (for model-free reinforcement learning)
-  Vector<3> goal_pos_;
+  Vector<3> goal_pos_, next_goal_pos, global_goal_pos_;
+  Vector<3> goal_vel_;
+  Vector<3> start;
+  double vel_lin_, vel_ang_;
+  double process;
+  double s_stamp, e_stamp;
 
   // action and observation normalization (for learning)
   Vector<quadenv::kNAct> act_mean_;

@@ -10,6 +10,8 @@ bool LowLevelControllerSimple::updateQuadDynamics(
   const QuadrotorDynamics& quad) {
   quad_dynamics_ = quad;
   B_allocation_ = quad.getAllocationMatrix();
+  Kinv_ang_vel_tau_ = quad.getKlqr();
+  // std::cout<<"B_allocation_: "<<B_allocation_<<std::endl;
   B_allocation_inv_ = B_allocation_.inverse();
   return true;
 }
@@ -29,23 +31,34 @@ bool LowLevelControllerSimple::setCommand(const Command& cmd) {
   return true;
 }
 
+bool LowLevelControllerSimple::setKlqr(const Ref<Matrix<3, 6>> K_lqr)
+{
+  Kinv_ang_vel_tau_ = K_lqr;
+  return true;
+}
 
-Vector<4> LowLevelControllerSimple::run(const Ref<Vector<3>> omega_des) {
+
+Vector<4> LowLevelControllerSimple::run(const Ref<Vector<3>> omega_des,
+                                        const Ref<Vector<3>> body_torques) {
   Vector<4> motor_thrusts;
   if (!cmd_.isSingleRotorThrusts()) {
     const Scalar force = quad_dynamics_.getMass() * cmd_.collective_thrust;
-    const Vector<3> omega_err = cmd_.omega - omega_des;
+    Eigen::VectorXd control_error = Eigen::VectorXd::Zero(6);
+    control_error.segment(0, 3) = cmd_.omega - omega_des;
+    control_error.segment(3, 3) =
+      cmd_.omega.cross(quad_dynamics_.getJ() * cmd_.omega) - body_torques;
     const Vector<3> body_torque_des =
-      quad_dynamics_.getJ() * Kinv_ang_vel_tau_ * omega_err +
+      Kinv_ang_vel_tau_ * control_error +
       omega_des.cross(quad_dynamics_.getJ() * omega_des);
     const Vector<4> thrust_torque(force, body_torque_des.x(),
                                   body_torque_des.y(), body_torque_des.z());
-
+    // std::cout<<"cmd_.omega: "<<cmd_.omega.transpose()<<" omega_des: "<<omega_des.transpose()<<std::endl;
+    // std::cout<<"thrust_torque: "<<thrust_torque.transpose()<<std::endl;
     motor_thrusts = B_allocation_inv_ * thrust_torque;
   } else {
     motor_thrusts = cmd_.thrusts;
   }
-
+  // std::cout<<"motor_thrusts "<<motor_thrusts.transpose()<<std::endl;
   motor_thrusts = quad_dynamics_.clampThrust(motor_thrusts);
   return motor_thrusts;
 }

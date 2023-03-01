@@ -272,9 +272,9 @@ bool QuadrotorDynamics::updateParams(const YAML::Node& params) {
     std::vector<Scalar> tbm_fl;
     tbm_fl = params["quadrotor_dynamics"]["tbm_fl"].as<std::vector<Scalar>>();
 
-    t_BM_.row(0) << tbm_fr[0], tbm_bl[0], tbm_br[0], tbm_fl[0];
-    t_BM_.row(1) << tbm_fr[1], tbm_bl[1], tbm_br[1], tbm_fl[1];
-    t_BM_.row(2) << tbm_fr[2], tbm_bl[2], tbm_br[2], tbm_fl[2];
+    t_BM_.row(0) << tbm_fr[0], tbm_bl[0], tbm_fl[0], tbm_br[0];
+    t_BM_.row(1) << tbm_fr[1], tbm_bl[1], tbm_fl[1], tbm_br[1];
+    t_BM_.row(2) << tbm_fr[2], tbm_bl[2], tbm_fl[2], tbm_br[2];
 
     // body drag coefficients
     std::vector<Scalar> body_drag_1;
@@ -296,6 +296,23 @@ bool QuadrotorDynamics::updateParams(const YAML::Node& params) {
       (Matrix<4, 4>() << Vector<4>::Ones().transpose(), t_BM_.row(1),
        -t_BM_.row(0), kappa_ * Vector<4>(-1.0, -1.0, 1.0, 1.0).transpose())
         .finished();
+
+    K_lqr_ = Eigen::MatrixXd::Zero(3, 6);
+
+    double body_rates_p_xy;
+    double body_rates_d_xy;
+    double body_rates_p_z;
+    double body_rates_d_z;
+    body_rates_p_xy = params["quadrotor_dynamics"]["body_rates_p_xy"].as<Scalar>();
+    body_rates_d_xy = params["quadrotor_dynamics"]["body_rates_d_xy"].as<Scalar>();
+    body_rates_p_z = params["quadrotor_dynamics"]["body_rates_p_z"].as<Scalar>();
+    body_rates_d_z = params["quadrotor_dynamics"]["body_rates_d_z"].as<Scalar>();
+    K_lqr_(0, 0) = body_rates_p_xy;
+    K_lqr_(1, 1) = body_rates_p_xy;
+    K_lqr_(2, 2) = body_rates_p_z;
+    K_lqr_(0, 3) = body_rates_d_xy;
+    K_lqr_(1, 4) = body_rates_d_xy;
+    K_lqr_(2, 5) = body_rates_d_z;
 
     force_torque_min_(0) = 0.0;
     force_torque_max_(0) = thrust_max_ * 4;

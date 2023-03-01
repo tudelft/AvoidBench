@@ -48,12 +48,13 @@ class UnityBridge {
   bool getRender(const FrameID frame_id, const bool SpawnNewObj = false);
   bool handleOutput(const FrameID sent_frame_id);
   bool getPointCloud(PointCloudMessage_t &pointcloud_msg);
-  bool checkCollisionState(const CollisionCheckMessage_t &collision_check_msg, std::vector<float>* const new_pt);
+  bool checkCollisionState(const CollisionCheckMessage_t &collision_check_msg);
   // public set functions
   bool setScene(const SceneID &scene_id);
 
   // add object
   bool addQuadrotor(std::shared_ptr<Quadrotor> quad);
+  std::shared_ptr<Quadrotor> getQuadrotor(size_t id);
   bool addCamera(std::shared_ptr<UnityCamera> unity_camera);
   bool addStaticObject(std::shared_ptr<Cylinder> static_object);
 
@@ -71,9 +72,9 @@ class UnityBridge {
       std::make_shared<UnityBridge>();
     return bridge_ptr;
   };
+  bool initializeConnections(void);
 
  private:
-  bool initializeConnections(void);
 
   //
   SettingsMessage_t settings_;

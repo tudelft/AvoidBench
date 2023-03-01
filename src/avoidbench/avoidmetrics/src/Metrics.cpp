@@ -66,6 +66,20 @@ namespace avoidmetrics
     return progress;
   }
 
+  double Metrics::CalRelativeEndDistance(const std::shared_ptr<Mission> mission)
+  {
+    double red;
+    if(mission->finished)
+      red = 0.0;
+    else
+    {
+      double mission_dis = (mission->end_point - mission->start_point).norm();
+      double end_dis = (mission->traj.back().position - mission->end_point).norm();
+      red = end_dis / mission_dis;
+    }
+    return red;
+  }
+
   double Metrics::CalRelativeGapSize(const double &width, const double &radius)
   {
     double relative_gap_size;
@@ -87,6 +101,7 @@ namespace avoidmetrics
   void Metrics::setMissions(const std::shared_ptr<Mission> mission)
   {
     mission_.push_back(mission);
+    astar_ptr_->setMissionNumber(mission_.size());
   }
 
   avoid_msgs::Metrics Metrics::getMetricsMsg()
@@ -121,10 +136,8 @@ namespace avoidmetrics
     {
       if(!mission_.empty())
       {
-        std::cout<<"mission number: "<<mission_.size()<<std::endl;
         std::shared_ptr<Mission> mission = mission_.front();
         double dis, trav_dis;
-
         if(mission->trial_id == 0)
         {
           //just need to be calculated once
@@ -135,30 +148,32 @@ namespace avoidmetrics
           factor.traversability = env_ptr_->getTraversability();
           factor.traversability = factor.traversability / d_drone;
           factor.relative_gap_size = CalRelativeGapSize(mission->obs_width, mission->r_poisson);
-          factor.optimality_factor.clear();
+          factor.path_excess_factor.clear();
           factor.average_goal_velocity.clear();
-          factor.mission_progress.clear();
           factor.processing_time.clear();
           factor.collision_number.clear();
           factor.energy_cost.clear();
+          factor.relative_end_distance.clear();
         }
-        astar_ptr_->toFindPath(mission->start_point, mission->end_point);
-        CalOptimalDis(&dis, astar_ptr_->getBestPath());
-        factor.optimality_factor.push_back(CalOptimalityFactor(dis, mission, trav_dis));
+        if(astar_ptr_->toFindPath(mission->start_point, mission->end_point))
+          CalOptimalDis(&dis, astar_ptr_->getBestPath());
+        else dis = INFINITY;
+        factor.path_excess_factor.push_back(CalOptimalityFactor(dis, mission, trav_dis));
         factor.average_goal_velocity.push_back(CalAverageGoalVelocity(dis, mission->t_mission));
-        factor.mission_progress.push_back(CalMissionProgress(mission));
         factor.processing_time.push_back(CalProcessingTime(mission->cal_time));
         factor.collision_number.push_back(mission->collision_number);
         factor.energy_cost.push_back(CalEnergyCost(dis, mission->traj));
+        factor.relative_end_distance.push_back(CalRelativeEndDistance(mission));
+        
         std::cout<<"distance: "<<dis<<std::endl;
         std::cout<<"traversability: "<<factor.traversability<<std::endl;
         std::cout<<"relative_gap_size: "<<factor.relative_gap_size<<std::endl;
-        std::cout<<"optimality_factor: "<<factor.optimality_factor.back()<<std::endl;
+        std::cout<<"path_excess_factor: "<<factor.path_excess_factor.back()<<std::endl;
         std::cout<<"average_goal_velocity: "<<factor.average_goal_velocity.back()<<std::endl;
-        std::cout<<"mission_progress: "<<factor.mission_progress.back()<<std::endl;
         std::cout<<"processing_time: "<<factor.processing_time.back()<<std::endl;
         std::cout<<"collision_number: "<<factor.collision_number.back()<<std::endl;
         std::cout<<"energy_cost: "<<factor.energy_cost.back()<<std::endl;
+        std::cout<<"relative_end_distance: "<<factor.relative_end_distance.back()<<std::endl;
 
         metrics_out.open(getenv("AVOIDBENCH_PATH") + std::string("/avoidmetrics/data/metrics_out.txt"), 
                           std::ios::out | std::ios::app);
@@ -166,12 +181,12 @@ namespace avoidmetrics
         out_data = std::to_string(dis) + " " + std::to_string(trav_dis) + " " + 
                     std::to_string(factor.traversability) + " " +
                     std::to_string(factor.relative_gap_size) + " " +
-                    std::to_string(factor.optimality_factor.back()) + " " +
+                    std::to_string(factor.path_excess_factor.back()) + " " +
                     std::to_string(factor.average_goal_velocity.back()) + " " +
-                    std::to_string(factor.mission_progress.back()) + " " +
                     std::to_string(factor.processing_time.back()) + " " +
                     std::to_string(factor.collision_number.back()) + " " +
-                    std::to_string(factor.energy_cost.back()) + "\n";
+                    std::to_string(factor.energy_cost.back()) + " " +
+                    std::to_string(factor.relative_end_distance.back()) + "\n";
         metrics_out << out_data;
         metrics_out.close();
 

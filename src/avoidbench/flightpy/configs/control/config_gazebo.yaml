@@ -1,0 +1,61 @@
+unity:
+  scene_id: 0 # 0 warehouse, 1 garage, 3 natureforest
+  render: no
+
+simulation:
+  seed: 1
+  sim_dt: 0.01
+  max_t: 20.0
+  num_envs: 100
+  num_threads: 10
+  rotor_ctrl: 1 # 0 single rotor, 1 body rate
+
+quadrotor_dynamics:
+  mass: 1.05
+  tbm_fr: [0.13, -0.20, 0.0] # [m]
+  tbm_bl: [-0.13, 0.20, 0.0] # [m]
+  tbm_br: [-0.13, -0.20, 0.0] # [m]
+  tbm_fl: [0.13, 0.20, 0.0] # [m
+  omega_max: [6.0, 6.0, 1.5]
+  inertia: [0.0147563, 0.0158929, 0.022]
+  kappa: 0.016
+  motor_omega_min: 0.0
+  motor_omega_max: 1200.0
+  motor_tau: 0.033
+  thrust_map: [8.54858e-06, 0.0, 0.0] # max thrust = 8.50 N
+  body_drag_1: [0.0, 0.0, 0.0] # [0.26, 0.28, 0.42]
+  body_drag_3: [0.00, 0.00, 0.00]
+  body_drag_h: 0.00
+  body_rates_p_xy: 0.3
+  body_rates_d_xy: 1.0
+  body_rates_p_z: 0.12
+  body_rates_d_z: 0.20
+
+rewards:
+  pos_coeff: -0.001 # reward coefficient for position
+  ori_coeff: -0.0005 # reward coefficient for orientation
+  vert_coeff: -0.001
+  lin_vel_coeff: -0.001 # reward coefficient for linear velocity
+  ang_vel_coeff: -0.000 # reward coefficient for angular velocity
+  smooth_coeff: -0.000
+  vel_dir_coeff: -0.000
+  time_coeff: -0.0
+  names: [processing_reward, lin_vel_penalty, ori_penalty, vel_dir_penalty, ang_vel_penalty,
+    smooth_reward, waypoint_reward, total]
+  goal_state:
+    position: [0.0, 0.0, 5.0]
+    rotation: [0.0, 0.0, 0.0]
+    lin_vel: [0.0, 0.0, 0.0]
+    ang_vel: [0.0, 0.0, 0.0]
+
+rgb_camera:
+  on: yes
+  t_BC: [0.0, 0.0, 0.3] # translational vector of the camera with repect to the body frame
+  r_BC: [0.0, 0.0, -90] # rotational angle (roll, pitch, yaw) of the camera in degree.
+  channels: 3
+  width: 720
+  height: 480
+  fov: 70.0
+  enable_depth: yes
+  enable_segmentation: no
+  enable_opticalflow: no

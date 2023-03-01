@@ -50,6 +50,7 @@ class EnvBase {
   inline int getActDim() { return act_dim_; };
   inline int getRewDim() { return rew_dim_; };
   inline int getStateDim() {return state_dim_; };
+  inline int getMotorDim() {return motor_dim_; };
   inline int getImgWidth() { return img_width_; };
   inline int getImgHeight() { return img_height_; };
   inline double getSimTimeStep() { return sim_dt_; };
@@ -65,6 +66,7 @@ class EnvBase {
   int obs_dim_;
   int act_dim_;
   int state_dim_;
+  int motor_dim_;
   //
   int rew_dim_;
 

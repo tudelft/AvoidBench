@@ -59,6 +59,7 @@ message("CUDA curand library: ${CUDA_curand_LIBRARY}")
 # Including dependencies 
 find_package(OpenCV REQUIRED)
 find_package(OpenMP REQUIRED)
+find_package(Open3D)
 
 if(ENABLE_BLAS)
   set(BLA_VENDOR "Generic")
@@ -139,8 +140,10 @@ file(GLOB_RECURSE AVOIDLIB_SOURCES
   src/objects/*.cpp
   src/sensors/*.cpp
   src/envs/*.cpp
+  src/vision_envs/*.cpp
   src/common/*.cpp
   src/controller/*.cpp
+  src/pointclouds/*.cpp
 )
 
 file(GLOB_RECURSE AVOIDBRIDGE_SOURCES
@@ -151,27 +154,8 @@ file(GLOB_RECURSE FLIGHTLIB_GYM_SOURCES
   src/wrapper/pybind_wrapper.cpp 
 )
 
-# Create file lists for avoidlib tests
-file(GLOB_RECURSE AVOIDLIB_TEST_SOURCES
-  tests/dynamics/*.cpp
-  tests/objects/*.cpp
-  tests/sensors/*.cpp  
-  tests/envs/*.cpp
-  tests/common/*.cpp
-)
-
-# Create file lists for avoidlib_gym tests
-file(GLOB_RECURSE AVOIDLIB_GYM_TEST_SOURCES
-  tests/wrapper/*.cpp
-)
-
-# Create file lists for avoidlib_unity_bridge tests
-file(GLOB_RECURSE AVOIDLIB_UNITY_BRIDGE_TEST_SOURCES
-  tests/bridges/*.cpp
-)
-
 # Library and Executables
-include_directories(include ${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
+include_directories(include ${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS} ${Open3D_INCLUDE_DIRS})
 
 if(NOT AVOIDLIB_SOURCES)
 	set(LIBRARY_NAME)
@@ -180,6 +164,7 @@ else()
   add_library(${PROJECT_NAME} ${AVOIDLIB_SOURCES})
   target_link_libraries(${PROJECT_NAME}
     ${OpenCV_LIBRARIES}
+    ${Open3D_LIBRARIES}
     yaml-cpp
     zmq
     zmqpp
@@ -252,7 +237,7 @@ else()
       target_include_directories(flightgym PRIVATE
         # ${PROJECT_SOURCE_DIR}/externals/pybind11-src/include
         ${PYBIND11_INCLUDE_DIR}
-        ${PROJECT_SOURCE_DIR}/externals/eigen/eigen3 #pybind11 use #include <Eigen/Core>, however, flightmare use #include <eigen3/Eigen/Core>
+        ${PROJECT_SOURCE_DIR}/externals/eigen/eigen3 
         ${PROJECT_SOURCE_DIR}/include)  
     endif()
     message("${LIBRARY_NAME}")

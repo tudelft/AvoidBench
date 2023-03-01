@@ -58,6 +58,20 @@ target_link_libraries(avoid_manage_node
   stdc++fs
 )
 
+cs_add_library(rl_test
+    src/rl_test.cpp
+)
+
+cs_add_executable(rl_test_node
+   src/avoid_manage_node.cpp
+)
+
+target_link_libraries(rl_test_node
+  rl_test
+  ${OpenCV_LIBRARIES}
+  stdc++fs
+)
+
 catkin_install_python(PROGRAMS scripts/plot_metrics.py
 				scripts/avoid_manage.py
                       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

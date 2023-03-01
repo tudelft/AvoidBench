@@ -58,15 +58,13 @@ bool Quadrotor::run(const Scalar ctl_dt) {
   // time
   const Scalar max_dt = integrator_ptr_->dtMax();
   Scalar remain_ctl_dt = ctl_dt;
-
   ctrl_.setCommand(cmd_);
-
   // simulation loop
   while (remain_ctl_dt > 0.0) {
     const Scalar sim_dt = std::min(remain_ctl_dt, max_dt);
 
     const Vector<4> motor_thrusts_des =
-      cmd_.isSingleRotorThrusts() ? cmd_.thrusts : ctrl_.run(state_.w);
+      cmd_.isSingleRotorThrusts() ? cmd_.thrusts : ctrl_.run(state_.w, state_.tau);
     runMotors(sim_dt, motor_thrusts_des);
 
     Vector<4> force_torques = B_allocation_ * motor_thrusts_;
@@ -87,7 +85,6 @@ bool Quadrotor::run(const Scalar ctl_dt) {
 
     // dynamics integration
     integrator_ptr_->step(state_.x, sim_dt, next_state.x);
-
     //
     state_.x = next_state.x;
     remain_ctl_dt -= sim_dt;
@@ -124,17 +121,24 @@ bool Quadrotor::reset(const QuadState &state) {
   return true;
 }
 
+bool Quadrotor::reset(const QuadState &state, const Vector<4> motor_omega) {
+  if (!state.valid()) return false;
+  state_ = state;
+  motor_omega_ = motor_omega;
+  // motor_thrusts_.setZero();
+  return true;
+}
+
 void Quadrotor::runMotors(const Scalar sim_dt,
                           const Vector<4> &motor_thruts_des) {
   const Vector<4> motor_omega_des =
     dynamics_.motorThrustToOmega(motor_thruts_des);
   const Vector<4> motor_omega_clamped =
     dynamics_.clampMotorOmega(motor_omega_des);
-
+  // std::cout<<"motor_omega_clamped: "<<motor_omega_des.transpose()<<std::endl;
   // simulate motors as a first-order system
   const Scalar c = std::exp(-sim_dt * dynamics_.getMotorTauInv());
   motor_omega_ = c * motor_omega_ + (1.0 - c) * motor_omega_clamped;
-
   motor_thrusts_ = dynamics_.motorOmegaToThrust(motor_omega_);
   motor_thrusts_ = dynamics_.clampThrust(motor_thrusts_);
 }
@@ -145,7 +149,6 @@ bool Quadrotor::setCommand(const Command &cmd) {
     return false;
   }
   cmd_ = cmd;
-
   if (std::isfinite(cmd_.collective_thrust))
     cmd_.collective_thrust =
       dynamics_.clampCollectiveThrust(cmd_.collective_thrust);
@@ -270,7 +273,7 @@ std::vector<std::shared_ptr<RGBCamera>> Quadrotor::getCameras(void) const {
 
 bool Quadrotor::getCamera(const size_t cam_id,
                           std::shared_ptr<RGBCamera> camera) const {
-  if (cam_id <= rgb_cameras_.size()) {
+  if (cam_id >= rgb_cameras_.size()) {
     return false;
   }
 

@@ -59,8 +59,16 @@ struct QuadState {
     BACCY = 23,
     BACCZ = 24,
     NBACC = 3,
+
     //
-    SIZE = 25,
+    TAG = 25,
+    TAGX = 25,
+    TAGY = 26,
+    TAGZ = 27,
+    TAGR = 28,
+    NTAG = 3,
+    //
+    SIZE = 29,
     NDYM = 19
   };
 
@@ -96,6 +104,8 @@ struct QuadState {
   Ref<Vector<3>> bw{x.segment<IDX::NBOME>(IDX::BOME)};
   //
   Ref<Vector<3>> ba{x.segment<IDX::NBACC>(IDX::BACC)};
+  //
+  Ref<Vector<3>> tg{x.segment<IDX::NTAG>(IDX::TAG)};
 
   bool operator==(const QuadState& rhs) const {
     return t == rhs.t && x.isApprox(rhs.x, 1e-5);

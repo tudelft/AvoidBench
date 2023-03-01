@@ -49,6 +49,7 @@ void VecEnvBase<EnvBaseName>::configEnv(const YAML::Node& cfg_node) {
   obs_dim_ = envs_[0]->getObsDim();
   act_dim_ = envs_[0]->getActDim();
   state_dim_ = envs_[0]->getStateDim();
+  motor_dim_ = envs_[0]->getMotorDim();
   rew_dim_ = envs_[0]->getRewDim();
   img_width_ = envs_[0]->getImgWidth();
   img_height_ = envs_[0]->getImgHeight();
@@ -274,5 +275,7 @@ void VecEnvBase<EnvBaseName>::curriculumUpdate(void) {
 // declaration and definition of the template class.
 // Segmentation fault (core dumped)!
 template class VecEnvBase<QuadrotorEnv>;
+
+template class VecEnvBase<TrackingEnv>;
 
 }  // namespace avoidlib

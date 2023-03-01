@@ -10,6 +10,7 @@ AvoidManage::AvoidManage(const ros::NodeHandle &nh, const ros::NodeHandle &pnh)
     start_time(0.0),
     mission_id(0),
     trial_id(0),
+    maps_tried_id(0),
     mission_state(Mission_state::PREPARING) {
   // load parameters
   if (!loadParams()) {
@@ -121,7 +122,7 @@ void AvoidManage::RenderingCallback(const ros::TimerEvent &event)
     std_msgs::Bool colli;
     colli.data = collision_state;
     collision_info_pub_.publish(colli);
-    if(mission_state == Mission_state::MISSIONPROCESS)
+    if(mission_state == Mission_state::MISSIONPROCESS || mission_state == Mission_state::WAITMISSION)
     {
       if(last_collision_state==false && collision_state==true)
       {
@@ -242,8 +243,8 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
       //random generate start and end point until they both have a certain free space
       int ss=0;
 
-      while(avoidbench_bridge->checkCollisionState(&(p_m.m_start_point), true) || 
-        avoidbench_bridge->checkCollisionState(&(p_m.m_end_point)))
+      while(avoidbench_bridge->checkCollisionState(p_m.m_start_point, true) || 
+        avoidbench_bridge->checkCollisionState(p_m.m_end_point))
       {
         ss++;
         mission_state = Mission_state::UNITYSETTING;
@@ -271,8 +272,8 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
       //random generate start and end point until they both have a certain free space
       if_update_map = false;
       getMissionParam(&p_m, mission_id);
-      while(avoidbench_bridge->checkCollisionState(&(p_m.m_start_point), true) || 
-        avoidbench_bridge->checkCollisionState(&(p_m.m_end_point)))
+      while(avoidbench_bridge->checkCollisionState(p_m.m_start_point, true) || 
+        avoidbench_bridge->checkCollisionState(p_m.m_end_point))
       {
         mission_state = Mission_state::UNITYSETTING;
         if_update_map = false;
@@ -283,11 +284,9 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
       // mission->reset(p_m);
       ros::Duration(5.0).sleep();
     }
-    
     mission = std::make_shared<avoidmetrics::Mission>(cfg_, p_m, mission_id);    
     //reset the position of start point for gazebo
     resetGazebo(Eigen::Vector3d(p_m.m_start_point[0], p_m.m_start_point[1], p_m.m_start_point[2]), p_m.m_start_point[3]);
-    std::cout<<"start point: "<<p_m.m_start_point[0]<<" "<<p_m.m_start_point[1]<<" "<<p_m.m_start_point[2]<<" "<<p_m.m_start_point[3]<<std::endl;
     mission_start_time = ros::Time::now();
     ros::Duration(1.0).sleep();
     mission_state = Mission_state::SENTMISSION;
@@ -338,7 +337,7 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
       collision_happen = false;
     }
     mission_state = Mission_state::WAITMISSION;
-    if(mission->stop_flag)
+    if(mission->stop_flag || mission->collision_number >= 3)
       mission_state = Mission_state::GAZEBOSETTING;
   }
 
@@ -351,6 +350,7 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
     mission->cal_time = iter_times;
     iter_times.clear();
     std::vector<float>(iter_times).swap(iter_times);
+    mission->trial_id = trial_id;
     metrics->setMissions(mission);
     ros::Duration(1.0).sleep();
     trial_id++;
@@ -362,7 +362,7 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
     } else
       get_new_mission = false;
 
-    std::cout<<"mission_id: "<<mission_id<<"  trial_id: "<<trial_id<<std::endl;
+    ROS_INFO("The finished mission_id is: %d, trial_id is: %d", mission_id, trial_id);
 
     if(mission_id<mission_number)
       mission_state = Mission_state::UNITYSETTING;
@@ -386,7 +386,7 @@ void AvoidManage::resetGazebo(const Eigen::Vector3d &pos, const double yaw)
 {
   gazebo_msgs::SetModelState dronestate;
   rpg_quadrotor_msgs::TrajectoryPoint cmd;
-  dronestate.request.model_state.model_name = "hummingbird";
+  dronestate.request.model_state.model_name = quad_name;
   cmd.pose.position.x = dronestate.request.model_state.pose.position.x = pos.x();
   cmd.pose.position.y = dronestate.request.model_state.pose.position.y = pos.y();
   cmd.pose.position.z = dronestate.request.model_state.pose.position.z = pos.z();
@@ -436,7 +436,7 @@ void AvoidManage::getMissionParam(avoidlib::mission_parameter* const m_param, co
 
     static float width, length, radius_area, radius_origin;
     static std::vector<float> start_area, start_origin, end_area, end_origin;
-    static int trials_;
+    static int trials_, seed;
 
     if(!get_seed)
     {
@@ -452,7 +452,7 @@ void AvoidManage::getMissionParam(avoidlib::mission_parameter* const m_param, co
       end_origin = cfg["mission"]["end_origin"].as<std::vector<float>>();
       radius_area = cfg["mission"]["radius_area"].as<float>();
       radius_origin = cfg["mission"]["radius_origin"].as<float>();
-      int seed = cfg["mission"]["seed"].as<int>();
+      seed = cfg["mission"]["seed"].as<int>();
       trials_ = cfg["mission"]["trials"].as<int>();
       srand(seed);
       get_seed = true;
@@ -462,41 +462,41 @@ void AvoidManage::getMissionParam(avoidlib::mission_parameter* const m_param, co
     {
       int area_id = std::rand()%4;
       if (area_id == 0)
-        m_param->m_start_point = {-start_area[0]/2.0f+start_area[0]*rand,
+        m_param->m_start_point = {start_area[1]-start_area[0]/2.0f+(start_area[0]-2*start_area[1])*rand,
                                   start_area[1]*rand,
                                   2.0f, 0};
         rand = (std::rand()%200)/200.0f;
-        m_param->m_end_point = {-end_area[0]/2.0f+end_area[0]*rand,
+        m_param->m_end_point = {end_area[1]-end_area[0]/2.0f+(end_area[0]-2*end_area[1])*rand,
                                   -end_area[1]*rand+end_origin[1],
                                   2.0f+1.0f*rand};
       if (area_id == 1)
       {
         m_param->m_start_point = {start_area[1]*rand-start_area[0]/2.0,
-                                start_area[0]*rand,
+                                (start_area[1] + (start_area[0]-2*start_area[1]))*rand,
                                 2.0f, -M_PI/2.0};
         rand = (std::rand()%200)/200.0f;
         m_param->m_end_point = {-end_area[1]*rand+end_area[0]/2,
-                                  end_area[0]*rand,
+                                  (end_area[1] + (end_area[0]-2*end_area[1]))*rand,
                                   2.0f+1.0f*rand};  
       }
       if (area_id == 2)
       {
-        m_param->m_start_point = {-end_area[0]/2.0f+end_area[0]*rand,
+        m_param->m_start_point = {end_area[1]-end_area[0]/2.0f+(end_area[0]-2*end_area[1])*rand,
                                   -end_area[1]*rand+end_area[0],
                                   2.0f, M_PI};
         rand = (std::rand()%200)/200.0f;
-        m_param->m_end_point = {-start_area[0]/2.0f+start_area[0]*rand,
+        m_param->m_end_point = {start_area[1]-start_area[0]/2.0f+(start_area[0]-2*start_area[1])*rand,
                                   start_area[1]*rand,
-                                  2.0f+1.0f*rand};  
+                                  2.0f+1.0f*rand};
       }
       if (area_id == 3)
       {
         m_param->m_start_point = {-end_area[1]*rand+end_area[0]/2,
-                                  end_area[0]*rand,
+                                  (end_area[1] + (end_area[0]-2*end_area[1]))*rand,
                                   2.0f, M_PI/2.0};
         rand = (std::rand()%200)/200.0f;
         m_param->m_end_point = {start_area[1]*rand-start_area[0]/2,
-                                  start_area[0]*rand,
+                                  (start_area[1] + (start_area[0]-2*start_area[1]))*rand,
                                   2.0f+1.0f*rand};  
       }
     }
@@ -517,10 +517,12 @@ void AvoidManage::getMissionParam(avoidlib::mission_parameter* const m_param, co
       if_update_map = true;
       return;
     }
-    m_param->trials =trials_;
+    maps_tried_id++;
+    srand(seed * maps_tried_id); // make sure every mission has the same complexity map when benchmark different algos
+    rand = (std::rand()%200)/200.0f;
+    m_param->trials = trials_;
     m_param->m_radius = radius_origin + radius_area*rand;
     m_param->m_seed = std::rand()%200;
-    rand = (std::rand()%200)/200.0f;
     m_param->m_opacity = rand;
     if(!save_data_mode)
       m_param->m_pc_file_name = cfg["mission"]["pc_file_name"].as<std::string>()+std::to_string(m_id);
@@ -542,8 +544,9 @@ bool AvoidManage::loadParams() {
   quadrotor_common::getParam("camera/fov", fov, pnh_);
   quadrotor_common::getParam("camera/width", width, pnh_);
   quadrotor_common::getParam("camera/height", height, pnh_);
-  quadrotor_common::getParam("camera/baseline", baseline);
-  quadrotor_common::getParam("camera/perform_sgm", perform_sgm_);
+  quadrotor_common::getParam("camera/baseline", baseline, pnh_);
+  quadrotor_common::getParam("camera/perform_sgm", perform_sgm_, pnh_);
+  pnh_.getParam("quad_name", quad_name);
   scene_id_ = env_id;
   return true;
 }

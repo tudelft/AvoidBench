@@ -21,7 +21,7 @@ camera:
   height: 480
   baseline: 0.12
   pitch_angle_deg: 0.0 # camera pitch angle in degrees
-  perform_sgm: false
+  perform_sgm: true
   
 drone:
   length: 0.5
@@ -29,8 +29,8 @@ drone:
   
 flight_number: 30
 mission:
-  seed: 32
-  trials: 1
+  seed: 28
+  trials: 18
   start_area: [16, 1.6]
   start_origin: [0, -1.8]
   radius_area: 3.0

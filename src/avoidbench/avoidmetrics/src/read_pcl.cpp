@@ -11,7 +11,7 @@ int main (int argc, char **argv)
     ros::NodeHandle nh;
     ros::Publisher pcl_pub = nh.advertise<sensor_msgs::PointCloud2> ("pcl_output", 1);
     pcl::PointCloud<pcl::PointXYZ> cloud;
-    if (pcl::io::loadPLYFile<pcl::PointXYZ>("/home/hyyu/AvoidBench/src/avoidbench/avoidmetrics/point_clouds_data/pointcloud-unity0.ply", cloud) == -1)
+    if (pcl::io::loadPLYFile<pcl::PointXYZ>("/home/hyyu/AvoidBench/src/avoidbench/avoidmetrics/point_clouds_data/pointclouds0.ply", cloud) == -1)
 	{
 		PCL_ERROR("Couldn't read file1 \n");
 		return (-1);

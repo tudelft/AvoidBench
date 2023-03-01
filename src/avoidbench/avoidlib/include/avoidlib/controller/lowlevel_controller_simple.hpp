@@ -12,8 +12,10 @@ class LowLevelControllerSimple {
 
   LowLevelControllerSimple(QuadrotorDynamics quad_dynamics);
   bool setCommand(const Command& cmd);
-  Vector<4> run(const Ref<Vector<3>> omega);
+  Vector<4> run(const Ref<Vector<3>> omega,
+                const Ref<Vector<3>> body_torques);
   bool updateQuadDynamics(const QuadrotorDynamics& quad_dynamics);
+  bool setKlqr(const Ref<Matrix<3, 6>> K_lqr);
 
  private:
   // Quadrotor properties
@@ -21,8 +23,7 @@ class LowLevelControllerSimple {
   Matrix<4, 4> B_allocation_inv_;
 
   // P gain for body rate control
-  const Matrix<3, 3> Kinv_ang_vel_tau_ =
-    Vector<3>(20.0, 20.0, 40.0).asDiagonal();
+  Matrix<3, 6> Kinv_ang_vel_tau_;
 
   // Quadcopter to which the controller is applied
   QuadrotorDynamics quad_dynamics_;

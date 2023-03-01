@@ -141,6 +141,19 @@ void quaternionToEuler(const Quaternion& quat, Ref<Vector<3>> euler) {
                            quat.y() * quat.y() - quat.z() * quat.z());
 }
 
+void EularToquaternion(Quaternion& quat, const Ref<Vector<3>> euler) {
+    double cy = std::cos(euler.z() * 0.5);
+    double sy = std::sin(euler.z() * 0.5);
+    double cp = std::cos(euler.y() * 0.5);
+    double sp = std::sin(euler.y() * 0.5);
+    double cr = std::cos(euler.x() * 0.5);
+    double sr = std::sin(euler.x() * 0.5);
+    quat.w() = cy * cp * cr + sy * sp * sr;
+    quat.x() = cy * cp * sr - sy * sp * cr;
+    quat.y() = sy * cp * sr + cy * sp * cr;
+    quat.z() = sy * cp * cr - cy * sp * sr;
+}
+
 
 std::vector<float> transformationRos2Unity(const Matrix<4, 4>& ros_tran_mat) {
   /// [ Transformation Matrix ] from ROS coordinate system (right hand)

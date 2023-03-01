@@ -121,7 +121,6 @@ bool UnityBridge::getRender(const FrameID frame_id, const bool SpawnNewObj) {
   }
 
   pub_msg_.spawn_new_obj = SpawnNewObj;
-  // std::cout<<"pub_msg_.spawn_new_obj: "<<pub_msg_.spawn_new_obj<<std::endl;
   // create new message object
   zmqpp::message msg;
   // add topic header
@@ -179,11 +178,15 @@ bool UnityBridge::addQuadrotor(std::shared_ptr<Quadrotor> quad) {
     rgb_cameras_.push_back(rgb_cameras[cam_idx]);
   }
   unity_quadrotors_.push_back(quad);
-
   //
   settings_.vehicles.push_back(vehicle_t);
   pub_msg_.vehicles.push_back(vehicle_t);
   return true;
+}
+
+std::shared_ptr<Quadrotor> UnityBridge::getQuadrotor(size_t id)
+{
+  return unity_quadrotors_[id];
 }
 
 bool UnityBridge::addStaticObject(std::shared_ptr<Cylinder> static_object) {
@@ -230,10 +233,10 @@ bool UnityBridge::handleOutput(const FrameID sent_frame_id) {
     colli_state_msg = json::parse(json_colli_msg);
     return false;
   }
+
   // unpack message metadata
   std::string json_sub_msg = msg.get(0);
   std::string json_pc_msg = msg.get(1);
-  // std::cout<<json_pc_msg<<std::endl;
   // parse metadata
   SubMessage_t sub_msg = json::parse(json_sub_msg);
   pc_state_msg = json::parse(json_pc_msg);
@@ -242,6 +245,7 @@ bool UnityBridge::handleOutput(const FrameID sent_frame_id) {
   size_t image_i = 2;
   // ensureBufferIsAllocated(sub_msg);
   collisions.clear();
+
   for (size_t idx = 0; idx < settings_.vehicles.size(); idx++) {
     // update vehicle collision flag
     unity_quadrotors_[idx]->setCollision(sub_msg.sub_vehicles[idx].collision);
@@ -310,7 +314,8 @@ bool UnityBridge::handleOutput(const FrameID sent_frame_id) {
 bool UnityBridge::getPointCloud(PointCloudMessage_t& pointcloud_msg) {
   int ss = 0;
   while(!pc_state_msg.get_pc_msg)
-  { ss++;
+  {
+    ss++;
     // create new message object
     zmqpp::message msg;
     // add topic header
@@ -322,7 +327,6 @@ bool UnityBridge::getPointCloud(PointCloudMessage_t& pointcloud_msg) {
     pub_.send(msg, true);
 
     usleep(0.01 * 1e6);
-    if (ss>800) break;
   }
   ss = 0;
   pc_state_msg.get_pc_msg = false;
@@ -332,14 +336,13 @@ bool UnityBridge::getPointCloud(PointCloudMessage_t& pointcloud_msg) {
   {
     ss++;
     usleep(0.1 * 1e6);
-    // std::cout<<"point cloud saving..."<<std::endl;
   }
   pc_state_msg.save_pc_success = false;
   std::cout<<"sava point cloud success..........................."<<std::endl;
   return true;
 }
 
-bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_check_msg, std::vector<float>* const new_pt)
+bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_check_msg)
 {
   int ss = 0;
   while(!colli_state_msg.get_msg)
@@ -359,10 +362,7 @@ bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_c
   if(ss==20) return true;
   colli_state_msg.get_msg = false;
   if(colli_state_msg.if_collision)
-  {
-    *new_pt = colli_state_msg.new_point;
     return true;
-  }
   return false;
 }
 
