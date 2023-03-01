@@ -141,6 +141,18 @@ We tested several mainstream, state-of-the-art obstacle avoidance algorithms, in
   <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Media1_4.gif" width = "640" height = "360"/>
 </p>
 
+# 6. Citation
+Paper: [AvoidBench](https://arxiv.org/abs/2301.07430)
+
+```
+@article{yu2023avoidbench,
+  title={AvoidBench: A high-fidelity vision-based obstacle avoidance benchmarking suite for multi-rotors},
+  author={Yu, Hang and de Croon, Guido CH and De Wagter, Christophe},
+  journal={arXiv preprint arXiv:2301.07430},
+  year={2023}
+}
+```
+
 # 6. Ackowledgements
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). Thanks for the great works from [Yunlong Song](https://yun-long.github.io) and [Antonio Loquercio](https://antonilo.github.io/).
 
