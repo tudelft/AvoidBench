@@ -21,6 +21,8 @@ For the hardware, we suggest you testing AvoidBench in a PC or laptop with GPU. 
 Run the following commands to setup:
 ``` bash
 # install Open3D
+sudo apt update
+sudo apt install git libtool build-essential cmake
 git clone --recursive -b v0.9.0 https://github.com/isl-org/Open3D.git
 cd Open3D
 mkdir build
@@ -32,7 +34,7 @@ sudo make install
 ``` bash
 git clone https://github.com/tudelft/Avoidbench.git
 sudo apt update
-sudo apt install git libtool build-essential cmake libzmqpp-dev libopencv-dev unzip python3-catkin-tools
+sudo apt install libzmqpp-dev libopencv-dev unzip python3-catkin-tools
 sudo apt install libgoogle-glog-dev protobuf-compiler ros-noetic-octomap-msgs ros-noetic-octomap-ros python3-vcstool
 cd Avoidbench
 echo "export AVOIDBENCH_PATH=path_to_this_project/AvoidBench/src/avoidbench" >> ~/.bashrc
