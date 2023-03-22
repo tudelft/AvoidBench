@@ -137,13 +137,26 @@ Always keep in mind that AvoidBench can provide stereo images, real depth images
   # This topic needs to be provided by users
   /hummingbird/iter_time # Computer running time required for each trajectory generation
  ```
-# 5. Results
+ 
+# 5. Demo of Benchmarking Agile_autonomy
+
+We provide a demo of benchmarking [Agile_autonomy](https://rpg.ifi.uzh.ch/AgileAutonomy.html) algorithm by AvoidBench. The benckmark version can be found [here](https://github.com/NPU-yuhang/agile_autonomy). Following these steps to build and run this demo:
+
+```bash 
+# in the ROS workspace of AvoidBench
+cd src/
+git clone --recursive https://github.com/NPU-yuhang/agile_autonomy.git
+cd ..
+catkin build
+```
+ 
+# 6. Results
 We tested several mainstream, state-of-the-art obstacle avoidance algorithms, including: [Agile-Autonomy](https://github.com/uzh-rpg/agile_autonomy)(learning-based), [Ego-planner](https://github.com/ZJU-FAST-Lab/ego-planner)(optimization-based), and [MBPlanner](https://github.com/ntnu-arl/mbplanner_ros)(motion-primitive-based, the original version is designed for explorationm, we changed the exploration gain to the distance of current point to the goal point so that the drone can always fly to a fixed goal). Here is the testing video:
 <p align="center">
   <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Media1_4.gif" width = "640" height = "360"/>
 </p>
 
-# 6. Citation
+# 7. Citation
 Paper: [AvoidBench](https://arxiv.org/abs/2301.07430)
 
 ```
@@ -155,10 +168,10 @@ Paper: [AvoidBench](https://arxiv.org/abs/2301.07430)
 }
 ```
 
-# 7. Ackowledgements
+# 8. Ackowledgements
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). Thanks for the great works from [Yunlong Song](https://yun-long.github.io) and [Antonio Loquercio](https://antonilo.github.io/).
 
 Thanks for the helping of all the members in TU-Delft [MAVLab](https://mavlab.tudelft.nl/).
 
-# 8. Licence
+# 9. Licence
 The source code is released under MIT license.
