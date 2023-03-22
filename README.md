@@ -149,7 +149,34 @@ git clone --recursive https://github.com/NPU-yuhang/agile_autonomy.git
 cd ..
 catkin build
 ```
- 
+Create your learning environment (install [conda](https://docs.conda.io/en/latest/miniconda.html) if you want to use Agile-autonomy)
+
+```bash 
+source devel/setup.bash
+roscd planner_learning
+conda create --name tf_24 python=3.7
+conda activate tf_24
+conda install tensorflow-gpu
+pip install rospkg==1.2.3,pyquaternion,open3d,opencv-python
+```
+
+Fly with Aigle-autonomy, Open a terminal and type::
+
+```bash
+source devel/setup.bash
+roslaunch agile_autonomy simulation.launch
+```
+
+Run the Network in an other terminal:
+
+```bash
+source devel/setup.bash
+conda activate tf_24
+roscd planner_learning
+python test_trajectories.py --settings_file=config/test_settings.yaml
+
+```
+
 # 6. Results
 We tested several mainstream, state-of-the-art obstacle avoidance algorithms, including: [Agile-Autonomy](https://github.com/uzh-rpg/agile_autonomy)(learning-based), [Ego-planner](https://github.com/ZJU-FAST-Lab/ego-planner)(optimization-based), and [MBPlanner](https://github.com/ntnu-arl/mbplanner_ros)(motion-primitive-based, the original version is designed for explorationm, we changed the exploration gain to the distance of current point to the goal point so that the drone can always fly to a fixed goal). Here is the testing video:
 <p align="center">
