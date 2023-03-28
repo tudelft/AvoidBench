@@ -32,7 +32,7 @@ make -j
 sudo make install
 ```
 ``` bash
-git clone https://github.com/tudelft/Avoidbench.git
+git clone https://github.com/tudelft/AvoidBench.git
 sudo apt update
 sudo apt install libzmqpp-dev libopencv-dev unzip python3-catkin-tools
 sudo apt install libgoogle-glog-dev protobuf-compiler ros-noetic-octomap-msgs ros-noetic-octomap-ros python3-vcstool
@@ -160,7 +160,7 @@ conda install tensorflow-gpu
 pip install rospkg==1.2.3,pyquaternion,open3d,opencv-python
 ```
 
-Fly with Aigle-autonomy, Open a terminal and type::
+Fly with Aigle-autonomy, Open a terminal and type:
 
 ```bash
 source devel/setup.bash
