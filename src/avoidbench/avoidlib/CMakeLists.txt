@@ -49,7 +49,6 @@ set(CUDA_NVCC_FLAGS
         -gencode=arch=compute_61,code=sm_61
         -gencode=arch=compute_62,code=sm_62
         -gencode=arch=compute_75,code=sm_75
-        -gencode=arch=compute_86,code=sm_86
         )
 
 message("CUDA Libs: ${CUDA_LIBRARIES}")
