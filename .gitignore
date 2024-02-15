@@ -1,0 +1,13 @@
+src/avoidbench/unity_scene/*
+src/avoidbench/avoidmetrics/externals/
+src/avoidbench/avoidmetrics/data/
+src/avoidbench/avoidmetrics/point_clouds_data/*
+src/avoidbench/avoidlib/build/
+src/avoidbench/avoidlib/externals/
+src/avoidbench/avoid_manage/externals/
+build/
+devel/
+logs/
+*.bag
+.catkin_tools/
+.vscode/
