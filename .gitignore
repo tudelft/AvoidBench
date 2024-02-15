@@ -3,6 +3,7 @@ src/avoidbench/avoidmetrics/externals/
 src/avoidbench/avoidmetrics/data/
 src/avoidbench/avoidmetrics/point_clouds_data/*
 src/avoidbench/avoidlib/build/
+src/avoidbench/avoidlib/.vscode/
 src/avoidbench/avoidlib/externals/
 src/avoidbench/avoid_manage/externals/
 src/mavrl/

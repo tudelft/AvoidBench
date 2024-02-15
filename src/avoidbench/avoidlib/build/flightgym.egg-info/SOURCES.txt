@@ -1,6 +1,0 @@
-setup.py
-./flightgym.cpython-38-x86_64-linux-gnu.so
-./flightgym.egg-info/PKG-INFO
-./flightgym.egg-info/SOURCES.txt
-./flightgym.egg-info/dependency_links.txt
-./flightgym.egg-info/top_level.txt
