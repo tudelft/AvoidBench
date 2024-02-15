@@ -37,6 +37,16 @@ AvoidVecVisionEnv<EnvBaseName>::AvoidVecVisionEnv(const YAML::Node& cfg_node) {
 }
 
 template<typename EnvBaseName>
+bool AvoidVecVisionEnv<EnvBaseName>::resetRewCoeff() 
+{
+  for (int i = 0; i < this->num_envs_; i++) {
+    this->envs_[i]->resetRewCoeff(cfg_);
+  }
+
+  return true;
+}
+
+template<typename EnvBaseName>
 bool AvoidVecVisionEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs) {
   if (obs.rows() != this->num_envs_ || obs.cols() != this->goal_obs_dim_) {
     this->logger_.error(
@@ -60,12 +70,11 @@ bool AvoidVecVisionEnv<EnvBaseName>::reset(Ref<MatrixRowMajor<>> obs,
       "Input matrix dimensions do not match with that of the environment.");
     return false;
   }
-  random_reset_ = random;
-
+  // random_reset_ = random;
 
   this->receive_id_ = 0;
   for (int i = 0; i < this->num_envs_; i++) {
-    this->envs_[i]->reset(obs.row(i), random_reset_);
+    this->envs_[i]->reset(obs.row(i), random);
   }
 
   return true;

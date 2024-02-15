@@ -21,7 +21,6 @@
 #include "sgm_gpu/left_right_consistency.h"
 #include "sgm_gpu/median_filter.h"
 
-#include <cv_bridge/cv_bridge.h>
 //#include <image_geometry/stereo_camera_model.h>
 
 namespace sgm_gpu {
@@ -271,11 +270,11 @@ bool SgmGpu::computeDisparity(const cv::Mat &left_image,
   // Convert images to grayscale
   cv::Mat left_mono8, right_mono8;
   if (left_image.channels() > 1) {
-    cv::cvtColor(left_image, left_mono8, CV_RGB2GRAY);
+    cv::cvtColor(left_image, left_mono8, cv::COLOR_RGB2GRAY);
   }
 
   if (right_image.channels() > 1) {
-    cv::cvtColor(right_image, right_mono8, CV_RGB2GRAY);
+    cv::cvtColor(right_image, right_mono8, cv::COLOR_RGB2GRAY);
   }
 
   // Resize images to their width and height divisible by 4 for limit of CUDA

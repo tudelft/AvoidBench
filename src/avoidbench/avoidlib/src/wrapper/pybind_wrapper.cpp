@@ -23,6 +23,11 @@ void PointCloudThread(AvoidVecVisionEnv<AvoidVisionEnv>& vec_env, std::string da
   vec_env.getPointClouds(data_dir, id, save_pc);
 }
 
+void PointCloudReadingThread(AvoidVecVisionEnv<AvoidVisionEnv>& vec_env, int id)
+{
+  vec_env.readPointClouds(id);
+}
+
 PYBIND11_MODULE(flightgym, m) {
   py::class_<UnityBridge, std::shared_ptr<UnityBridge>>(m, "UnityBridge")
     .def(py::init<>());
@@ -82,6 +87,7 @@ PYBIND11_MODULE(flightgym, m) {
          static_cast<bool (AvoidVecVisionEnv<AvoidVisionEnv>::*)(
            Ref<MatrixRowMajor<>>, bool)>(&AvoidVecVisionEnv<AvoidVisionEnv>::reset),
          "reset with random option")
+    .def("resetRewCoeff", &AvoidVecVisionEnv<AvoidVisionEnv>::resetRewCoeff)
     .def("step", &AvoidVecVisionEnv<AvoidVisionEnv>::step)
     .def("close", &AvoidVecVisionEnv<AvoidVisionEnv>::close)
     .def("setSeed", &AvoidVecVisionEnv<AvoidVisionEnv>::setSeed)
@@ -94,9 +100,15 @@ PYBIND11_MODULE(flightgym, m) {
       std::thread PCThread(PointCloudThread, std::ref(vec_env), data_dir, id, save_pc);
       PCThread.detach();
     })
+    .def("readPointClouds", [](AvoidVecVisionEnv<AvoidVisionEnv>& vec_env, int id) {
+      std::thread PCReadingThread(PointCloudReadingThread, std::ref(vec_env), id);
+      PCReadingThread.detach();
+    })
+    // .def("readPointClouds", &AvoidVecVisionEnv<AvoidVisionEnv>::readPointClouds)
     .def("setUnityFromPtr", &AvoidVecVisionEnv<AvoidVisionEnv>::setUnityFromPtr)
     .def("getUnityPtr", &AvoidVecVisionEnv<AvoidVisionEnv>::getUnityPtr)
     .def("getSavingState", &AvoidVecVisionEnv<AvoidVisionEnv>::getSavingState)
+    .def("getReadingState", &AvoidVecVisionEnv<AvoidVisionEnv>::getReadingState)
     .def("getObs", &AvoidVecVisionEnv<AvoidVisionEnv>::getObs)
     .def("getQuadAct", &AvoidVecVisionEnv<AvoidVisionEnv>::getQuadAct)
     .def("getQuadState", &AvoidVecVisionEnv<AvoidVisionEnv>::getQuadState)

@@ -35,6 +35,7 @@ class VisionEnvBase {
   virtual bool isTerminalState(double &reward);
   virtual bool addQuadrotorToUnity(const std::shared_ptr<UnityBridge> bridge);
   virtual bool setPointClouds(const std::shared_ptr<Environment> env_ptr);
+  virtual void setTraversability(double traversability);
   virtual void setQuadFromPtr(const std::shared_ptr<UnityBridge> bridge);
   inline void setSeed(const int seed) { std::srand(seed); };
   inline int getObsDim() { return obs_dim_; };

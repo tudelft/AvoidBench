@@ -10,8 +10,8 @@ rotor_thrust_coeff: 8.54858e-06
 max_rotor_speed: 838.0
 # Controller
 low_level_control_frequency: 200.0
-body_rates_p_xy: 0.1
+body_rates_p_xy: 0.2
 body_rates_d_xy: 0.5
-body_rates_p_z: 0.03
-body_rates_d_z: 0.1
+body_rates_p_z: 0.4
+body_rates_d_z: 0.3
 roll_pitch_cont_gain: 6.0

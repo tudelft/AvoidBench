@@ -42,7 +42,7 @@ public:
   void readPointCloud(const std::string &filepath);
   Eigen::Vector3i pcl2Node(const Eigen::Vector3d &pos);
   Eigen::Vector3d Node2pcl(const Eigen::Vector3i &node);
-  bool checkOccupied(const Eigen::Vector3d &pos);
+  bool checkOccupied(const Eigen::Vector3d &pos, const double radius=0.0);
   bool checkOccupied(const Eigen::Vector3i &node);
   double getOccupiedDistance(const Eigen::Vector3d &pos,
                     const double radius, const double max_nn);

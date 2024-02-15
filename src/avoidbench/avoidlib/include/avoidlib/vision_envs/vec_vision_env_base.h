@@ -48,10 +48,12 @@ class VecVisionEnvBase {
   bool initializeConnections();
   void disconnectUnity();
   FrameID updateUnity(const FrameID frame_id);
-  bool spawnObstacles(bool change_obs);
+  bool spawnObstacles(bool change_obs, int seed=-1, float radius=-1.0f);
   bool ifSceneChanged();
   bool getPointClouds(const std::string curr_data_dir, int id, bool save_pc);
+  bool readPointClouds(int id);
   bool getSavingState() { return save_pc_success_; };
+  bool getReadingState() { return read_pc_success_; };
     // public functions
   inline int getSeed(void) const { return seed_; };
   inline SceneID getSceneID(void) const { return scene_id_; };
@@ -108,5 +110,6 @@ class VecVisionEnvBase {
   int img_width_, img_height_;
   Matrix<> obs_dummy_;
   bool save_pc_success_{false};
+  bool read_pc_success_{false};
 };
 }

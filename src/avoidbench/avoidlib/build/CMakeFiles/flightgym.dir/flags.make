@@ -6,5 +6,5 @@ CXX_FLAGS =  -fPIC -Wall -DNDEBUG  -fopenmp  -Ofast  -march=native  -fPIC -fvisi
 
 CXX_DEFINES = -DYAML_CPP_STATIC_DEFINE -Dflightgym_EXPORTS
 
-CXX_INCLUDES = -I/home/hyyu/AvoidBench/src/avoidbench/avoidlib/include -I/usr/include/eigen3 -I/usr/local/include/Open3D/3rdparty/Eigen -I/usr/local/include/Open3D/3rdparty/fmt/include -isystem /home/hyyu/AvoidBench/src/avoidbench/avoidlib/externals/pybind11-src/include -isystem /home/hyyu/AvoidBench/src/avoidbench/avoidlib/externals/yaml-src/include -isystem /usr/include/opencv4 -isystem /home/hyyu/anaconda3/envs/sb3_18/include/python3.8 
+CXX_INCLUDES = -I/home/hyyu/new/mavrl/src/avoidbench/avoidlib/include -I/usr/include/eigen3 -I/usr/local/include/Open3D/3rdparty/Eigen -I/usr/local/include/Open3D/3rdparty/fmt/include -I/usr/local/cuda/include -isystem /home/hyyu/new/mavrl/src/avoidbench/avoidlib/externals/pybind11-src/include -isystem /home/hyyu/new/mavrl/src/avoidbench/avoidlib/externals/yaml-src/include -isystem /usr/include/opencv4 -isystem /home/hyyu/anaconda3/envs/agileflight/include/python3.8 
 

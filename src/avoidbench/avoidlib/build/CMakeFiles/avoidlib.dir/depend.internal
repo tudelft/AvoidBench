@@ -59,7 +59,7 @@ CMakeFiles/avoidlib.dir/src/bridges/unity_bridge.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/bridges/unity_bridge.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/bridges/unity_bridge.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -470,10 +470,67 @@ CMakeFiles/avoidlib.dir/src/bridges/unity_bridge.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/command.cpp.o
  ../include/avoidlib/common/command.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/command.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/command.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -751,11 +808,68 @@ CMakeFiles/avoidlib.dir/src/common/command.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/integrator_base.cpp.o
  ../include/avoidlib/common/integrator_base.hpp
  ../include/avoidlib/common/quad_state.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/integrator_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/integrator_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -1033,12 +1147,69 @@ CMakeFiles/avoidlib.dir/src/common/integrator_base.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/integrator_euler.cpp.o
  ../include/avoidlib/common/integrator_base.hpp
  ../include/avoidlib/common/integrator_euler.hpp
  ../include/avoidlib/common/quad_state.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/integrator_euler.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/integrator_euler.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -1316,12 +1487,69 @@ CMakeFiles/avoidlib.dir/src/common/integrator_euler.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/integrator_rk4.cpp.o
  ../include/avoidlib/common/integrator_base.hpp
  ../include/avoidlib/common/integrator_rk4.hpp
  ../include/avoidlib/common/quad_state.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/integrator_rk4.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/integrator_rk4.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -1599,13 +1827,70 @@ CMakeFiles/avoidlib.dir/src/common/integrator_rk4.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/logger.cpp.o
  ../include/avoidlib/common/logger.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/logger.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/logger.cpp
 CMakeFiles/avoidlib.dir/src/common/math.cpp.o
  ../include/avoidlib/common/math.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/math.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/math.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -1883,6 +2168,63 @@ CMakeFiles/avoidlib.dir/src/common/math.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/parameter_base.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -1916,11 +2258,11 @@ CMakeFiles/avoidlib.dir/src/common/parameter_base.cpp.o
  ../externals/yaml-src/include/yaml-cpp/traits.h
  ../externals/yaml-src/include/yaml-cpp/yaml.h
  ../include/avoidlib/common/parameter_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/parameter_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/parameter_base.cpp
 CMakeFiles/avoidlib.dir/src/common/pend_state.cpp.o
  ../include/avoidlib/common/pend_state.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/pend_state.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/pend_state.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -2198,10 +2540,67 @@ CMakeFiles/avoidlib.dir/src/common/pend_state.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/quad_state.cpp.o
  ../include/avoidlib/common/quad_state.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/quad_state.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/quad_state.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -2479,10 +2878,67 @@ CMakeFiles/avoidlib.dir/src/common/quad_state.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/timer.cpp.o
  ../include/avoidlib/common/timer.hpp
  ../include/avoidlib/common/types.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/timer.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/timer.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -2760,13 +3216,70 @@ CMakeFiles/avoidlib.dir/src/common/timer.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/common/utils.cpp.o
  ../include/avoidlib/common/utils.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/common/utils.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/common/utils.cpp
 CMakeFiles/avoidlib.dir/src/controller/filter.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/controller/filter.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/controller/filter.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/controller/filter.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -3044,6 +3557,63 @@ CMakeFiles/avoidlib.dir/src/controller/filter.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_base.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -3084,7 +3654,7 @@ CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_base.cpp.o
  ../include/avoidlib/controller/lowlevel_controller_base.hpp
  ../include/avoidlib/dynamics/dynamics_base.hpp
  ../include/avoidlib/dynamics/quadrotor_dynamics.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/controller/lowlevel_controller_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/controller/lowlevel_controller_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -3362,6 +3932,63 @@ CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_base.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_betaflight.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -3405,7 +4032,7 @@ CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_betaflight.cpp.o
  ../include/avoidlib/controller/pid_parts.hpp
  ../include/avoidlib/dynamics/dynamics_base.hpp
  ../include/avoidlib/dynamics/quadrotor_dynamics.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/controller/lowlevel_controller_betaflight.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/controller/lowlevel_controller_betaflight.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -3683,6 +4310,63 @@ CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_betaflight.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_simple.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -3723,7 +4407,7 @@ CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_simple.cpp.o
  ../include/avoidlib/controller/lowlevel_controller_simple.hpp
  ../include/avoidlib/dynamics/dynamics_base.hpp
  ../include/avoidlib/dynamics/quadrotor_dynamics.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/controller/lowlevel_controller_simple.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/controller/lowlevel_controller_simple.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -4001,11 +4685,68 @@ CMakeFiles/avoidlib.dir/src/controller/lowlevel_controller_simple.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/controller/pid_parts.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/controller/filter.hpp
  ../include/avoidlib/controller/pid_parts.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/controller/pid_parts.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/controller/pid_parts.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -4283,10 +5024,67 @@ CMakeFiles/avoidlib.dir/src/controller/pid_parts.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/dynamics/dynamics_base.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/dynamics/dynamics_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/dynamics/dynamics_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/dynamics/dynamics_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -4564,6 +5362,63 @@ CMakeFiles/avoidlib.dir/src/dynamics/dynamics_base.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/dynamics/quadrotor_dynamics.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -4602,7 +5457,7 @@ CMakeFiles/avoidlib.dir/src/dynamics/quadrotor_dynamics.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/dynamics/dynamics_base.hpp
  ../include/avoidlib/dynamics/quadrotor_dynamics.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/dynamics/quadrotor_dynamics.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/dynamics/quadrotor_dynamics.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -4880,6 +5735,63 @@ CMakeFiles/avoidlib.dir/src/dynamics/quadrotor_dynamics.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/envs/env_base.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -4939,7 +5851,7 @@ CMakeFiles/avoidlib.dir/src/envs/env_base.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/envs/env_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/envs/env_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -5350,6 +6262,63 @@ CMakeFiles/avoidlib.dir/src/envs/env_base.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/envs/quadrotor_env/quadrotor_env.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -5410,7 +6379,7 @@ CMakeFiles/avoidlib.dir/src/envs/quadrotor_env/quadrotor_env.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/envs/quadrotor_env/quadrotor_env.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/envs/quadrotor_env/quadrotor_env.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -5821,6 +6790,63 @@ CMakeFiles/avoidlib.dir/src/envs/quadrotor_env/quadrotor_env.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/envs/quadrotor_env/quadrotor_vec_env.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -5884,7 +6910,7 @@ CMakeFiles/avoidlib.dir/src/envs/quadrotor_env/quadrotor_vec_env.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/envs/quadrotor_env/quadrotor_vec_env.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/envs/quadrotor_env/quadrotor_vec_env.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -6295,6 +7321,63 @@ CMakeFiles/avoidlib.dir/src/envs/quadrotor_env/quadrotor_vec_env.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/envs/tracking_env/tracking_env.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -6355,7 +7438,7 @@ CMakeFiles/avoidlib.dir/src/envs/tracking_env/tracking_env.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/envs/tracking_env/tracking_env.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/envs/tracking_env/tracking_env.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -6766,6 +7849,63 @@ CMakeFiles/avoidlib.dir/src/envs/tracking_env/tracking_env.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/envs/tracking_env/tracking_vec_env.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -6829,7 +7969,7 @@ CMakeFiles/avoidlib.dir/src/envs/tracking_env/tracking_vec_env.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/envs/tracking_env/tracking_vec_env.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/envs/tracking_env/tracking_vec_env.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -7240,6 +8380,63 @@ CMakeFiles/avoidlib.dir/src/envs/tracking_env/tracking_vec_env.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/envs/vec_env_base.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -7302,7 +8499,7 @@ CMakeFiles/avoidlib.dir/src/envs/vec_env_base.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/envs/vec_env_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/envs/vec_env_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -7713,10 +8910,67 @@ CMakeFiles/avoidlib.dir/src/envs/vec_env_base.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/objects/object_base.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/objects/object_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/objects/object_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/objects/object_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -7994,6 +9248,63 @@ CMakeFiles/avoidlib.dir/src/objects/object_base.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/objects/quadrotor.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -8046,7 +9357,7 @@ CMakeFiles/avoidlib.dir/src/objects/quadrotor.cpp.o
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/objects/quadrotor.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/objects/quadrotor.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -8454,6 +9765,63 @@ CMakeFiles/avoidlib.dir/src/objects/quadrotor.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/objects/unity_camera.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -8491,7 +9859,7 @@ CMakeFiles/avoidlib.dir/src/objects/unity_camera.cpp.o
  ../include/avoidlib/objects/unity_camera.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/objects/unity_camera.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/objects/unity_camera.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -8899,6 +10267,63 @@ CMakeFiles/avoidlib.dir/src/objects/unity_camera.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/pointclouds/environment.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -8933,7 +10358,7 @@ CMakeFiles/avoidlib.dir/src/pointclouds/environment.cpp.o
  ../externals/yaml-src/include/yaml-cpp/yaml.h
  ../include/avoidlib/pointclouds/environment.h
  ../include/avoidlib/pointclouds/tinyply.h
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/pointclouds/environment.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/pointclouds/environment.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -9141,11 +10566,68 @@ CMakeFiles/avoidlib.dir/src/pointclouds/environment.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/sensors/imu.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/sensors/imu.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/sensors/imu.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/sensors/imu.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -9423,6 +10905,63 @@ CMakeFiles/avoidlib.dir/src/sensors/imu.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/sensors/rgb_camera.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -9459,7 +10998,7 @@ CMakeFiles/avoidlib.dir/src/sensors/rgb_camera.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/sensors/rgb_camera.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/sensors/rgb_camera.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -9867,10 +11406,67 @@ CMakeFiles/avoidlib.dir/src/sensors/rgb_camera.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/sensors/sensor_base.cpp.o
  ../include/avoidlib/common/types.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/sensors/sensor_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/sensors/sensor_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -10148,6 +11744,63 @@ CMakeFiles/avoidlib.dir/src/sensors/sensor_base.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/vision_envs/avoid_vision_envs/avoid_vec_vision_envs.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -10211,7 +11864,9 @@ CMakeFiles/avoidlib.dir/src/vision_envs/avoid_vision_envs/avoid_vec_vision_envs.
  ../include/avoidlib/vision_envs/avoid_vision_envs/avoid_vision_envs.h
  ../include/avoidlib/vision_envs/vec_vision_env_base.h
  ../include/avoidlib/vision_envs/vision_env_base.h
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/vision_envs/avoid_vision_envs/avoid_vec_vision_envs.cpp
+ ../include/sgm_gpu/configuration.h
+ ../include/sgm_gpu/sgm_gpu.h
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/vision_envs/avoid_vision_envs/avoid_vec_vision_envs.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -10622,6 +12277,63 @@ CMakeFiles/avoidlib.dir/src/vision_envs/avoid_vision_envs/avoid_vec_vision_envs.
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/vision_envs/avoid_vision_envs/avoid_vision_envs.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -10683,7 +12395,9 @@ CMakeFiles/avoidlib.dir/src/vision_envs/avoid_vision_envs/avoid_vision_envs.cpp.
  ../include/avoidlib/sensors/sensor_base.hpp
  ../include/avoidlib/vision_envs/avoid_vision_envs/avoid_vision_envs.h
  ../include/avoidlib/vision_envs/vision_env_base.h
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/vision_envs/avoid_vision_envs/avoid_vision_envs.cpp
+ ../include/sgm_gpu/configuration.h
+ ../include/sgm_gpu/sgm_gpu.h
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/vision_envs/avoid_vision_envs/avoid_vision_envs.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -11094,6 +12808,63 @@ CMakeFiles/avoidlib.dir/src/vision_envs/avoid_vision_envs/avoid_vision_envs.cpp.
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/vision_envs/vec_vision_env_base.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -11156,7 +12927,9 @@ CMakeFiles/avoidlib.dir/src/vision_envs/vec_vision_env_base.cpp.o
  ../include/avoidlib/vision_envs/avoid_vision_envs/avoid_vision_envs.h
  ../include/avoidlib/vision_envs/vec_vision_env_base.h
  ../include/avoidlib/vision_envs/vision_env_base.h
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/vision_envs/vec_vision_env_base.cpp
+ ../include/sgm_gpu/configuration.h
+ ../include/sgm_gpu/sgm_gpu.h
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/vision_envs/vec_vision_env_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -11567,6 +13340,63 @@ CMakeFiles/avoidlib.dir/src/vision_envs/vec_vision_env_base.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h
 CMakeFiles/avoidlib.dir/src/vision_envs/vision_env_base.cpp.o
  ../externals/yaml-src/include/yaml-cpp/binary.h
  ../externals/yaml-src/include/yaml-cpp/dll.h
@@ -11627,7 +13457,7 @@ CMakeFiles/avoidlib.dir/src/vision_envs/vision_env_base.cpp.o
  ../include/avoidlib/sensors/rgb_camera.hpp
  ../include/avoidlib/sensors/sensor_base.hpp
  ../include/avoidlib/vision_envs/vision_env_base.h
- /home/hyyu/AvoidBench/src/avoidbench/avoidlib/src/vision_envs/vision_env_base.cpp
+ /home/hyyu/new/mavrl/src/avoidbench/avoidlib/src/vision_envs/vision_env_base.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -12038,3 +13868,60 @@ CMakeFiles/avoidlib.dir/src/vision_envs/vision_env_base.cpp.o
  /usr/include/opencv4/opencv2/viz/viz3d.hpp
  /usr/include/opencv4/opencv2/viz/vizcore.hpp
  /usr/include/opencv4/opencv2/viz/widgets.hpp
+ /usr/local/cuda/include/builtin_types.h
+ /usr/local/cuda/include/channel_descriptor.h
+ /usr/local/cuda/include/crt/common_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.h
+ /usr/local/cuda/include/crt/device_double_functions.hpp
+ /usr/local/cuda/include/crt/device_functions.h
+ /usr/local/cuda/include/crt/device_functions.hpp
+ /usr/local/cuda/include/crt/func_macro.h
+ /usr/local/cuda/include/crt/host_config.h
+ /usr/local/cuda/include/crt/host_defines.h
+ /usr/local/cuda/include/crt/math_functions.h
+ /usr/local/cuda/include/crt/math_functions.hpp
+ /usr/local/cuda/include/crt/sm_70_rt.h
+ /usr/local/cuda/include/crt/sm_70_rt.hpp
+ /usr/local/cuda/include/crt/sm_80_rt.h
+ /usr/local/cuda/include/crt/sm_80_rt.hpp
+ /usr/local/cuda/include/cuda_device_runtime_api.h
+ /usr/local/cuda/include/cuda_fp16.h
+ /usr/local/cuda/include/cuda_fp16.hpp
+ /usr/local/cuda/include/cuda_runtime.h
+ /usr/local/cuda/include/cuda_runtime_api.h
+ /usr/local/cuda/include/cuda_surface_types.h
+ /usr/local/cuda/include/cuda_texture_types.h
+ /usr/local/cuda/include/device_atomic_functions.h
+ /usr/local/cuda/include/device_atomic_functions.hpp
+ /usr/local/cuda/include/device_launch_parameters.h
+ /usr/local/cuda/include/device_types.h
+ /usr/local/cuda/include/driver_functions.h
+ /usr/local/cuda/include/driver_types.h
+ /usr/local/cuda/include/host_defines.h
+ /usr/local/cuda/include/library_types.h
+ /usr/local/cuda/include/math_constants.h
+ /usr/local/cuda/include/sm_20_atomic_functions.h
+ /usr/local/cuda/include/sm_20_atomic_functions.hpp
+ /usr/local/cuda/include/sm_20_intrinsics.h
+ /usr/local/cuda/include/sm_20_intrinsics.hpp
+ /usr/local/cuda/include/sm_30_intrinsics.h
+ /usr/local/cuda/include/sm_30_intrinsics.hpp
+ /usr/local/cuda/include/sm_32_atomic_functions.h
+ /usr/local/cuda/include/sm_32_atomic_functions.hpp
+ /usr/local/cuda/include/sm_32_intrinsics.h
+ /usr/local/cuda/include/sm_32_intrinsics.hpp
+ /usr/local/cuda/include/sm_35_atomic_functions.h
+ /usr/local/cuda/include/sm_35_intrinsics.h
+ /usr/local/cuda/include/sm_60_atomic_functions.h
+ /usr/local/cuda/include/sm_60_atomic_functions.hpp
+ /usr/local/cuda/include/sm_61_intrinsics.h
+ /usr/local/cuda/include/sm_61_intrinsics.hpp
+ /usr/local/cuda/include/surface_functions.h
+ /usr/local/cuda/include/surface_indirect_functions.h
+ /usr/local/cuda/include/surface_types.h
+ /usr/local/cuda/include/texture_fetch_functions.h
+ /usr/local/cuda/include/texture_indirect_functions.h
+ /usr/local/cuda/include/texture_types.h
+ /usr/local/cuda/include/vector_functions.h
+ /usr/local/cuda/include/vector_functions.hpp
+ /usr/local/cuda/include/vector_types.h

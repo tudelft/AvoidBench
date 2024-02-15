@@ -21,7 +21,7 @@ bool RGBCamera::feedImageQueue(const int image_layer,
       rgb_queue_.push_back(image_mat);
       break;
     case CameraLayer::DepthMap:
-      if (depth_queue_.size() > queue_size_) depth_queue_.resize(queue_size_);
+      if (depth_queue_.size() > queue_size_) depth_queue_.clear();
       depth_queue_.push_back(image_mat);
       break;
     case CameraLayer::Segmentation:
@@ -167,6 +167,7 @@ bool RGBCamera::getRGBImage(cv::Mat& rgb_img) {
 }
 
 bool RGBCamera::getDepthMap(cv::Mat& depth_map) {
+  // std::cout<<"depth_queue_ size: "<<depth_queue_.size()<<std::endl;
   if (!depth_queue_.empty()) {
     depth_map = depth_queue_.front();
     depth_queue_.pop_front();

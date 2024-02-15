@@ -183,12 +183,12 @@ namespace avoidmetrics
     kd_tree_.SearchRadius(query_point, bounding.resolution_, indices, distances_squared);
     if (indices.size() != 0) {
       *free_dist = 0;
-      for(int i=0; i<direct_num; i++)
-      {
-        std::string ss = std::to_string(0) + "\n";
-        location_out << ss;
-      }
-      location_out.close();
+      // for(int i=0; i<direct_num; i++)
+      // {
+      //   std::string ss = std::to_string(0) + "\n";
+      //   location_out << ss;
+      // }
+      // location_out.close();
       return;
     }
     double aver_dist=0;
@@ -215,10 +215,10 @@ namespace avoidmetrics
       }
       double dist = (ray_point - query_point).norm();
       aver_dist = aver_dist + dist;
-      std::string ss = std::to_string(dist) + "\n";
-      location_out << ss;
+      // std::string ss = std::to_string(dist) + "\n";
+      // location_out << ss;
     }
-    location_out.close();
+    // location_out.close();
     // exit(1);
     aver_dist = aver_dist / direct_num;
     *free_dist = aver_dist;

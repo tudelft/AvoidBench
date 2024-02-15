@@ -205,6 +205,7 @@ bool VecVisionEnvBase<EnvBaseName>::setUnity(bool render) {
     return false;
   }
   // create unity bridge
+  logger_.info("create unity bridge");
   unity_bridge_ptr_ = UnityBridge::getInstance();
   // add objects to Unity
   for (int i = 0; i < num_envs_; i++) {
@@ -269,7 +270,7 @@ bool VecVisionEnvBase<EnvBaseName>::ifSceneChanged()
 }
 
 template<typename EnvBaseName>
-bool VecVisionEnvBase<EnvBaseName>::spawnObstacles(bool change_obs)
+bool VecVisionEnvBase<EnvBaseName>::spawnObstacles(bool change_obs, int seed, float radius)
 {
   if(change_obs)
   {
@@ -281,9 +282,16 @@ bool VecVisionEnvBase<EnvBaseName>::spawnObstacles(bool change_obs)
       trees.bounding_area[1] = bounding_box_[1];
       trees.bounding_origin[0] = bounding_box_origin_[0];
       trees.bounding_origin[1] = bounding_box_origin_[1];
-      trees.seed = std::rand()%200;;
+      if(seed == -1)
+        trees.seed = std::rand()%200;
+      else
+        trees.seed = seed;
       float rand = (std::rand()%200)/200.0f;
-      trees.radius = radius_origin_ + radius_area_ * rand;
+      if(radius == -1.0f)
+        trees.radius = radius_origin_ + radius_area_ * rand;
+      else
+        trees.radius = radius;
+      std::cout<<"trees radius: "<<trees.radius<<std::endl;
       unity_bridge_ptr_->placeTrees(trees);
     }
     if(spawn_objects_)
@@ -296,10 +304,21 @@ bool VecVisionEnvBase<EnvBaseName>::spawnObstacles(bool change_obs)
       objects.bounding_origin[1] = bounding_box_origin_[1];
       objects.scale_min = min_object_scale_;
       objects.scale_max = max_object_scale_;
-      objects.seed = std::rand()%200;;
+      if(seed == -1)
+        objects.seed = std::rand()%200;
+      else
+        objects.seed = seed;
       float rand = (std::rand()%200) / 200.0f;
-      objects.radius = radius_origin_ + radius_area_ * rand;
-      objects.opacity = (std::rand()%200) / 200.0f;
+      if(radius == -1.0f)
+      {
+        objects.radius = radius_origin_ + radius_area_ * rand;
+        objects.opacity = (std::rand()%200) / 200.0f;
+      }
+      else
+      {
+        objects.radius = radius;
+        objects.opacity = 0.5f;
+      }
       unity_bridge_ptr_->placeObjects(objects);
     }
   }
@@ -314,6 +333,7 @@ bool VecVisionEnvBase<EnvBaseName>::getPointClouds(const std::string curr_data_d
   if (save_pc)
   {
     // save point clouds
+    save_pc_success_ = false;
     PointCloudMessage_t pc_msg;
     pc_msg.range = range_;
     pc_msg.origin = origin_;
@@ -322,17 +342,25 @@ bool VecVisionEnvBase<EnvBaseName>::getPointClouds(const std::string curr_data_d
     pc_msg.file_name = "pointclouds" + std::to_string(id);
     unity_bridge_ptr_->getPointCloud(pc_msg);
     save_pc_success_ = true;
-    usleep(1.0*1e6);
   }
+  return true;
+}
 
+template<typename EnvBaseName>
+bool VecVisionEnvBase<EnvBaseName>::readPointClouds(int id)
+{
+  read_pc_success_ = false;
   // read the point clouds and save it to kd-tree
   std::string pc_path = getenv("AVOIDBENCH_PATH") + std::string("/avoidmetrics/point_clouds_data/") + 
                         "pointclouds" + std::to_string(id) + std::string(".ply");
   env_ptr_->readPointCloud(pc_path);
-
+  double traversability = env_ptr_->getTraversability();
+  std::cout<<"traversability: "<<traversability<<std::endl;
   for (int i = 0; i < num_envs_; i++) {
     envs_[i]->setPointClouds(env_ptr_);
+    envs_[i]->setTraversability(traversability);
   }
+  read_pc_success_ = true;
   return true;
 }
 

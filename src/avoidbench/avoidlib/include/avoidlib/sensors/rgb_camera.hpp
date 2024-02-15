@@ -68,7 +68,7 @@ class RGBCamera : SensorBase {
 
   // image data buffer
   std::mutex queue_mutex_;
-  const int queue_size_ = 1;
+  const int queue_size_ = 0;
 
   std::deque<cv::Mat> rgb_queue_;
   std::deque<cv::Mat> depth_queue_;

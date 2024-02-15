@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hyyu/AvoidBench/src/avoidbench/avoidlib
+CMAKE_SOURCE_DIR = /home/hyyu/new/mavrl/src/avoidbench/avoidlib
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hyyu/AvoidBench/src/avoidbench/avoidlib/build
+CMAKE_BINARY_DIR = /home/hyyu/new/mavrl/src/avoidbench/avoidlib/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyyu/AvoidBench/src/avoidbench/avoidlib/build/CMakeFiles /home/hyyu/AvoidBench/src/avoidbench/avoidlib/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyyu/new/mavrl/src/avoidbench/avoidlib/build/CMakeFiles /home/hyyu/new/mavrl/src/avoidbench/avoidlib/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyyu/AvoidBench/src/avoidbench/avoidlib/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyyu/new/mavrl/src/avoidbench/avoidlib/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -107,7 +107,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /home/hyyu/AvoidBench/src/avoidbench/avoidlib/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/hyyu/new/mavrl/src/avoidbench/avoidlib/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -125,6 +125,19 @@ flightgym/fast:
 .PHONY : flightgym/fast
 
 #=============================================================================
+# Target rules for targets named sgm_gpu
+
+# Build rule for target.
+sgm_gpu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sgm_gpu
+.PHONY : sgm_gpu
+
+# fast build rule for target.
+sgm_gpu/fast:
+	$(MAKE) -f CMakeFiles/sgm_gpu.dir/build.make CMakeFiles/sgm_gpu.dir/build
+.PHONY : sgm_gpu/fast
+
+#=============================================================================
 # Target rules for targets named avoidlib
 
 # Build rule for target.
@@ -138,17 +151,368 @@ avoidlib/fast:
 .PHONY : avoidlib/fast
 
 #=============================================================================
-# Target rules for targets named uninstall
+# Target rules for targets named NightlyMemCheck
 
 # Build rule for target.
-uninstall: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 uninstall
-.PHONY : uninstall
+NightlyMemCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyMemCheck
+.PHONY : NightlyMemCheck
 
 # fast build rule for target.
-uninstall/fast:
-	$(MAKE) -f ../externals/yaml-build/CMakeFiles/uninstall.dir/build.make ../externals/yaml-build/CMakeFiles/uninstall.dir/build
-.PHONY : uninstall/fast
+NightlyMemCheck/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyMemCheck.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyMemCheck.dir/build
+.PHONY : NightlyMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named NightlyTest
+
+# Build rule for target.
+NightlyTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyTest.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousConfigure
+
+# Build rule for target.
+ContinuousConfigure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousConfigure
+.PHONY : ContinuousConfigure
+
+# fast build rule for target.
+ContinuousConfigure/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousConfigure.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousConfigure.dir/build
+.PHONY : ContinuousConfigure/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousBuild
+
+# Build rule for target.
+ContinuousBuild: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousBuild
+.PHONY : ContinuousBuild
+
+# fast build rule for target.
+ContinuousBuild/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousBuild.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
+
+#=============================================================================
+# Target rules for targets named NightlyConfigure
+
+# Build rule for target.
+NightlyConfigure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyConfigure
+.PHONY : NightlyConfigure
+
+# fast build rule for target.
+NightlyConfigure/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyConfigure.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyConfigure.dir/build
+.PHONY : NightlyConfigure/fast
+
+#=============================================================================
+# Target rules for targets named NightlyMemoryCheck
+
+# Build rule for target.
+NightlyMemoryCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyMemoryCheck
+.PHONY : NightlyMemoryCheck
+
+# fast build rule for target.
+NightlyMemoryCheck/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyMemoryCheck.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyMemoryCheck.dir/build
+.PHONY : NightlyMemoryCheck/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalTest
+
+# Build rule for target.
+ExperimentalTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalTest
+.PHONY : ExperimentalTest
+
+# fast build rule for target.
+ExperimentalTest/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalTest.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalTest.dir/build
+.PHONY : ExperimentalTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousUpdate
+
+# Build rule for target.
+ContinuousUpdate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousUpdate
+.PHONY : ContinuousUpdate
+
+# fast build rule for target.
+ContinuousUpdate/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousUpdate.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousUpdate.dir/build
+.PHONY : ContinuousUpdate/fast
+
+#=============================================================================
+# Target rules for targets named NightlyUpdate
+
+# Build rule for target.
+NightlyUpdate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyUpdate
+.PHONY : NightlyUpdate
+
+# fast build rule for target.
+NightlyUpdate/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyUpdate.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyUpdate.dir/build
+.PHONY : NightlyUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalMemCheck
+
+# Build rule for target.
+ExperimentalMemCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalMemCheck
+.PHONY : ExperimentalMemCheck
+
+# fast build rule for target.
+ExperimentalMemCheck/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalMemCheck.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalMemCheck.dir/build
+.PHONY : ExperimentalMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalSubmit
+
+# Build rule for target.
+ExperimentalSubmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalSubmit
+.PHONY : ExperimentalSubmit
+
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalSubmit.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
+
+#=============================================================================
+# Target rules for targets named Experimental
+
+# Build rule for target.
+Experimental: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Experimental
+.PHONY : Experimental
+
+# fast build rule for target.
+Experimental/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/Experimental.dir/build.make ../externals/yaml-build/CMakeFiles/Experimental.dir/build
+.PHONY : Experimental/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousCoverage
+
+# Build rule for target.
+ContinuousCoverage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousCoverage
+.PHONY : ContinuousCoverage
+
+# fast build rule for target.
+ContinuousCoverage/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousCoverage.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousCoverage.dir/build
+.PHONY : ContinuousCoverage/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalConfigure
+
+# Build rule for target.
+ExperimentalConfigure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalConfigure
+.PHONY : ExperimentalConfigure
+
+# fast build rule for target.
+ExperimentalConfigure/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalConfigure.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalConfigure.dir/build
+.PHONY : ExperimentalConfigure/fast
+
+#=============================================================================
+# Target rules for targets named Continuous
+
+# Build rule for target.
+Continuous: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Continuous
+.PHONY : Continuous
+
+# fast build rule for target.
+Continuous/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/Continuous.dir/build.make ../externals/yaml-build/CMakeFiles/Continuous.dir/build
+.PHONY : Continuous/fast
+
+#=============================================================================
+# Target rules for targets named Nightly
+
+# Build rule for target.
+Nightly: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Nightly
+.PHONY : Nightly
+
+# fast build rule for target.
+Nightly/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/Nightly.dir/build.make ../externals/yaml-build/CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
+
+#=============================================================================
+# Target rules for targets named NightlySubmit
+
+# Build rule for target.
+NightlySubmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlySubmit
+.PHONY : NightlySubmit
+
+# fast build rule for target.
+NightlySubmit/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlySubmit.dir/build.make ../externals/yaml-build/CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
+
+#=============================================================================
+# Target rules for targets named NightlyStart
+
+# Build rule for target.
+NightlyStart: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyStart
+.PHONY : NightlyStart
+
+# fast build rule for target.
+NightlyStart/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyStart.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyStart.dir/build
+.PHONY : NightlyStart/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalCoverage
+
+# Build rule for target.
+ExperimentalCoverage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalCoverage
+.PHONY : ExperimentalCoverage
+
+# fast build rule for target.
+ExperimentalCoverage/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalCoverage.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalCoverage.dir/build
+.PHONY : ExperimentalCoverage/fast
+
+#=============================================================================
+# Target rules for targets named NightlyCoverage
+
+# Build rule for target.
+NightlyCoverage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyCoverage
+.PHONY : NightlyCoverage
+
+# fast build rule for target.
+NightlyCoverage/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyCoverage.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyCoverage.dir/build
+.PHONY : NightlyCoverage/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalStart
+
+# Build rule for target.
+ExperimentalStart: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalStart
+.PHONY : ExperimentalStart
+
+# fast build rule for target.
+ExperimentalStart/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalStart.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalStart.dir/build
+.PHONY : ExperimentalStart/fast
+
+#=============================================================================
+# Target rules for targets named NightlyBuild
+
+# Build rule for target.
+NightlyBuild: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyBuild
+.PHONY : NightlyBuild
+
+# fast build rule for target.
+NightlyBuild/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/NightlyBuild.dir/build.make ../externals/yaml-build/CMakeFiles/NightlyBuild.dir/build
+.PHONY : NightlyBuild/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalBuild
+
+# Build rule for target.
+ExperimentalBuild: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalBuild
+.PHONY : ExperimentalBuild
+
+# fast build rule for target.
+ExperimentalBuild/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalBuild.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalBuild.dir/build
+.PHONY : ExperimentalBuild/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalUpdate
+
+# Build rule for target.
+ExperimentalUpdate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalUpdate
+.PHONY : ExperimentalUpdate
+
+# fast build rule for target.
+ExperimentalUpdate/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ExperimentalUpdate.dir/build.make ../externals/yaml-build/CMakeFiles/ExperimentalUpdate.dir/build
+.PHONY : ExperimentalUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousStart
+
+# Build rule for target.
+ContinuousStart: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousStart
+.PHONY : ContinuousStart
+
+# fast build rule for target.
+ContinuousStart/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousStart.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousStart.dir/build
+.PHONY : ContinuousStart/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousMemCheck
+
+# Build rule for target.
+ContinuousMemCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousMemCheck
+.PHONY : ContinuousMemCheck
+
+# fast build rule for target.
+ContinuousMemCheck/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousMemCheck.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousMemCheck.dir/build
+.PHONY : ContinuousMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousTest
+
+# Build rule for target.
+ContinuousTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousTest
+.PHONY : ContinuousTest
+
+# fast build rule for target.
+ContinuousTest/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousTest.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousTest.dir/build
+.PHONY : ContinuousTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousSubmit
+
+# Build rule for target.
+ContinuousSubmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousSubmit
+.PHONY : ContinuousSubmit
+
+# fast build rule for target.
+ContinuousSubmit/fast:
+	$(MAKE) -f ../externals/yaml-build/CMakeFiles/ContinuousSubmit.dir/build.make ../externals/yaml-build/CMakeFiles/ContinuousSubmit.dir/build
+.PHONY : ContinuousSubmit/fast
 
 #=============================================================================
 # Target rules for targets named yaml-cpp
@@ -1210,8 +1574,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... flightgym"
+	@echo "... sgm_gpu"
 	@echo "... avoidlib"
-	@echo "... uninstall"
+	@echo "... NightlyMemCheck"
+	@echo "... NightlyTest"
+	@echo "... ContinuousConfigure"
+	@echo "... ContinuousBuild"
+	@echo "... NightlyConfigure"
+	@echo "... NightlyMemoryCheck"
+	@echo "... ExperimentalTest"
+	@echo "... ContinuousUpdate"
+	@echo "... NightlyUpdate"
+	@echo "... ExperimentalMemCheck"
+	@echo "... ExperimentalSubmit"
+	@echo "... Experimental"
+	@echo "... ContinuousCoverage"
+	@echo "... ExperimentalConfigure"
+	@echo "... Continuous"
+	@echo "... Nightly"
+	@echo "... NightlySubmit"
+	@echo "... NightlyStart"
+	@echo "... ExperimentalCoverage"
+	@echo "... NightlyCoverage"
+	@echo "... ExperimentalStart"
+	@echo "... NightlyBuild"
+	@echo "... ExperimentalBuild"
+	@echo "... ExperimentalUpdate"
+	@echo "... ContinuousStart"
+	@echo "... ContinuousMemCheck"
+	@echo "... ContinuousTest"
+	@echo "... ContinuousSubmit"
 	@echo "... yaml-cpp"
 	@echo "... yaml-cpp-read"
 	@echo "... yaml-cpp-parse"
@@ -1338,7 +1730,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /home/hyyu/AvoidBench/src/avoidbench/avoidlib/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/hyyu/new/mavrl/src/avoidbench/avoidlib/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
