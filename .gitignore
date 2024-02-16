@@ -7,6 +7,7 @@ src/avoidbench/avoidlib/.vscode/
 src/avoidbench/avoidlib/externals/
 src/avoidbench/avoid_manage/externals/
 src/mavrl/
+src/agilicious/agilib/externals/
 build/
 devel/
 logs/

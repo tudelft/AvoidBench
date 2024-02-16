@@ -1,0 +1,4 @@
+use_indi:                     true
+
+filter_sampling_frequency:    300   # filter frequency, same as control frequency (Hz)s
+filter_cutoff_frequency:      12    # inner loop filter cut-off frequency (Hz)

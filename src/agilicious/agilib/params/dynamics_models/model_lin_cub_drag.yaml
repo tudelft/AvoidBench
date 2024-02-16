@@ -1,0 +1,3 @@
+lin_drag_coeff: [ 0.26,  0.28, 0.42 ]
+cub_drag_coeff: [ 0.0, 0.0, 0.0 ]
+induced_lift_coeff: 0.01

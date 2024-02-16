@@ -1,0 +1,5 @@
+port: /dev/ttyTHS2
+timeout: 0.1
+
+thrust_map:         thrust_map.csv                    # filename of thrust map
+omega_max:          [1022.0, 1022.0, 524.0]           # [degree/s]

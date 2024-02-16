@@ -1,0 +1,26 @@
+enable_timing:                          true
+use_imu:                                false
+update_on_get:                          true
+max_update_wait_time:                   0.005
+jump_pos_threshold:                     0.5
+jump_att_threshold:                     0.7
+R_pos:                                  1.0e-4
+R_att:                                  1.0e-4
+R_acc:                                  1.0e-3
+R_omega:                                1.0e-4
+Q_pos:                                  1.0e-3
+Q_att:                                  1.0e-3
+Q_vel:                                  1.0e+1
+Q_ome:                                  1.0e+3
+Q_acc:                                  1.0e+3
+Q_bome:                                 1.0e-12
+Q_bacc:                                 1.0e-12
+Q_init_pos:                             1.0e-4
+Q_init_att:                             1.0e-2
+Q_init_vel:                             1.0e+3
+Q_init_ome:                             1.0e+3
+Q_init_acc:                             1.0e+4
+Q_init_tau:                             1.0e+4
+Q_init_bome:                            1.0e-12
+Q_init_bacc:                            1.0e-12
+

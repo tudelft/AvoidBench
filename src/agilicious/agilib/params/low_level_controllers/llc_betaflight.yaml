@@ -1,0 +1,21 @@
+PID:
+  kp_roll: 40.0
+  ki_roll: 80.0
+  kd_roll: 20.0
+  kp_pitch: 40.0
+  ki_pitch: 80.0
+  kd_pitch: 20.0
+  kp_yaw: 30.0
+  ki_yaw: 60.0
+  kd_yaw: 0.0
+
+Throttle:
+  min_throttle_pwm: 1070
+  max_throttle_pwm: 2000
+  dshot_offset: 0.055
+
+Filter:
+  gyro_lowpass_freq: 250.0
+  dterm_lowpass_freq: 170.0
+
+thrust_map: "thrust_map.csv"
