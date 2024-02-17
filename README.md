@@ -36,7 +36,7 @@ git clone https://github.com/tudelft/AvoidBench.git
 sudo apt update
 sudo apt install libzmqpp-dev libopencv-dev unzip python3-catkin-tools
 sudo apt install libgoogle-glog-dev protobuf-compiler ros-noetic-octomap-msgs ros-noetic-octomap-ros python3-vcstool
-cd Avoidbench
+cd AvoidBench
 echo "export AVOIDBENCH_PATH=path_to_this_project/AvoidBench/src/avoidbench" >> ~/.bashrc
 catkin build
 ```
