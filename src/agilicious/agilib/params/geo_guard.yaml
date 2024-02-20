@@ -1,0 +1,14 @@
+drag_compensation:            false
+
+kpacc:                        [10.0,  10.0, 20.0]
+kdacc:                        [ 4.0,   4.0,  6.0]
+
+kpatt_z:                      2
+kpatt_xy:                     10
+kprate:                       [0.0, 0.0, 0.0]
+
+p_err_max:                    [0.6, 0.6, 0.3]
+v_err_max:                    [1.0, 1.0, 1.0]
+
+filter_sampling_frequency:     300   # filter frequency, same as control frequency (Hz)
+filter_cutoff_frequency:       6    # outer loop filter cut-off frequency (Hz)

@@ -253,21 +253,15 @@ void AvoidbenchBridge::getPointCloud(const std::string curr_data_dir,
   finish_pc_save = true;
 }
 
-bool AvoidbenchBridge::checkCollisionState(const std::vector<float> point, const bool if_start)
+bool AvoidbenchBridge::checkCollisionState(std::vector<float>* const point, const bool &if_start)
 {
   finish_check = false; //"finish_check" just used for python side because of the multi thread
   CollisionCheckMessage_t collision_check_msg;
+  collision_check_msg.checked_point = *point;
   collision_check_msg.if_start_point = if_start;
   if(if_start)
-  {
     collision_check_msg.drone_width = 1.0;
-    collision_check_msg.checked_point[0] = point[0];
-    collision_check_msg.checked_point[1] = point[1];
-    collision_check_msg.checked_point[2] = point[2];
-  }
-  else collision_check_msg.checked_point = point;
-
-  bool is_collision = unity_bridge_ptr_->checkCollisionState(collision_check_msg);
+  bool is_collision = unity_bridge_ptr_->checkCollisionState(collision_check_msg, point);
   finish_check = true;
   return is_collision;
 }

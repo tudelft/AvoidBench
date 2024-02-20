@@ -21,7 +21,7 @@ bool checking_result;
 
 void checkPointThread(AvoidbenchBridge& bridge, std::vector<float> pt, bool if_start)
 {
-  checking_result = bridge.checkCollisionState(pt, if_start);
+  checking_result = bridge.checkCollisionState(&pt, if_start);
   new_point = pt;
 }
 

@@ -1,0 +1,41 @@
+unity:
+  unity_render: true
+  spawn_trees: true
+  spawn_objects: true
+  env_idx: 0 # 0 Industry, 1 WareHouse, 3 forest in other standalone
+
+  bounding_box: [20.0, 30.0] # spawn objects within this bounding box
+  bounding_box_origin: [-10.0, 0.8] # relative to the quadrotor start position
+  min_object_scale: [0.5, 0.5, 2.6]   # scale of objects in meters, will sample uniformly between bounds
+  max_object_scale: [1.0, 1.0, 3.8]   # scale of objects in meters, will sample uniformly between bounds
+  basic_size: [1.0, 1.0, 2]
+  if_get_pointcloud: true
+  range: [20, 30, 4]
+  origin: [0.0, 15.0, 2.0]
+  res: 0.10
+  save_data_mode: false
+  
+camera:
+  fov: 91.0 # horizontal FOV in degrees
+  width: 640
+  height: 480
+  baseline: 0.12
+  pitch_angle_deg: 0.0 # camera pitch angle in degrees
+  perform_sgm: true
+  
+drone:
+  length: 0.5
+  width: 0.5
+  
+flight_number: 30
+mission:
+  seed: 32
+  trials: 1
+  start_area: [16, 1.6]
+  start_origin: [0, -1.8]
+  radius_area: 3.0
+  radius_origin: 1.5
+  end_area: [16, 1.6]
+  end_origin: [0, 28]
+  rollout: 120
+  pc_file_name: pointcloud-unity

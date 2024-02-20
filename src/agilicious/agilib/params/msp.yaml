@@ -1,0 +1,4 @@
+port: /dev/ttyTHS2
+timeout: 0.1
+
+thrust_map:         thrust_map_msp.csv                    # filename of thrust map

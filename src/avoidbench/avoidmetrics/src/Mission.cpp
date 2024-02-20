@@ -55,11 +55,11 @@ namespace avoidmetrics {
   void Mission::CollisionCount()
   {
     collision_number++;
-    if(collision_number>2)
-    {
-      finished = false;
-      stop_flag = true;
-    }
+    // if(collision_number>2)
+    // {
+    //   finished = false;
+    //   stop_flag = true;
+    // }
   }
 
   void Mission::reset(const avoidlib::mission_parameter &m_param)

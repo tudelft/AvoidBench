@@ -18,6 +18,7 @@
 #include "avoidlib/objects/quadrotor.hpp"
 #include "avoidlib/vision_envs/vision_env_base.h"
 #include "avoidlib/sensors/rgb_camera.hpp"
+#include "sgm_gpu/sgm_gpu.h"
 
 namespace avoidlib {
 namespace avoidenv {
@@ -25,7 +26,7 @@ namespace avoidenv {
 enum Avoid : int {
   kNState = 14,
   kObs = 0,
-  kNObs = 6,
+  kNObs = 7,
   kNLatent = 32,
   kNSeq = 1,
   kAct = 0,
@@ -49,11 +50,12 @@ class AvoidVisionEnv final : public VisionEnvBase {
 
   // - public set functions
   bool loadParam(const YAML::Node &cfg);
+  bool resetRewCoeff(const YAML::Node &cfg);
   // - public get functions
   bool getObs(Ref<Vector<>> obs) override;
   bool getImage(Ref<ImgVector<>> img, const bool rgb = true) override;
   bool getDepthImage(Ref<DepthImgVector<>> img) override;
-
+  Ref<DepthImgVector<>> computeDepthImage(const cv::Mat& left_frame, const cv::Mat& right_frame);
   // get states
   bool getQuadAct(Ref<Vector<>> act) const;
   bool getQuadState(Ref<Vector<>> state) const;
@@ -69,6 +71,8 @@ class AvoidVisionEnv final : public VisionEnvBase {
   inline std::vector<std::string> getRewardNames() {return reward_names_;}
   std::unordered_map<std::string, float> extra_info_;
 
+  void setTraversability(double map_traversability) {map_traversability_ = map_traversability;}
+
  private:
   void init();
   int env_id_;
@@ -76,15 +80,23 @@ class AvoidVisionEnv final : public VisionEnvBase {
   bool configCamera(const YAML::Node &cfg, const std::shared_ptr<RGBCamera>);
   Logger logger_{"QaudrotorEnv"};
   bool LineCollisionCheck(Vector<3> pt1, Vector<3> pt2);
+  bool body2world(Ref<Vector<>> body, Ref<Vector<>> world);
 
   std::shared_ptr<Quadrotor> quad_ptr_;
+  std::shared_ptr<sgm_gpu::SgmGpu> sgm_;
   QuadState quad_state_, pre_quad_state_;
   Vector<3> goal_point_;
-  Vector<3> direction_, pre_direction_;
+  // Vector<3> direction_, pre_direction_;
+  double log_distance_, pre_log_distance_;
+  double horizon_vel_, pre_horizon_vel_;
+  double theta_, pre_theta_;
+  double horizon_vel_dire_, pre_horizon_vel_dire_;
+  double yaw;
   // Define reward for training
-  double colli_coeff_, risk_coeff_, goal_coeff_, input_coeff_, lin_vel_coeff_;
+  double colli_coeff_, distance_coeff_, vel_coeff_, vert_coeff_, angle_vel_coeff_, angle_coeff_, input_coeff_, yaw_coeff_;
   bool is_training;
   bool collision_happened;
+  bool reset_if_collide_;
   // observations and actions (for RL)
   Vector<avoidenv::kNObs> pi_obs_;
   Vector<avoidenv::kNAct> pi_act_;
@@ -98,9 +110,10 @@ class AvoidVisionEnv final : public VisionEnvBase {
   Vector<avoidenv::kNObs> obs_std_ = Vector<avoidenv::kNObs>::Ones();
 
   // robot vision
-  std::shared_ptr<RGBCamera> rgb_camera_;
-  cv::Mat rgb_img_;
+  std::shared_ptr<RGBCamera> rgb_camera_, right_rgb_camera_;
+  cv::Mat rgb_img_, right_rgb_img_;
   cv::Mat depth_img_;
+  bool use_stereo_vision_;
 
   // auxiliary variables
   bool use_camera_{true};
@@ -110,5 +123,18 @@ class AvoidVisionEnv final : public VisionEnvBase {
 
   // point clouds map
   std::shared_ptr<Environment> env_ptr_;
+  double map_traversability_;
+
+  // unity
+  int scene_id_;
+  std::vector<Scalar> start_area_, end_area_, start_origin_, end_origin_;
+
+  // seed
+  int seed_;
+
+  // exchange start and goal points
+  bool reverse {false};
+  Vector<3> last_goal_point_, last_start_point_;
+  double last_yaw_;
 };
 }

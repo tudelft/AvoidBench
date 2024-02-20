@@ -116,6 +116,12 @@ bool Quadrotor::reset() {
 bool Quadrotor::reset(const QuadState &state) {
   if (!state.valid()) return false;
   state_ = state;
+  Eigen::Matrix3d rot = state.q().toRotationMatrix()*Eigen::AngleAxisd(-0.5 * M_PI, Eigen::Vector3d::UnitZ());
+  Eigen::Quaterniond rot_q(rot);
+  state_.x[QS::ATTW] = rot_q.w();
+  state_.x[QS::ATTX] = rot_q.x();
+  state_.x[QS::ATTY] = rot_q.y();
+  state_.x[QS::ATTZ] = rot_q.z();  
   motor_omega_.setZero();
   motor_thrusts_.setZero();
   return true;
@@ -124,6 +130,12 @@ bool Quadrotor::reset(const QuadState &state) {
 bool Quadrotor::reset(const QuadState &state, const Vector<4> motor_omega) {
   if (!state.valid()) return false;
   state_ = state;
+  Eigen::Matrix3d rot = state.q().toRotationMatrix()*Eigen::AngleAxisd(-0.5 * M_PI, Eigen::Vector3d::UnitZ());
+  Eigen::Quaterniond rot_q(rot);
+  state_.x[QS::ATTW] = rot_q.w();
+  state_.x[QS::ATTX] = rot_q.x();
+  state_.x[QS::ATTY] = rot_q.y();
+  state_.x[QS::ATTZ] = rot_q.z();  
   motor_omega_ = motor_omega;
   // motor_thrusts_.setZero();
   return true;
@@ -164,6 +176,12 @@ bool Quadrotor::setCommand(const Command &cmd) {
 bool Quadrotor::setState(const QuadState &state) {
   if (!state.valid()) return false;
   state_ = state;
+  Eigen::Matrix3d rot = state.q().toRotationMatrix()*Eigen::AngleAxisd(-0.5 * M_PI, Eigen::Vector3d::UnitZ());
+  Eigen::Quaterniond rot_q(rot);
+  state_.x[QS::ATTW] = rot_q.w();
+  state_.x[QS::ATTX] = rot_q.x();
+  state_.x[QS::ATTY] = rot_q.y();
+  state_.x[QS::ATTZ] = rot_q.z();  
   return true;
 }
 

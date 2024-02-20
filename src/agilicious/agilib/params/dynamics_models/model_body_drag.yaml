@@ -1,0 +1,6 @@
+horizontal_drag_coefficient: 1.04
+vertical_drag_coefficient: 1.04
+frontarea_x: 1.5e-2
+frontarea_y: 1.5e-2
+frontarea_z: 3.0e-2
+air_density: 1.204

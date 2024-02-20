@@ -1,0 +1,17 @@
+update_on_get:                          true
+jump_pos_threshold:                     0.5
+jump_att_threshold:                     50.0
+R_pos:                                  1.0e-5
+R_att:                                  1.0e-5
+R_acc:                                  1.0e+2
+R_omega:                                1.0e-4
+Q_pos:                                  1.0e-5
+Q_att:                                  1.0e+1
+Q_vel:                                  1.0e+1
+Q_bome:                                 1.0e-1
+Q_bacc:                                 1.0e-1
+Q_init_pos:                             1.0e-6
+Q_init_att:                             1.0e-4
+Q_init_vel:                             1.0e+1
+Q_init_bome:                            1.0e-0
+Q_init_bacc:                            1.0e-0

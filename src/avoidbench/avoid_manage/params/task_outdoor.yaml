@@ -29,9 +29,9 @@ drone:
   
 flight_number: 30
 mission:
-  trials: 28
+  trials: 2
   # seed: 8 8 32 64 256 500
-  seed: 128 #20 32 64 100 128 200 50
+  seed: 32 #20 32 128 200 50
   start_area: [40, 6.0]
   start_origin: [0, 3.0]
   radius_area: 3.5

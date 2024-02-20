@@ -1,0 +1,22 @@
+use_imu:      true        # use IMU for propagation from last state estimate
+
+image_dt:     0.010       # dt between stored states, mimicks image rate [s]
+vio_dt:       0.005       # time between VIO updates [s]
+# vio_latency:  0.0       # latency of VIO algorithm, [s]
+
+rise:         0.7         # asympthotic convergence of a real time algorthm
+                          # 0.0 or left out to disable [1]
+
+# vio_pos_static_drift:     1.0e-4    # std of positional drift per time [m^2/s^2]
+# vio_pos_dynamic_drift:    1.0e-4    # std of drift per time and speed [m^2/s^2/(m/s)]
+# vio_pose_noise:           1.0e-2    # std of position noise [m^2]
+# vio_vel_noise:            1.0e-2    # std of velocity noise [(m/s)^2]
+# vio_att_noise:            1.0e-3    # std of attitude noise
+# vio_omega_bias_noise:     0.01      # std of noise on known gyro bias
+# vio_acc_bias_noise:       0.01      # std of noise on known acc bias
+
+imu_dt:                   0.002       # max imu rate in dt [s]
+imu_omega_noise:          0.1         # std of gyro noise [(rad/s)^2]
+imu_acc_noise:            0.2         # std of acc noise [(m/s^2)^2]
+imu_omega_bias:           1.0e-2      # std of gyro random walk [(rad/s)^2/s^2]
+imu_acc_bias:             1.0e-2      # std of acc random walk [(m/s^2)^2/s^2]

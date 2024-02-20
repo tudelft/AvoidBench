@@ -42,7 +42,6 @@ class AvoidManage:
         self.iter_time = []
         self.mission_id = 0
         self.trial_id = 0
-        self.maps_tried_id = 0
         self.cv_bridge = CvBridge()
         self.loadParams()
         self.p_m = mission_parameter()
@@ -281,7 +280,6 @@ class AvoidManage:
             self.force_hover_pub_.publish(hover)
             self.mission.cal_time = self.iter_time
             self.iter_time = []
-            self.mission.trial_id = self.trial_id
             self.metrics.setMissions(self.mission)
             rospy.sleep(1.0)
             self.trial_id = self.trial_id + 1
@@ -321,6 +319,7 @@ class AvoidManage:
             random.seed(self.seed)
             self.get_seed = True
         rand = random.random()
+        print("rand: ", rand)
 
         if self.env_id == 3:
             area_id = random.randint(0, 3)
@@ -361,11 +360,6 @@ class AvoidManage:
             self.if_update_map = True
             return
         print("update env")
-        # make sure every mission has the same complexity map when benchmark different algos
-        self.maps_tried_id = self.maps_tried_id+1
-        random.seed(self.seed * self.maps_tried_id)
-        rand = random.random()
-
         self.p_m.trials = self.trials_
         self.p_m.m_radius = self.radius_origin + self.radius_area*rand
         self.p_m.m_seed = random.randint(0, 200)

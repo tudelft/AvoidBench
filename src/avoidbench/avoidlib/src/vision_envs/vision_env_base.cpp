@@ -27,6 +27,8 @@ bool VisionEnvBase::setPointClouds(const std::shared_ptr<Environment> env_ptr) {
   return false;
 }
 
+void VisionEnvBase::setTraversability(double traversability) {}
+
 void VisionEnvBase::setQuadFromPtr(const std::shared_ptr<UnityBridge> bridge) {}
 
 void VisionEnvBase::close() {}

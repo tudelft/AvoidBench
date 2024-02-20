@@ -48,7 +48,7 @@ class UnityBridge {
   bool getRender(const FrameID frame_id, const bool SpawnNewObj = false);
   bool handleOutput(const FrameID sent_frame_id);
   bool getPointCloud(PointCloudMessage_t &pointcloud_msg);
-  bool checkCollisionState(const CollisionCheckMessage_t &collision_check_msg);
+  bool checkCollisionState(const CollisionCheckMessage_t &collision_check_msg, std::vector<float>* const new_pt);
   // public set functions
   bool setScene(const SceneID &scene_id);
 

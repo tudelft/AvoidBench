@@ -14,9 +14,9 @@ namespace avoidmetrics
 struct Metrics_msg {
 double traversability;
 double relative_gap_size;
-std::vector<double> path_excess_factor;
+std::vector<double> optimality_factor;
 std::vector<double> average_goal_velocity;
-std::vector<double> relative_end_distance;
+std::vector<double> mission_progress;
 std::vector<double> processing_time;
 std::vector<int> collision_number;
 std::vector<double> energy_cost;
@@ -50,7 +50,6 @@ private:
                               const std::shared_ptr<Mission> mission, double &trav_dis);
   double CalAverageGoalVelocity(const double &dis, const double &t_m);
   double CalMissionProgress(const std::shared_ptr<Mission> mission);
-  double CalRelativeEndDistance(const std::shared_ptr<Mission> mission);
   double CalRelativeGapSize(const double &width, const double &radius);
   double CalProcessingTime(const std::vector<float> &time);
   double CalEnergyCost(const double &dis, const std::vector<quadrotor_common::QuadStateEstimate> traj);

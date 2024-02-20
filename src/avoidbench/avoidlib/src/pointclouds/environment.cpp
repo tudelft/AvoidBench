@@ -24,26 +24,26 @@ namespace avoidlib
       tinyply::PlyFile file;
       file.parse_header(*file_stream);
 
-      std::cout << "\t[ply_header] Type: "
-                << (file.is_binary_file() ? "binary" : "ascii") << std::endl;
-      for (const auto &c : file.get_comments())
-        std::cout << "\t[ply_header] Comment: " << c << std::endl;
-      for (const auto &c : file.get_info())
-        std::cout << "\t[ply_header] Info: " << c << std::endl;
+      // std::cout << "\t[ply_header] Type: "
+      //           << (file.is_binary_file() ? "binary" : "ascii") << std::endl;
+      // for (const auto &c : file.get_comments())
+      //   std::cout << "\t[ply_header] Comment: " << c << std::endl;
+      // for (const auto &c : file.get_info())
+      //   std::cout << "\t[ply_header] Info: " << c << std::endl;
 
-      for (const auto &e : file.get_elements()) {
-        std::cout << "\t[ply_header] element: " << e.name << " (" << e.size << ")"
-                  << std::endl;
-        for (const auto &p : e.properties) {
-          std::cout << "\t[ply_header] \tproperty: " << p.name
-                    << " (type=" << tinyply::PropertyTable[p.propertyType].str
-                    << ")";
-          if (p.isList)
-            std::cout << " (list_type=" << tinyply::PropertyTable[p.listType].str
-                      << ")";
-          std::cout << std::endl;
-        }
-      }
+      // for (const auto &e : file.get_elements()) {
+      //   std::cout << "\t[ply_header] element: " << e.name << " (" << e.size << ")"
+      //             << std::endl;
+      //   for (const auto &p : e.properties) {
+      //     std::cout << "\t[ply_header] \tproperty: " << p.name
+      //               << " (type=" << tinyply::PropertyTable[p.propertyType].str
+      //               << ")";
+      //     if (p.isList)
+      //       std::cout << " (list_type=" << tinyply::PropertyTable[p.listType].str
+      //                 << ")";
+      //     std::cout << std::endl;
+      //   }
+      // }
 
       // Because most people have their own mesh types, tinyply treats parsed data
       // as structured/typed byte buffers. See examples below on how to marry your
@@ -67,7 +67,6 @@ namespace avoidlib
         std::cout << "\tRead " << vertices->count << " total vertices "
                   << std::endl;
 
-
       const size_t numVerticesBytes = vertices->buffer.size_bytes();
 
 
@@ -89,7 +88,6 @@ namespace avoidlib
         }
         idx += 1;
       }
-
       kd_tree_.SetMatrixData(points_);
 
     } catch (const std::exception &e) {
@@ -183,12 +181,12 @@ namespace avoidlib
     kd_tree_.SearchRadius(query_point, bounding.resolution_, indices, distances_squared);
     if (indices.size() != 0) {
       *free_dist = 0;
-      for(int i=0; i<direct_num; i++)
-      {
-        std::string ss = std::to_string(0) + "\n";
-        location_out << ss;
-      }
-      location_out.close();
+      // for(int i=0; i<direct_num; i++)
+      // {
+      //   std::string ss = std::to_string(0) + "\n";
+      //   location_out << ss;
+      // }
+      // location_out.close();
       return;
     }
     double aver_dist=0;
@@ -215,10 +213,10 @@ namespace avoidlib
       }
       double dist = (ray_point - query_point).norm();
       aver_dist = aver_dist + dist;
-      std::string ss = std::to_string(dist) + "\n";
-      location_out << ss;
+      // std::string ss = std::to_string(dist) + "\n";
+      // location_out << ss;
     }
-    location_out.close();
+    // location_out.close();
     // exit(1);
     aver_dist = aver_dist / direct_num;
     *free_dist = aver_dist;
@@ -257,11 +255,16 @@ namespace avoidlib
     return pos;
   }
 
-  bool Environment::checkOccupied(const Eigen::Vector3d &pos)
+  bool Environment::checkOccupied(const Eigen::Vector3d &pos, const double radius)
   {
     std::vector<int> indices;
     std::vector<double> distances_squared;
-    kd_tree_.SearchRadius(pos, drone_r, indices, distances_squared);
+    if (radius == 0.0) {
+      kd_tree_.SearchRadius(pos, drone_r, indices, distances_squared);
+    }
+    else {
+      kd_tree_.SearchRadius(pos, radius, indices, distances_squared);
+    }
     if (indices.size() != 0) {
       return true;
     }

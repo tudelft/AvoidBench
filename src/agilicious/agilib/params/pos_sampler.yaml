@@ -1,0 +1,3 @@
+search_dt:   0.01
+search_tol:  0.001
+axis_weights: [ 1.0, 1.0, 1.0 ]

@@ -1,0 +1,94 @@
+unity:
+  unity_render: true
+  spawn_trees: true
+  spawn_objects: false
+  env_idx: 3 # 0 Industry, 1 WareHouse, 3 forest in other standalone
+
+  bounding_box: [140.0, 160.0] # spawn objects within this bounding box
+  bounding_box_origin: [-10.0, 0.8] # relative to the quadrotor start position
+  min_object_scale: [0.5, 0.5, 1.3]   # scale of objects in meters, will sample uniformly between bounds
+  max_object_scale: [1.0, 1.0, 1.8]   # scale of objects in meters, will sample uniformly between bounds
+  basic_size: [1.0, 1.0, 2]
+  if_get_pointcloud: true
+  range: [20, 40, 6]
+  origin: [0.0, 20.0, 3.0]
+  res: 0.15
+  save_data_mode: false
+  
+camera:
+  fov: 91.0 # horizontal FOV in degrees
+  width: 640
+  height: 480
+  baseline: 0.12
+  pitch_angle_deg: 0.0 # camera pitch angle in degrees
+  perform_sgm: true
+  
+drone:
+  length: 0.5
+  width: 0.5
+  
+flight_number: 8
+mission0:
+  start_point: [0, 0, 1.2]
+  end_point: [-4.8, 26, 2.5]
+  radius: 4.5
+  opacity: 0.6
+  seed: 6
+  pc_file_name: env_pc00
+  
+mission1:
+  start_point: [0, 0, 1.2]
+  end_point: [3.0, 28.0, 2.0]
+  radius: 5.0
+  opacity: 0.6
+  seed: 30
+  pc_file_name: env_pc01
+  
+mission2:
+  start_point: [0, 0, 1.2]
+  end_point: [5.0, 25.0, 2.5]
+  radius: 6.0
+  opacity: 0.6
+  seed: 23
+  pc_file_name: env_pc02
+  
+mission3:
+  start_point: [0, 0, 1.2]
+  end_point: [-5.0, 28.0, 2.0]
+  radius: 5.5
+  opacity: 0.6
+  seed: 46
+  pc_file_name: env_pc03
+  
+mission4:
+  start_point: [0, 0, 1.2]
+  end_point: [-8.0, 25.0, 2.5]
+  radius: 5.0
+  opacity: 0.6
+  seed: 12
+  pc_file_name: env_pc04
+  
+mission5:
+  start_point: [0, 0, 1.2]
+  end_point: [7.0, 28.0, 2.0]
+  radius: 4.5
+  opacity: 0.6
+  seed: 25
+  pc_file_name: env_pc05
+  
+    
+mission6:
+  start_point: [0, 0, 1.2]
+  end_point: [-8.0, 25.0, 2.5]
+  radius: 4.0
+  opacity: 0.6
+  seed: 16
+  pc_file_name: env_pc06
+  
+mission7:
+  start_point: [0, 0, 1.2]
+  end_point: [7.0, 28.0, 2.0]
+  radius: 4.5
+  opacity: 0.6
+  seed: 34
+  pc_file_name: env_pc07

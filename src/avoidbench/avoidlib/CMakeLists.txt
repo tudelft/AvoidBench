@@ -49,6 +49,7 @@ set(CUDA_NVCC_FLAGS
         -gencode=arch=compute_61,code=sm_61
         -gencode=arch=compute_62,code=sm_62
         -gencode=arch=compute_75,code=sm_75
+        -gencode=arch=compute_86,code=sm_86
         )
 
 message("CUDA Libs: ${CUDA_LIBRARIES}")
@@ -171,6 +172,14 @@ else()
   set(LIBRARY_NAME ${PROJECT_NAME})
 endif()
 
+  
+cuda_add_library(sgm_gpu
+      src/sgm_gpu/sgm_gpu.cu
+      src/sgm_gpu/costs.cu
+      src/sgm_gpu/hamming_cost.cu
+      src/sgm_gpu/left_right_consistency.cu
+      src/sgm_gpu/median_filter.cu)
+
 if(DEFINED CATKIN_DEVEL_PREFIX)
   find_package(catkin_simple REQUIRED)     
   catkin_package(
@@ -178,13 +187,7 @@ if(DEFINED CATKIN_DEVEL_PREFIX)
           CATKIN_DEPENDS
   )
   catkin_simple(ALL_DEPS_REQUIRED)
-  
-  cuda_add_library(sgm_gpu
-        src/sgm_gpu/sgm_gpu.cu
-        src/sgm_gpu/costs.cu
-        src/sgm_gpu/hamming_cost.cu
-        src/sgm_gpu/left_right_consistency.cu
-        src/sgm_gpu/median_filter.cu)
+
 
   cs_add_library(avoidbench_bridge ${AVOIDBRIDGE_SOURCES})
   target_link_libraries(avoidbench_bridge
@@ -240,7 +243,7 @@ else()
         ${PROJECT_SOURCE_DIR}/include)  
     endif()
     message("${LIBRARY_NAME}")
-    target_link_libraries(flightgym PRIVATE ${LIBRARY_NAME})
+    target_link_libraries(flightgym PRIVATE sgm_gpu ${LIBRARY_NAME})
   endif()
   
 endif()

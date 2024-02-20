@@ -5,8 +5,8 @@ namespace avoidlib {
 // constructor
 UnityBridge::UnityBridge()
   : client_address_("tcp://*"),
-    pub_port_("10253"),
-    sub_port_("10254"),
+    pub_port_("10255"),
+    sub_port_("10256"),
     num_frames_(0),
     last_downloaded_utime_(0),
     last_download_debug_utime_(0),
@@ -233,7 +233,6 @@ bool UnityBridge::handleOutput(const FrameID sent_frame_id) {
     colli_state_msg = json::parse(json_colli_msg);
     return false;
   }
-
   // unpack message metadata
   std::string json_sub_msg = msg.get(0);
   std::string json_pc_msg = msg.get(1);
@@ -273,8 +272,6 @@ bool UnityBridge::handleOutput(const FrameID sent_frame_id) {
           // left.
           new_image = new_image * (100.f);
           cv::flip(new_image, new_image, 0);
-
-
           unity_quadrotors_[idx]
             ->getCameras()[cam.output_index]
             ->feedImageQueue(layer_idx, new_image);
@@ -331,18 +328,16 @@ bool UnityBridge::getPointCloud(PointCloudMessage_t& pointcloud_msg) {
   ss = 0;
   pc_state_msg.get_pc_msg = false;
   float wait_time = 0.0f;
-  std::cout<<"pc_state_msg.save_pc_success: "<<pc_state_msg.save_pc_success<<std::endl;
   while(!pc_state_msg.save_pc_success)
   {
     ss++;
-    usleep(0.1 * 1e6);
+    usleep(0.2 * 1e6);
   }
   pc_state_msg.save_pc_success = false;
-  std::cout<<"sava point cloud success..........................."<<std::endl;
   return true;
 }
 
-bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_check_msg)
+bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_check_msg, std::vector<float>* const new_pt)
 {
   int ss = 0;
   while(!colli_state_msg.get_msg)
@@ -362,7 +357,10 @@ bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_c
   if(ss==20) return true;
   colli_state_msg.get_msg = false;
   if(colli_state_msg.if_collision)
+  {
+    *new_pt = colli_state_msg.new_point;
     return true;
+  }
   return false;
 }
 

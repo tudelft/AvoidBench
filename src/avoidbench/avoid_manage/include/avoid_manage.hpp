@@ -116,7 +116,6 @@ class AvoidManage {
   nav_msgs::Odometry drone_pose;
   int mission_id;
   int trial_id;
-  int maps_tried_id;
   std::string cfg_;
   quadrotor_common::QuadStateEstimate received_state_est_;
   std::vector<float> iter_times;
