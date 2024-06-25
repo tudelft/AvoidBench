@@ -91,7 +91,7 @@ Here we show the environments with different comlexity:
 </p>
 
 # 4. Usage
-To use this benchmark, you should download the Unity file first. You can download the Unity [standalone](https://github.com/tudelft/AvoidBench/releases/download/v0.0.2/AvoidBench.zip). **OR** you can just run the following commands to setup:
+To use this benchmark, you should download the Unity file first. You can download the Unity [standalone](https://github.com/tudelft/AvoidBench/releases/download/v0.0.3/AvoidBench.zip). **OR** you can just run the following commands to setup:
 (For docker version, we have already done this, so this step is only for ROS version.)
 
 ``` bash
