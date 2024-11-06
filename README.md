@@ -5,7 +5,7 @@ AvoidBench: A high-fidelity vision-based obstacle avoidance benchmarking suite f
 This work is based on [Flightmare](https://github.com/uzh-rpg/flightmare). In this project, we propose AvoidBench as a benchmarking suite for evaluating the performance of vision-based obstacle avoidance algorithms. We choose Flightmare as the basic backbone of AvoidBench, because it is lighter and can achieve higher simulation speed than Airsim. Based on Flightmare, we have for now built two simulation scenes for benchmarking: a forest environment and an indoor environment. It is easy to change the distribution of obstacles and complexity of map so that researchers can reveal the potential of drones using their algorithms. And we propose a complete set of metrics which contain the flight performance and environment complexity to evaluate the obstacle avoidance algorithms.
 
 <p align="center">
-  <img src="https://github.com/tudelft/AvoidBench/blob/main/src/images/Picture1.gif"/>
+  <img src="[https://github.com/tudelft/AvoidBench/blob/main/src/images/Picture1.gif](https://github.com/tudelft/mavrl/blob/main/imgs/cover_720.gif)"/>
 </p>
 
 <p align="center">
