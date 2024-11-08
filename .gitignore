@@ -14,3 +14,4 @@ logs/
 *.bag
 .catkin_tools/
 .vscode/
+*__pycache__*
