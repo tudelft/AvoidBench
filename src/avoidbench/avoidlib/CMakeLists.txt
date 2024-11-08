@@ -181,7 +181,7 @@ cuda_add_library(sgm_gpu
       src/sgm_gpu/median_filter.cu)
 
 if(DEFINED CATKIN_DEVEL_PREFIX)
-  find_package(catkin_simple REQUIRED)     
+  find_package(catkin_simple REQUIRED)
   catkin_package(
           LIBRARIES
           CATKIN_DEPENDS

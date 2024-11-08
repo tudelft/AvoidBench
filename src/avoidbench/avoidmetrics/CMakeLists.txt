@@ -29,7 +29,7 @@ else ()
 endif ()
 
 include(cmake/yaml.cmake)
-include(cmake/pybind11.cmake)
+find_package(pybind11)
 message(STATUS "Eigen3 include dir: ${EIGEN3_INCLUDE_DIR}")
 
 # Setup Default Build Type as Release
@@ -72,7 +72,7 @@ if(EIGEN3_FOUND)
     ${PROJECT_SOURCE_DIR}/include
     ${EIGEN3_INCLUDE_DIR}
     ${Open3D_INCLUDE_DIRS}
-    yaml-cpp)  
+    yaml-cpp)
 else()
   target_include_directories(Metrics PUBLIC
     # ${PROJECT_SOURCE_DIR}/externals/pybind11-src/include
@@ -107,13 +107,15 @@ pybind11_add_module(avoidmetrics MODULE
 if(EIGEN3_FOUND)
   target_include_directories(avoidmetrics PUBLIC
     # ${PROJECT_SOURCE_DIR}/externals/pybind11-src/include
+    ${PYBIND11_INCLUDE_DIR}
     ${PROJECT_SOURCE_DIR}/include
     ${EIGEN3_INCLUDE_DIR}
     ${Open3D_INCLUDE_DIRS}
-    )  
+    )
 else()
   target_include_directories(avoidmetrics PUBLIC
     # ${PROJECT_SOURCE_DIR}/externals/pybind11-src/include
+    ${PYBIND11_INCLUDE_DIR}
     ${PROJECT_SOURCE_DIR}/externals/eigen/eigen3 #pybind11 use #include <Eigen/Core>, however, flightmare use #include <eigen3/Eigen/Core>
     ${PROJECT_SOURCE_DIR}/include
     ${Open3D_INCLUDE_DIRS}
