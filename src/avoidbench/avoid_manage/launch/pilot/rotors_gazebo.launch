@@ -6,7 +6,7 @@
   <arg name="model" value="$(find rotors_description)/urdf/mav_generic_odometry_sensor.gazebo"/>
     <arg name="world_name" value="$(find avoid_manage)/resources/worlds/simple.world"/>
 
-  <arg name="use_unity_editor" default="true" />
+  <arg name="use_unity_editor" default="false" />
   <arg name="paused" value="false"/>
   <arg name="gui" value="false"/>
   <arg name="use_mpc" default="false"/>
@@ -101,7 +101,9 @@
       <param name="quad_name" value="$(arg quad_name)" />
       <remap from="flight_pilot/state_estimate" to="ground_truth/odometry" />
     </node>
-
+    
+    <node pkg="unity_scene" type="AvoidBench.x86_64" name="avoidbench_render" unless="$(arg use_unity_editor)">
+    </node>
   </group>
 
 </launch>
