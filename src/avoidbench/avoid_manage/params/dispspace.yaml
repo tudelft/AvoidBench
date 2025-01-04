@@ -1,7 +1,0 @@
-camera:
-  baseline: 0.18
-  cx: 320
-  cy: 240
-  fov_deg: 91
-expand:
-  exp_radius: 0.08

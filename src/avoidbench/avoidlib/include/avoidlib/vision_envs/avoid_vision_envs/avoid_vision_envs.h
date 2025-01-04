@@ -50,7 +50,6 @@ class AvoidVisionEnv final : public VisionEnvBase {
 
   // - public set functions
   bool loadParam(const YAML::Node &cfg);
-  bool resetRewCoeff(const YAML::Node &cfg);
   // - public get functions
   bool getObs(Ref<Vector<>> obs) override;
   bool getImage(Ref<ImgVector<>> img, const bool rgb = true) override;
@@ -128,13 +127,5 @@ class AvoidVisionEnv final : public VisionEnvBase {
   // unity
   int scene_id_;
   std::vector<Scalar> start_area_, end_area_, start_origin_, end_origin_;
-
-  // seed
-  int seed_;
-
-  // exchange start and goal points
-  bool reverse {false};
-  Vector<3> last_goal_point_, last_start_point_;
-  double last_yaw_;
 };
 }

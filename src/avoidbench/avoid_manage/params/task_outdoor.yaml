@@ -16,7 +16,7 @@ unity:
   save_data_mode: false
   
 camera:
-  fov: 91.0 # horizontal FOV in degrees
+  fov: 100.0 # horizontal FOV in degrees
   width: 640
   height: 480
   baseline: 0.12
@@ -29,13 +29,13 @@ drone:
   
 flight_number: 30
 mission:
-  trials: 2
+  trials: 30
   # seed: 8 8 32 64 256 500
-  seed: 32 #20 32 128 200 50
+  seed: 100 #24 64 100 128 200 50
   start_area: [40, 6.0]
   start_origin: [0, 3.0]
-  radius_area: 3.5
-  radius_origin: 2.5
+  radius_area: 3.2
+  radius_origin: 2.1
   end_area: [40, 6.0]
   end_origin: [0, 34]
   rollout: 120

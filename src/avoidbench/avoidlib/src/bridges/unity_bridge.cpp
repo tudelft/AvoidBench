@@ -233,6 +233,7 @@ bool UnityBridge::handleOutput(const FrameID sent_frame_id) {
     colli_state_msg = json::parse(json_colli_msg);
     return false;
   }
+
   // unpack message metadata
   std::string json_sub_msg = msg.get(0);
   std::string json_pc_msg = msg.get(1);
@@ -337,7 +338,7 @@ bool UnityBridge::getPointCloud(PointCloudMessage_t& pointcloud_msg) {
   return true;
 }
 
-bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_check_msg, std::vector<float>* const new_pt)
+bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_check_msg)
 {
   int ss = 0;
   while(!colli_state_msg.get_msg)
@@ -357,10 +358,7 @@ bool UnityBridge::checkCollisionState(const CollisionCheckMessage_t &collision_c
   if(ss==20) return true;
   colli_state_msg.get_msg = false;
   if(colli_state_msg.if_collision)
-  {
-    *new_pt = colli_state_msg.new_point;
     return true;
-  }
   return false;
 }
 

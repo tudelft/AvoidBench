@@ -48,9 +48,9 @@ public:
   void setMap(std::shared_ptr<Environment> env_ptr) { env_ptr_ = env_ptr; }
   bool toFindPath(const Eigen::Vector3d startPos, const Eigen::Vector3d endPos);
   std::vector<Eigen::Vector3d> getBestPath();
-
+  void setMissionNumber(const int num) {mission_number = num;}
 private:
-
+    int mission_number;
     std::vector<Eigen::Vector3d> bestPath;
     std::vector<AStarNode> bestNodePath;
     std::shared_ptr<Environment> env_ptr_;

@@ -134,99 +134,53 @@ void AvoidVisionEnv::setQuadFromPtr(const std::shared_ptr<UnityBridge> bridge)
 bool AvoidVisionEnv::reset(Ref<Vector<>> obs) {
   // reset position
   quad_state_.setZero();
+
   Vector<3> euler;
   euler.x() = 0.0;
   euler.y() = 0.0;
   euler.z() = 0.0;
-  if (reverse && !(env_ptr_->checkOccupied(Eigen::Vector3d(last_start_point_(0), last_start_point_(1), last_start_point_(2)+0.5), 1.5))
-              && !(env_ptr_->checkOccupied(Eigen::Vector3d(last_goal_point_(0), last_goal_point_(1), last_goal_point_(2)+0.5), 1.5)))
+  int area_id = std::rand() % 4;
+  do
   {
-    quad_state_.p.x() = last_goal_point_(0);
-    quad_state_.p.y() = last_goal_point_(1);
-    quad_state_.p.z() = last_goal_point_(2);
-    if (last_yaw_ <= 0.0)
-      euler.z() = last_yaw_ + M_PI;
-    else
-      euler.z() = last_yaw_ - M_PI;
-    goal_point_(0) = last_start_point_(0);
-    goal_point_(1) = last_start_point_(1);
-    goal_point_(2) = last_start_point_(2);
-    reverse = false;
-  }
-  else
-  {
-    do
+    if(scene_id_ == 3)
     {
-      int area_id = std::rand() % 3;
-      if(scene_id_ == 3)
+      if(area_id == 0)
       {
-        if(area_id == 0)
-        {
-          quad_state_.p.x() = start_area_[1] - start_area_[0]/2.0 + 
-            (start_area_[0] - 2*start_area_[1]) * std::abs(uniform_dist_(random_gen_));
-          quad_state_.p.y() = start_area_[1] * std::abs(uniform_dist_(random_gen_));
-          quad_state_.p.z() = 3.0;
-          euler.z() = 0.0;
-
-          goal_point_(0) = end_area_[1] - end_area_[0]/2.0 + 
-            (end_area_[0] - 2 * end_area_[1]) * std::abs(uniform_dist_(random_gen_));
-          goal_point_(1) = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_origin_[1];
-          goal_point_(2) = 3.0 + std::abs(uniform_dist_(random_gen_));
-        } else if(area_id == 1)
-        {
-          quad_state_.p.x() = start_area_[1] * std::abs(uniform_dist_(random_gen_)) - 
-                              start_area_[0] / 2.0;
-          quad_state_.p.y() = start_area_[1] + (start_area_[1] + 
-                              (start_area_[0]-2 * start_area_[1])) * std::abs(uniform_dist_(random_gen_));
-          quad_state_.p.z() = 3.0;
-          euler.z() = -M_PI / 2.0;
-
-          goal_point_(0) = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_area_[0] / 2.0;
-          goal_point_(1) = end_area_[1] + (end_area_[0] - 2 * end_area_[1]) * std::abs(uniform_dist_(random_gen_));
-          goal_point_(2) = 3.0 + std::abs(uniform_dist_(random_gen_));
-        } else if(area_id == 2)
-        // {
-        //   quad_state_.p.x() = end_area_[1] - end_area_[0]/2.0 + 
-        //     (end_area_[0] - 2 * end_area_[1]) * std::abs(uniform_dist_(random_gen_));
-        //   quad_state_.p.y() = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_area_[0];
-        //   quad_state_.p.z() = 3.0;
-        //   euler.z() = M_PI;
-
-        //   goal_point_(0) = start_area_[1] - start_area_[0] / 2.0 + 
-        //     (start_area_[0] - 2 * start_area_[1]) * std::abs(uniform_dist_(random_gen_));
-        //   goal_point_(1) = start_area_[1] * std::abs(uniform_dist_(random_gen_));
-        //   goal_point_(2) = 3.0 + std::abs(uniform_dist_(random_gen_));
-        // } else if(area_id == 3)
-        {
-          quad_state_.p.x() = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_area_[0]/2.0;
-          quad_state_.p.y() = (end_area_[1] + (end_area_[0] - 2.0 * end_area_[1])) * std::abs(uniform_dist_(random_gen_));
-          quad_state_.p.z() = 3.0;
-          euler.z() = M_PI / 2.0;
-
-          goal_point_(0) = start_area_[1] * std::abs(uniform_dist_(random_gen_)) - start_area_[0]/2.0;
-          goal_point_(1) = (start_area_[1] + (start_area_[0] - 2.0 * start_area_[1])) * std::abs(uniform_dist_(random_gen_));
-          goal_point_(2) = 3.0 + std::abs(uniform_dist_(random_gen_));
-        }
-      }
-      else if (scene_id_ == 1)
-      {
-        quad_state_.p.x() = - start_area_[0] / 2.0 + start_area_[0] * std::abs(uniform_dist_(random_gen_));
+        quad_state_.p.x() = start_area_[1] - start_area_[0]/2.0 + 
+          (start_area_[0] - 2*start_area_[1]) * std::abs(uniform_dist_(random_gen_));
         quad_state_.p.y() = start_area_[1] * std::abs(uniform_dist_(random_gen_));
-        quad_state_.p.z() = 3.0;
-
-        goal_point_(0) = - end_area_[0] / 2.0 + end_area_[0] * std::abs(uniform_dist_(random_gen_));
-        goal_point_(1) = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_origin_[1];
-        goal_point_(2) = 3.0 + std::abs(uniform_dist_(random_gen_));
+        quad_state_.p.z() = 2.5;
+        euler.z() = 0.0;
+      } else if(area_id == 1)
+      {
+        quad_state_.p.x() = start_area_[1] * std::abs(uniform_dist_(random_gen_)) - 
+                            start_area_[0] / 2.0;
+        quad_state_.p.y() = start_area_[1] + (start_area_[1] + 
+                            (start_area_[0]-2 * start_area_[1])) * std::abs(uniform_dist_(random_gen_));
+        quad_state_.p.z() = 2.5;
+        euler.z() = -M_PI / 2.0;
+      } else if(area_id == 2)
+      {
+        quad_state_.p.x() = end_area_[1] - end_area_[0]/2.0 + 
+          (end_area_[0] - 2 * end_area_[1]) * std::abs(uniform_dist_(random_gen_));
+        quad_state_.p.y() = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_area_[0];
+        quad_state_.p.z() = 2.5;
+        euler.z() = M_PI;
+      } else if(area_id == 3)
+      {
+        quad_state_.p.x() = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_area_[0]/2.0;
+        quad_state_.p.y() = (end_area_[1] + (end_area_[0] - 2.0 * end_area_[1])) * std::abs(uniform_dist_(random_gen_));
+        quad_state_.p.z() = 2.5;
+        euler.z() = M_PI / 2.0;
       }
-    } while (env_ptr_->checkOccupied(Eigen::Vector3d(quad_state_.p.x(), quad_state_.p.y(), quad_state_.p.z()+0.5), 1.5) ||
-    env_ptr_->checkOccupied(Eigen::Vector3d(goal_point_(0), goal_point_(1), goal_point_(2)+0.5), 1.5));
-
-    last_goal_point_ = goal_point_;
-    last_start_point_ << quad_state_.p.x(), quad_state_.p.y(), quad_state_.p.z();
-    last_yaw_ = euler.z();
-    // reverse = true;
-  }
-
+    }
+    else if (scene_id_ == 1)
+    {
+      quad_state_.p.x() = - start_area_[0] / 2.0 + start_area_[0] * std::abs(uniform_dist_(random_gen_));
+      quad_state_.p.y() = start_area_[1] * std::abs(uniform_dist_(random_gen_));
+      quad_state_.p.z() = 2.0;
+    }
+  } while (env_ptr_->checkOccupied(Eigen::Vector3d(quad_state_.p), 1.0));
   // reset velocity
   if(action_mode_ ==0)
   {
@@ -239,17 +193,55 @@ bool AvoidVisionEnv::reset(Ref<Vector<>> obs) {
     quad_state_.x(QS::VELY) = 0.0;
     quad_state_.x(QS::VELZ) = 0.0;
   }
+
   Quaternion quat;
   EularToquaternion(quat, euler);
   quad_state_.x(QS::ATTW) = quat.w();
   quad_state_.x(QS::ATTX) = quat.x();
   quad_state_.x(QS::ATTY) = quat.y();
   quad_state_.x(QS::ATTZ) = quat.z();
-
   pre_quad_state_ = quad_state_;
+
   // reset quadrotor with random states
   quad_ptr_->reset(quad_state_);
 
+  do
+  {
+    if (scene_id_ == 3)
+    {
+      if(area_id == 0)
+      {
+        goal_point_(0) = end_area_[1] - end_area_[0]/2.0 + 
+          (end_area_[0] - 2 * end_area_[1]) * std::abs(uniform_dist_(random_gen_));
+        goal_point_(1) = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_origin_[1];
+        goal_point_(2) = 2.5 + std::abs(uniform_dist_(random_gen_));
+      } else if(area_id == 1)
+      {
+        goal_point_(0) = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_area_[0] / 2.0;
+        goal_point_(1) = end_area_[1] + (end_area_[0] - 2 * end_area_[1]) * std::abs(uniform_dist_(random_gen_));
+        goal_point_(2) = 2.5 + std::abs(uniform_dist_(random_gen_));
+      } else if(area_id == 2)
+      {
+        goal_point_(0) = start_area_[1] - start_area_[0] / 2.0 + 
+          (start_area_[0] - 2 * start_area_[1]) * std::abs(uniform_dist_(random_gen_));
+        goal_point_(1) = start_area_[1] * std::abs(uniform_dist_(random_gen_));
+        goal_point_(2) = 2.5 + std::abs(uniform_dist_(random_gen_));
+      } else if(area_id == 3)
+      {
+        goal_point_(0) = start_area_[1] * std::abs(uniform_dist_(random_gen_)) - start_area_[0]/2.0;
+        goal_point_(1) = (start_area_[1] + (start_area_[0] - 2.0 * start_area_[1])) * std::abs(uniform_dist_(random_gen_));
+        goal_point_(2) = 2.5 + std::abs(uniform_dist_(random_gen_));
+      }
+    }
+    else if(scene_id_ == 1)
+    {
+      goal_point_(0) = - end_area_[0] / 2.0 + end_area_[0] * std::abs(uniform_dist_(random_gen_));
+      goal_point_(1) = - end_area_[1] * std::abs(uniform_dist_(random_gen_)) + end_origin_[1];
+      goal_point_(2) = 2.5 + std::abs(uniform_dist_(random_gen_));
+    }
+  } while (env_ptr_->checkOccupied(Eigen::Vector3d(quad_state_.p), 1.0));
+  // direction_ = goal_point_ - quad_state_.p;
+  // direction_.normalize();
   log_distance_ = log(sqrt(pow(goal_point_.x()-quad_state_.p.x(), 2) + pow(goal_point_.y()-quad_state_.p.y(), 2)) + 1);
   pre_log_distance_ = log_distance_;
   horizon_vel_ = 0.0;
@@ -262,16 +254,11 @@ bool AvoidVisionEnv::reset(Ref<Vector<>> obs) {
   yaw = euler.z();
   // obtain observations
   getObs(obs);
-
   round++;
   return true;
 }
 
-bool AvoidVisionEnv::reset(Ref<Vector<>> obs, bool random) { 
-  if (!random)
-    random_gen_.seed(seed_);
-  return reset(obs); 
-  }
+bool AvoidVisionEnv::reset(Ref<Vector<>> obs, bool random) { return reset(obs); }
 
 bool AvoidVisionEnv::getObs(Ref<Vector<>> obs)
 {
@@ -403,7 +390,6 @@ bool AvoidVisionEnv::step(const Ref<Vector<>> act, Ref<Vector<>> obs,
   double speed_penalty = 0;
   if (std::abs(horizon_vel_) > 3.0)
     speed_penalty = vel_coeff_ * std::abs(horizon_vel_);
-  // speed_penalty = vel_coeff_ * std::abs(horizon_vel_ - 2.0);
 
   //penalty for vertical
   const double vertical_penalty = vert_coeff_ * (std::abs(quad_state_.p.z() - goal_point_.z()));
@@ -456,21 +442,15 @@ bool AvoidVisionEnv::isTerminalState(double &reward) {
     return true;
   }
 
-  if (quad_state_.t > 100.0)
+  if (quad_state_.t > 49.5)
   {
-    if (scene_id_ == 1)
-      reward = -10.0;
-    else if (scene_id_ == 3)
-      reward = -5.0;
+    reward = -2.0;
     return true;
   }
 
   if (collision_happened)
   {
-    if (scene_id_ == 1)
-      reward = -10.0;
-    else if (scene_id_ == 3)
-      reward = -2.0;
+    reward = -2.0;
     if (reset_if_collide_)
     {
       return true;
@@ -635,37 +615,12 @@ bool AvoidVisionEnv::loadParam(const YAML::Node &cfg) {
     end_area_ = cfg["unity"]["end_area"].as<std::vector<Scalar>>();
     start_origin_ = cfg["unity"]["start_origin"].as<std::vector<Scalar>>();
     end_origin_ = cfg["unity"]["end_origin"].as<std::vector<Scalar>>();
-    world_box_ << -start_area_[0]/2 - 2.0, start_area_[0]/2 + 2.0, -2.0, end_origin_[1] + 8.0, 0.4, 6.0;
+    world_box_ << -start_area_[0]/2 - 2.0, start_area_[0]/2 + 2.0, -2.0, end_origin_[1] + 8.0, 0.4, 5.5;
   } else {
     logger_.error("Cannot load [unity] parameters");
     return false;
   }
 
-  if (cfg["simulation"]){
-    seed_ = cfg["simulation"]["seed"].as<int>();
-  } else {
-    logger_.error("Cannot load [simulation] parameters");
-    return false;
-  }
-
-  return true;
-}
-
-bool AvoidVisionEnv::resetRewCoeff(const YAML::Node &cfg)
-{
-  if (cfg["rewards"]) {
-    // load reinforcement learning related parameters
-    colli_coeff_ = cfg["rewards"]["colli_coeff_new"].as<Scalar>();
-    distance_coeff_ = cfg["rewards"]["distance_coeff_new"].as<Scalar>();
-    vel_coeff_ = cfg["rewards"]["vel_coeff_new"].as<Scalar>();
-    vert_coeff_ = cfg["rewards"]["vert_coeff_new"].as<Scalar>();
-    angle_vel_coeff_ = cfg["rewards"]["angle_vel_coeff_new"].as<Scalar>();
-    input_coeff_ = cfg["rewards"]["input_coeff_new"].as<Scalar>();
-    yaw_coeff_ = cfg["rewards"]["yaw_coeff_new"].as<Scalar>();
-  } else {
-    logger_.error("Cannot load [rewards] parameters");
-    return false;
-  }
   return true;
 }
 

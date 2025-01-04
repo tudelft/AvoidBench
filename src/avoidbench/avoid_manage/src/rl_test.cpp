@@ -253,8 +253,8 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
       //random generate start and end point until they both have a certain free space
       int ss=0;
 
-      while(avoidbench_bridge->checkCollisionState(&(p_m.m_start_point), true) || 
-        avoidbench_bridge->checkCollisionState(&(p_m.m_end_point)))
+      while(avoidbench_bridge->checkCollisionState(p_m.m_start_point, true) || 
+        avoidbench_bridge->checkCollisionState(p_m.m_end_point))
       {
         ss++;
         mission_state = Mission_state::UNITYSETTING;
@@ -282,8 +282,8 @@ void AvoidManage::MissionCallback(const ros::TimerEvent &event)
       //random generate start and end point until they both have a certain free space
       if_update_map = false;
       getMissionParam(&p_m, mission_id);
-      while(avoidbench_bridge->checkCollisionState(&(p_m.m_start_point), true) || 
-        avoidbench_bridge->checkCollisionState(&(p_m.m_end_point)))
+      while(avoidbench_bridge->checkCollisionState(p_m.m_start_point, true) || 
+        avoidbench_bridge->checkCollisionState(p_m.m_end_point))
       {
         mission_state = Mission_state::UNITYSETTING;
         if_update_map = false;

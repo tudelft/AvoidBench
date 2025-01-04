@@ -215,7 +215,7 @@ namespace avoidmetrics
       }
       double dist = (ray_point - query_point).norm();
       aver_dist = aver_dist + dist;
-      // std::string ss = std::to_string(dist) + "\n";
+      std::string ss = std::to_string(dist) + "\n";
       // location_out << ss;
     }
     // location_out.close();

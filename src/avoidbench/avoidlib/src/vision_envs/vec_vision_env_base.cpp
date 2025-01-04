@@ -205,7 +205,6 @@ bool VecVisionEnvBase<EnvBaseName>::setUnity(bool render) {
     return false;
   }
   // create unity bridge
-  logger_.info("create unity bridge");
   unity_bridge_ptr_ = UnityBridge::getInstance();
   // add objects to Unity
   for (int i = 0; i < num_envs_; i++) {

@@ -4,7 +4,7 @@ namespace avoidmetrics {
   : start_flag(false),
     stop_flag(false),
     finished(false),
-    t_limit(80.0), 
+    t_limit(150.0), 
     trial_id(0),
     mission_id(mission_id_)
   {
@@ -42,7 +42,7 @@ namespace avoidmetrics {
       if(sqrt(pow((last_point.position.x()-end_point.x()),2) + pow((last_point.position.y()-end_point.y()),2))<0.8)
       {
         finished = true;
-        // stop_flag = true;
+        stop_flag = true;
       }
       if(t_mission >= t_limit)
       {
@@ -55,11 +55,11 @@ namespace avoidmetrics {
   void Mission::CollisionCount()
   {
     collision_number++;
-    // if(collision_number>2)
-    // {
-    //   finished = false;
-    //   stop_flag = true;
-    // }
+    if(collision_number>2)
+    {
+      finished = false;
+      stop_flag = true;
+    }
   }
 
   void Mission::reset(const avoidlib::mission_parameter &m_param)

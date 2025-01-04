@@ -29,12 +29,12 @@ drone:
   
 flight_number: 30
 mission:
-  seed: 28
-  trials: 18
+  seed: 35
+  trials: 2
   start_area: [16, 1.6]
   start_origin: [0, -1.8]
   radius_area: 3.0
-  radius_origin: 1.5
+  radius_origin: 2.5
   end_area: [16, 1.6]
   end_origin: [0, 28]
   rollout: 120
