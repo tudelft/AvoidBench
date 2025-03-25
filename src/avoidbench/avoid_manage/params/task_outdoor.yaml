@@ -31,7 +31,7 @@ flight_number: 30
 mission:
   trials: 30
   # seed: 8 8 32 64 256 500
-  seed: 100 #24 64 100 128 200 50
+  seed: 24 #24 64 100 128 200 50
   start_area: [40, 6.0]
   start_origin: [0, 3.0]
   radius_area: 3.2

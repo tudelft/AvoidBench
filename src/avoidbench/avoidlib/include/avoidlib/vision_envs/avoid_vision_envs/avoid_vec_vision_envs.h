@@ -1,3 +1,4 @@
+
 #pragma once
 
 // yaml cpp
@@ -31,6 +32,7 @@ class AvoidVecVisionEnv : public VecVisionEnvBase<EnvBaseName> {
   inline std::vector<std::string> getRewardNames(void) {
     return this->envs_[0]->getRewardNames();
   };
+  bool resetRewCoeff();
 
 private:
   void perAgentStep(int agent_id, Ref<MatrixRowMajor<>> act,

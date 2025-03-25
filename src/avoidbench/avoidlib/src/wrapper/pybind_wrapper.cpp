@@ -87,6 +87,7 @@ PYBIND11_MODULE(flightgym, m) {
          static_cast<bool (AvoidVecVisionEnv<AvoidVisionEnv>::*)(
            Ref<MatrixRowMajor<>>, bool)>(&AvoidVecVisionEnv<AvoidVisionEnv>::reset),
          "reset with random option")
+    .def("resetRewCoeff", &AvoidVecVisionEnv<AvoidVisionEnv>::resetRewCoeff)
     .def("step", &AvoidVecVisionEnv<AvoidVisionEnv>::step)
     .def("close", &AvoidVecVisionEnv<AvoidVisionEnv>::close)
     .def("setSeed", &AvoidVecVisionEnv<AvoidVisionEnv>::setSeed)
