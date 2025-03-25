@@ -60,6 +60,7 @@ message("CUDA curand library: ${CUDA_curand_LIBRARY}")
 find_package(OpenCV REQUIRED)
 find_package(OpenMP REQUIRED)
 find_package(Open3D)
+find_package(cv_bridge REQUIRED)
 
 if(ENABLE_BLAS)
   set(BLA_VENDOR "Generic")
@@ -155,7 +156,7 @@ file(GLOB_RECURSE FLIGHTLIB_GYM_SOURCES
 )
 
 # Library and Executables
-include_directories(include ${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS} ${Open3D_INCLUDE_DIRS})
+include_directories(include ${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS} ${Open3D_INCLUDE_DIRS} ${cv_bridge_INCLUDE_DIRS})
 
 if(NOT AVOIDLIB_SOURCES)
 	set(LIBRARY_NAME)
